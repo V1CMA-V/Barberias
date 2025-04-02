@@ -1,0 +1,30 @@
+---
+interface Props {
+    checkActive?: boolean
+    href: string
+    class?: string
+}
+
+const {
+    href,
+    class: className,
+    checkActive = true,
+    ...restOfProps
+} = Astro.props
+
+const currenPath = Astro.url.pathname
+const isActive = currenPath === href && checkActive
+
+---
+
+<a 
+    href={href}
+    class:list={[
+        className,
+        'border-b-2 uppercase',
+        isActive ? 'border-white' : 'border-transparent'
+    ]}
+    {...restOfProps}
+>
+    <slot />
+</a>
