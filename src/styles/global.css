@@ -1,1 +1,92 @@
 @import "tailwindcss";
+@plugin "@midudev/tailwind-animations";
+
+@theme {
+    --color-sisal-50: #f9f6f3;
+    --color-sisal-100: #f0ece4;
+    --color-sisal-200: #dfd5c5;
+    --color-sisal-300: #cdbca4;
+    --color-sisal-400: #b89e7f;
+    --color-sisal-500: #a98666;
+    --color-sisal-600: #9c765a;
+    --color-sisal-700: #82604c;
+    --color-sisal-800: #6a4f42;
+    --color-sisal-900: #574237;
+    --color-sisal-950: #2e211c;
+}
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+p {
+    line-height: 1.4;
+    margin-bottom: 1em;
+    font-weight: 100;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+}
+
+p strong {
+    font-weight: 700;
+}
+
+@utility mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+@utility text_glowing {
+    transition: text-shadown 0.3s ease;
+}
+
+.text_glowing:hover {
+    text-shadow: 1px 1px 20px#FFF;
+}
+
+@utility button_effect {
+    transition:
+      text-shadow 0.5s ease-out,
+      box-shadow 0.3s ease-out;
+}
+
+.button_effect:hover {
+    box-shadow: 0 0 10px #fff;
+    text-shadow: 1px 1px 20px #fff;
+}
+
+/* Scrollbar custom */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Header navbar effect */
+
+#header-nav {
+    animation: blur linear both;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+}
+
+@keyframes blur {
+    to {
+        box-shadow:
+            0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+            0px 0px 0 1px rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
+}
