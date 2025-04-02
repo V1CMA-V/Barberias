@@ -1,0 +1,16 @@
+---
+interface Props {
+    img: string
+}
+
+const { img } = Astro.props
+---
+
+<div class=`bg-[url('/images/${img}')] bg-cover bg-center w-full absolute inset-0 mask-fade-bottom`>
+</div>
+
+<div class="absolute inset-0 m-auto w-full h-full flex justify-center items-center flex-col animate-blurred-fade-in">
+    <slot />
+</div>
+
+
