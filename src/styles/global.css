@@ -35,6 +35,10 @@ p strong {
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
+@utility mask-fade-upper {
+    mask-image: linear-gradient(to top, black 80%, transparent 100%);
+}
+
 @utility text_glowing {
     transition: text-shadown 0.3s ease;
 }
@@ -52,6 +56,10 @@ p strong {
 .button_effect:hover {
     box-shadow: 0 0 10px #fff;
     text-shadow: 1px 1px 20px #fff;
+}
+
+.bling {
+    text-shadow: 1px 1px 20px#FFF;
 }
 
 /* Scrollbar custom */
@@ -90,3 +98,20 @@ p strong {
         backdrop-filter: blur(10px);
     }
 }
+
+html {
+    color-scheme: light dark;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    html {
+      color: white;
+    }
+  }
+  
+  @media (prefers-color-scheme: light) {
+    html {
+      color: black;
+    }
+  }
+
