@@ -1,15 +1,23 @@
 ---
 interface Props {
     img: string
+    class?: string
 }
-
-const { img } = Astro.props
+const { img, class: className } = Astro.props
 ---
 
-<div class=`bg-[url('/images/${img}')] bg-cover bg-center w-full absolute inset-0 mask-fade-bottom`>
+<div class={`
+    ${className}
+    bg-[url('/images/${img}.png')] 
+    bg-cover 
+    bg-center 
+    w-full 
+    absolute 
+    inset-0 
+    mask-fade-bottom`}>
 </div>
 
-<div class="absolute inset-0 m-auto w-full h-full flex justify-center items-center flex-col animate-blurred-fade-in">
+<div class="absolute m-auto w-full h-full  animate-blurred-fade-in">
     <slot />
 </div>
 
