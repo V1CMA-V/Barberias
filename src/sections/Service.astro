@@ -1,26 +1,37 @@
 ---
-import Hero from "@/components/Hero.astro";
+import Hero from "@/components/Hero.astro"; // O HeroOptimized si lo migras
 import Normal from "@/components/Normal.astro";
 import Pack from "@/components/Pack.astro";
+import ServiceImage from "@/assets/images/servicios.webp";
+
 ---
 
-<section id="Service" class="relative flex flex-col min-h-screen w-full">
-   <Hero img="servicios" class="rounded-2xl opacity-20">
-        <div class="flex flex-col items-center justify-start pt-20 h-screen gap-4">
-            <h3 class="mx-auto mb-10 text-balance text-center text-xl font-semibold uppercase tracking-wide md:text-5xl  bling">
-                Servicios
-            </h3>
+<section id="Service" class="relative w-full py-10 overflow-hidden">
+  <!-- Fondo Hero (no interfiere con contenido) -->
+  <Hero image={ServiceImage} alt="Corte de cabello estilo G-Look" oppacity={true}>
+        <!-- Contenido encima -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 flex flex-col items-center gap-8">
+        <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-center bling tracking-wide">
+        Servicios
+        </h3>
 
-            <span class="text-pretty text-center">
-            Conoce todos los servicios que ofrecemos
-            </span>
-            <p class="text-pretty text-center">
-                Todos los servicios incluyen bebida de cortesia
-            </p>
+        <p class="text-center text-pretty text-sm sm:text-base max-w-lg">
+        Conoce todos los servicios que ofrecemos
+        </p>
+        <p class="text-center text-pretty text-sm sm:text-base text-gray-300">
+        Todos los servicios incluyen bebida de cortesía 
+        </p>
 
-            <Normal />
-            <Pack />
-        </div>
-   </Hero>
+        <!-- Tabla de servicios -->
+        <Normal />
+
+        <!-- Espaciado visual -->
+        <div class="h-16"></div>
+
+        <!-- Paquete del mes -->
+        <Pack />
+    </div>
+  </Hero>
+
+  
 </section>
-
