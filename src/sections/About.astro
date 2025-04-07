@@ -1,3 +1,46 @@
-<section id="About" class="realative z-10 mx-auto my-24 max-w-[70ch] text-pretty px-6 text-left text-xl sm:px-20">
-    <h2 class="mx-auto mb-10 text-wrap text-center text-5xl font-semibold tracking-wide">Sobre Nosotros</h2>
+---
+import Scissors from "@/components/Icons/Scissors.astro";
+import Instagram from "@/components/Icons/Instagram.astro";
+---
+
+<section id="About" class="w-full flex items-center justify-between">
+    <div class=" w-1/2 px-36 flex flex-col items-center justify-center gap-10">
+        <h2 class="text-5xl text-balance uppercase tracking-wide font-semibold text-center bling">Sobre Nosotros</h2>
+        <div class="">
+            <p class="text-2xl text-pretty" >
+                En <strong>G-Look</strong>, nos apasiona el arte de la barbería.
+            </p>
+            <p class="text-2xl text-pretty" >
+                Con <strong>3 años de experiencia</strong>, nuestro equipo de barberos 
+                expertos combina técnicas tradicionales con las últimas tendencias 
+                para ofrecerte un servicio <strong>personalizado y de alta calidad</strong>. 
+            </p>
+            <p class="text-2xl text-pretty" >
+                Nos enorgullece crear un <strong>ambiente relajado y masculino</strong> donde 
+                cada cliente se sienta como en casa. 
+                ¡Ven y descubre por qué <strong>son la barbería favorita de Puebla</strong>!
+            </p>
+        </div>
+        
+
+        <!-- Icons -->
+        <div class="flex flex-col md:flex-row gap-10 items-center justify-center">
+            <div class="flex items-center gap-4">
+                <Scissors class="" />
+                <div class="">
+                    200 +
+                    <p class="text-pretty text-sm">citas realizadas</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 ">
+                <Instagram class="w-10" />
+                <div class="">
+                    1000 +
+                    <p class="text-pretty text-sm">seguidores</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img class="w-1/2 h-screen bg-cover bg-center mask-fade-upper rounded-2xl overflow-hidden" src="/images/about.png" alt="about">
 </section>
+
