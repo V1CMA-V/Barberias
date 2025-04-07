@@ -1,0 +1,25 @@
+---
+import { CountUp } from '@/components/CountUp';
+import Scissors from '../Icons/Scissors.astro';
+import Instagram from '../Icons/Instagram.astro';
+---
+
+<div class="flex flex-wrap justify-center gap-8 pt-6">
+    <div class="grid grid-cols-1  gap-y-10">
+        <div class="flex flex-col justify-center items-center">
+          <span class="numbers text-7xl font-bold tabular-nums tracking-wide flex items-center">
+            <Scissors />
+            <CountUp client:visible initial={0} final={200} />
+          </span>
+          <span class="uppercase opacity-70">Citas realizadas</span>
+        </div>
+    
+        <div class="flex flex-col justify-center items-center">
+          <span class="numbers text-7xl font-bold tabular-nums tracking-wide flex items-center gap-2">
+            <Instagram />
+            <CountUp client:visible initial={0} final={190} />
+          </span>
+          <span class="uppercase opacity-70">Seguidores </span>
+        </div>
+    </div>
+</div>
