@@ -1,0 +1,59 @@
+---
+const SERVICE_MONTH = [
+    "3 Cortes", 
+    "Un servicio de barba",
+    "2 Snacks Frios",
+    "Una Mascarilla"
+]
+
+const PRICE = 350
+---
+
+<section class="w-full max-w-4xl mx-auto px-6 ">
+  <!-- Franja decorativa -->
+  <div class="text-center mb-[-1.5rem] z-10 relative">
+    <span class="inline-block bg-gradient-to-r from-pink-500 to-yellow-400 text-black font-bold text-sm px-4 py-1 rounded-full shadow-md uppercase tracking-wide animate-bounce">
+      🔥 Solo este mes
+    </span>
+  </div>
+
+  <!-- Card con efecto neón -->
+  <div class="relative flex flex-col items-center justify-center gap-6 border-2 border-white rounded-2xl p-6 md:p-10  text-white text-center shadow-xl overflow-hidden">
+
+    <!-- Borde animado neón -->
+    <div class="absolute inset-0 rounded-2xl border-2 border-white blur-md opacity-40 pointer-events-none animate-flicker"></div>
+
+    <!-- Contenido -->
+    <div class="relative z-10 flex flex-col items-center justify-center gap-6 text-center">
+      <h4 class="text-3xl font-semibold uppercase tracking-wide bling">Paquete del Mes</h4>
+
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-10 w-full">
+        <!-- Servicios -->
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm sm:text-base">
+          {
+            SERVICE_MONTH.map(service => (
+              <li class="flex items-center gap-2 whitespace-nowrap">
+                <span class="text-green-500">✔</span> {service}
+              </li>
+            ))
+          }
+        </ul>
+
+        <!-- Precio -->
+        <p class="text-xl font-semibold">
+          <span class="text-4xl font-extrabold bling tracking-wide">${PRICE}</span><br /> al mes
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    @keyframes flicker {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 0.2; }
+    }
+    .animate-flicker {
+        animation: flicker 1.5s infinite ease-in-out;
+    }
+</style>
