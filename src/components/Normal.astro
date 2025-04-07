@@ -1,4 +1,6 @@
 ---
+import NormalMobile from "./Service/normalMobile.astro";
+
 const PRICES = {
   "Corte": [150, 120],
   "Barba": [150, 120],
@@ -40,7 +42,7 @@ const rightServices = services.slice(4);
   <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start relative">
     
     <!-- Columna Izquierda -->
-    <div class="w-full">
+    <div class="w-full hidden md:block">
       <div class="grid grid-cols-4 text-center font-semibold  mb-4">
         <span class="col-span-1">Servicio</span>
         <span class="col-span-1"></span>
@@ -72,7 +74,7 @@ const rightServices = services.slice(4);
     <div class="hidden md:block w-px bg-gray-300 h-full mx-auto"></div>
 
     <!-- Columna Derecha -->
-    <div class="w-full">
+    <div class="w-full hidden md:block">
       <div class="grid grid-cols-4 text-center font-semibold  mb-4">
         <span class="col-span-1">Servicio</span>
         <span class="col-span-1"></span>
@@ -99,5 +101,7 @@ const rightServices = services.slice(4);
         ))}
       </div>
     </div>
+
+    <NormalMobile />
   </div>
 </section>
