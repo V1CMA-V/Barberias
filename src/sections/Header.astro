@@ -1,42 +1,44 @@
 ---
-import HeaderLink from '@/components/HeaderLink.astro'
+import HeaderLink from '@/components/HeaderLink.astro';
+import MobileMenu from '@/components/MobileMenu.tsx';
 
-import MenuIcon from '@/components/Icons/MenuIcon.astro'
-import CloseIcon from '@/components/Icons/Close.astro'
+// Número de WhatsApp sin espacios ni signos
+const phone = "5560908911";
 
+// Mensaje precargado (encodeado)
+const message = encodeURIComponent(
+  "¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con G-Look. ¿Podrían brindarme más información?"
+);
+
+const url = `https://wa.me/${phone}?text=${message}`
 ---
+<header id="header-nav" class="fixed top-0 w-full px-6 py-4 z-50 bg-transparent">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-6 lg:gap-16">
 
-<header id="header-nav" class="fixed top-0 w-full px-6 py-4 z-50">
-  <div class="max-w-7xl mx-auto flex items-center justify-between gap-16">
-        <HeaderLink
-            checkActive={false}
-            href="/"
-            class="relative z-10 "
-            aria-label="a la página de inicio"
-        >
-            <h1 class="md:text-3xl  font-bold text_glowing">G-Look</h1>
-        </HeaderLink>
-        <nav
-            id="header-menu"
-            class="fixed  h-dvh inset-0 bg-[#242424]/90 md:text-xl lg:text-xl flex flex-col items-center justify-center gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 md:static md:h-[initial] md:bg-[initial] md:flex-row md:translate-y-[initial]"
-        >
-            <HeaderLink class="text_glowing" href="#About">Sobre nosotros</HeaderLink>
-            <HeaderLink class="text_glowing" href="#Service">Servicios</HeaderLink>
-            <HeaderLink class="text_glowing" href="#Location"> Ubicación</HeaderLink>
-            <HeaderLink class="text_glowing" href="#Contact"> Contáctanos</HeaderLink>
+    <!-- Logo -->
+    <HeaderLink checkActive={false} href="/" aria-label="Inicio">
+      <h1 class="md:text-3xl font-bold text_glowing transition">G-Look</h1>
+    </HeaderLink>
 
-            <a href="#header-nav" class="md:hidden absolute top-6 right-6">
-            <CloseIcon />
-            </a>
-        </nav>
+    <!-- Menú de escritorio -->
+    <nav class="hidden md:flex items-center gap-8 text-xl">
+      <HeaderLink class="text_glowing" href="#About">Sobre nosotros</HeaderLink>
+      <HeaderLink class="text_glowing" href="#Service">Servicios</HeaderLink>
+      <HeaderLink class="text_glowing" href="#Location">Ubicación</HeaderLink>
+      <HeaderLink class="text_glowing" href="#Contact">Contáctanos</HeaderLink>
+    </nav>
 
-        <a href=""
-            class="sm:text-lg w-fit font-medium px-5 py-3 border border-solid border-white rounded-2xl uppercase text-pretty button_effect text-center"
-        >
-            Realizar cita
-        </a>
+    <!-- Botón cita desktop -->
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden sm:inline-block sm:text-lg font-medium px-5 py-3 border border-white rounded-2xl uppercase text-pretty button_effect text-center"
+    >
+      Realizar cita
+    </a>
 
-
-        <a href="#header-menu" class="md:hidden"><MenuIcon /></a>
+    <!-- Menú móvil -->
+    <MobileMenu client:only="preact" />
   </div>
 </header>
