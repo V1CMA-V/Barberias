@@ -1,0 +1,103 @@
+---
+const PRICES = {
+  "Corte": [150, 120],
+  "Barba": [150, 120],
+  "Ritual de Barba": [180, 140],
+  "Corte y Barba": [250, 220],
+  "Ritual Corte y Barba": [150, 120],
+  "Servicio de Grooming": [150, 120],
+  "Limpieza Facial": [150, 120],
+  "Ceja/Greca (sencilla)": [250, 220]
+};
+
+const ICONS = {
+  "Corte": "✂️",
+  "Barba": "🧔",
+  "Ritual de Barba": "🪒",
+  "Corte y Barba": "🔥",
+  "Ritual Corte y Barba": "💈",
+  "Servicio de Grooming": "🧴",
+  "Limpieza Facial": "🧼",
+  "Ceja/Greca (sencilla)": "🎯"
+} as const
+type ServiceKey = keyof typeof ICONS
+
+
+const TAGS = {
+  "Corte": "⭐ Popular",
+  "Corte y Barba": "🧔 Recomendado",
+  "Ritual de Barba": "💆 Especial"
+} as const
+type TagKey = keyof typeof TAGS
+
+const services: ServiceKey[] = Object.keys(ICONS) as ServiceKey[]
+
+const leftServices = services.slice(0, 4);
+const rightServices = services.slice(4);
+---
+
+<section class="w-full max-w-6xl mx-auto px-4 py-16">   
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start relative">
+    
+    <!-- Columna Izquierda -->
+    <div class="w-full">
+      <div class="grid grid-cols-4 text-center font-semibold  mb-4">
+        <span class="col-span-1">Servicio</span>
+        <span class="col-span-1"></span>
+        <span class="col-span-1">General</span>
+        <span class="col-span-1">Estudiante</span>
+      </div>
+      <div class="grid grid-cols-4 gap-y-6 gap-x-2 text-center text-sm ">
+        {leftServices.map(service => (
+          <>
+            <div class="col-span-1  font-medium flex flex-col items-end">
+              <span class="whitespace-nowrap tracking-wide">
+                {ICONS[service]} {service}
+              </span>
+              {TAGS[service as TagKey] && (
+                <span class="text-xs text-yellow-500 mt-1 whitespace-nowrap">
+                  {TAGS[service as TagKey]}
+                </span>
+              )}
+            </div>
+            <div class="col-span-1 h-px bg-gray-300 self-center" />
+            <p class="col-span-1">${PRICES[service][0]}</p>
+            <p class="col-span-1">${PRICES[service][1]}</p>
+          </>
+        ))}
+      </div>
+    </div>
+
+    <!-- Separador vertical -->
+    <div class="hidden md:block w-px bg-gray-300 h-full mx-auto"></div>
+
+    <!-- Columna Derecha -->
+    <div class="w-full">
+      <div class="grid grid-cols-4 text-center font-semibold  mb-4">
+        <span class="col-span-1">Servicio</span>
+        <span class="col-span-1"></span>
+        <span class="col-span-1">General</span>
+        <span class="col-span-1">Estudiante</span>
+      </div>
+      <div class="grid grid-cols-4 gap-y-6 gap-x-2 text-center text-sm ">
+        {rightServices.map(service => (
+          <>
+            <div class="col-span-1 font-medium flex flex-col items-end">
+              <span class="whitespace-nowrap tracking-wide">
+                {ICONS[service]} {service}
+              </span>
+              {TAGS[service as TagKey] && (
+                <span class="text-xs text-yellow-500 mt-1 whitespace-nowrap">
+                  {TAGS[service as TagKey]}
+                </span>
+              )}
+            </div>
+            <div class="col-span-1 h-px bg-gray-300 self-center" />
+            <p class="col-span-1">${PRICES[service][0]}</p>
+            <p class="col-span-1">${PRICES[service][1]}</p>
+          </>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
