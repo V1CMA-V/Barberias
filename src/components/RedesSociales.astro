@@ -5,11 +5,13 @@ import WhatsApp from "./Icons/WhatsApp.astro";
 ---
 
 <section class="w-full max-w-6xl mx-auto px-6 py-20">
-  <div class="flex flex-wrap items-center justify-center gap-10">
+  <div class="flex flex-wrap items-center justify-center gap-12">
+    
     <a 
       href="https://www.facebook.com/glookbarber" 
       target="_blank" 
-      rel="noopener noreferrer" 
+      rel="noopener noreferrer"
+      aria-label="Ir a nuestro perfil de Facebook"
       class="hover:scale-110 transition-transform duration-300"
     >
       <Facebook color="#1877F2" class="w-20 h-20" />
@@ -18,7 +20,8 @@ import WhatsApp from "./Icons/WhatsApp.astro";
     <a 
       href="https://www.instagram.com/glookbarber" 
       target="_blank" 
-      rel="noopener noreferrer" 
+      rel="noopener noreferrer"
+      aria-label="Ir a nuestro perfil de Instagram"
       class="hover:scale-110 transition-transform duration-300"
     >
       <Instagram color="#E1306C" class="w-20 h-20" />
@@ -27,10 +30,12 @@ import WhatsApp from "./Icons/WhatsApp.astro";
     <a 
       href="https://wa.me/5213312345678" 
       target="_blank" 
-      rel="noopener noreferrer" 
+      rel="noopener noreferrer"
+      aria-label="Abrir conversación por WhatsApp"
       class="hover:scale-110 transition-transform duration-300"
     >
       <WhatsApp color="#25D366" class="w-20 h-20" />
     </a>
+
   </div>
 </section>
