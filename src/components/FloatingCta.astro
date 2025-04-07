@@ -1,0 +1,23 @@
+---
+// FloatingCta.astro
+
+// Número de WhatsApp sin espacios ni signos
+const phone = "5560908911";
+
+// Mensaje precargado (encodeado)
+const message = encodeURIComponent(
+  "¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con G-Look. ¿Podrían brindarme más información?"
+);
+
+const url = `https://wa.me/${phone}?text=${message}`;
+---
+
+<a 
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="animate-pulse fixed bottom-6 right-6 z-50 bg-white text-black font-bold py-3 px-6 rounded-full shadow-lg uppercase tracking-wide hover:scale-105 transition-all md:hidden"
+  aria-label="Enviar mensaje por WhatsApp"
+>
+  💬 Cita
+</a>
