@@ -11,42 +11,41 @@ const HORARIO = {
 <section id="Location" class="w-full max-w-7xl mx-auto p-6 sm:p-20 my-24">
   <h3 class="text-4xl font-bold uppercase tracking-wide text-center bling mb-16">Ubicación</h3>
 
-  <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+  <div class="flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-20">
     
     <!-- Mapa -->
     <div class="w-full lg:w-1/2 h-[400px] rounded-2xl overflow-hidden shadow-lg">
       <Map />
     </div>
 
-    <!-- Info ubicación -->
-    <div class="w-full lg:w-1/2 flex flex-col justify-center gap-10 ">
+    <!-- Info -->
+    <div class="w-full lg:w-1/2 flex flex-col justify-center items-center gap-10 text-center">
       
       <!-- Dirección -->
-      <div class="text-center text-base sm:text-lg leading-relaxed">
+      <div class="text-base sm:text-lg leading-relaxed max-w-prose">
         <a 
           href="https://maps.app.goo.gl/rXQSLCoe3NPfyHHd7" 
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 hover:underline text-pretty transition"
+          class="inline-flex flex-col sm:flex-row items-center justify-center gap-2 hover:underline text-pretty transition"
         >
-          
+          <span class="text-xl">📍</span>
           <span>
-            Estamos en <strong class="text-sisal-500">Privada 71 A Ote. 801, Loma Linda, 72477,
-            Heroica Puebla de Zaragoza</strong>, a un costado de <strong class="text-sisal-500">Ciudad Universitaria</strong>.
+            Estamos en <strong class="text-sisal-500">Privada 71 A Ote. 801, Loma Linda, 72477, Heroica Puebla de Zaragoza</strong>, a un costado de <strong class="text-sisal-500">Ciudad Universitaria</strong>.
           </span>
         </a>
-        <p class="mt-4 font-semibold text-pretty"><strong>¡Te esperamos!</strong></p>
+        <p class="mt-4 font-semibold text-pretty">¡Te esperamos!</p>
       </div>
 
       <!-- Horario -->
-      <div>
+      <div class="w-full">
         <h4 class="text-2xl font-semibold uppercase tracking-wide text-center mb-4 bling">Horario de Atención</h4>
-        <ul class="grid grid-cols-2 gap-y-3 w-fit mx-auto text-sm sm:text-base gap-x-3">
+        <ul class="grid grid-cols-2 gap-y-2 text-sm sm:text-base text-center divide-y divide-white/10 max-w-md mx-auto">
           {Object.entries(HORARIO).map(([dia, horario]) => (
-            <>
-              <li class="font-medium text-gray-300 text-end">{dia}:</li>
-              <li class=" text-start">{horario}</li>
-            </>
+            <li class="col-span-2 py-1 flex justify-between px-2 sm:px-6">
+              <span class="font-medium text-gray-300">{dia}</span>
+              <span>{horario}</span>
+            </li>
           ))}
         </ul>
       </div>
