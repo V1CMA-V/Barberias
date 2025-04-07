@@ -1,41 +1,37 @@
 ---
-import '@/styles/global.css'
-// Supports weights 100-900
+import '@/styles/global.css';
 import '@fontsource-variable/montserrat';
 
-import Header from '@/sections/Header.astro'
-import Footer from '@/sections/Footer.astro'
+import Header from '@/sections/Header.astro';
+import Footer from '@/sections/Footer.astro';
+import FloatingCta from '@/components/FloatingCta.astro';
 ---
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>G-Look - Barberia Ubicada en Puebla</title>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<slot />			
-		</main>
-		<Footer />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
+    <meta name="generator" content={Astro.generator} />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		background: #1B1B1B;
-		color: #FFF;
-		font-family: 'Montserrat Variable', sans-serif;;
-		display: flex;
-		flex-direction: column;
-		box-sizing: border-box;
-	}
-</style>
+    <title>G-Look - Barbería ubicada en Puebla</title>
+
+    <!-- Slot para inyectar head desde páginas -->
+    <slot name="head" />
+  </head>
+
+  <body class="min-h-screen flex flex-col bg-[#1B1B1B] text-white font-sans">
+    <Header role="banner" />
+
+    <main id="main-content" role="main" class="flex-grow">
+      <slot />
+	  <FloatingCta />
+    </main>
+
+    <Footer role="contentinfo" />
+  </body>
+</html>
