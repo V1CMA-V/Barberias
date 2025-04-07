@@ -1,59 +1,53 @@
 ---
 import Locate from "@/components/Icons/Locate.astro";
-
 ---
 
-<footer id="footer" class="bg-white rounded-lg shadow m-4">
-  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-    <div class="sm:flex sm:items-center sm:justify-between">
-      <a
-        href="/"
-        class="mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse flex items-center mr-24"
-      >
-        <img src="/images/favicon.webp" alt="Logo" class="w-16 h-16 rounded-full">
-        <span
-          class="self-center text-2xl font-semibold whitespace-nowrap text-black"
-          >G-Look</span
-        >
+<footer id="footer" class="bg-black  py-10 mt-10 border-t border-white/10">
+  <div class="w-full max-w-screen-xl mx-auto px-6 flex flex-col gap-8">
+
+    <!-- Sección superior -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+
+      <!-- Logo y nombre -->
+      <a href="/" class="flex items-center gap-4">
+        <img src="/images/favicon.webp" alt="Logo de G-Look" class="w-14 h-14 rounded-full shadow" />
+        <span class="text-2xl font-bold uppercase">G-Look</span>
       </a>
-      
+
+      <!-- Dirección con ícono -->
       <a 
-        href="https://maps.app.goo.gl/1w1kjpXu1EMXbn8N9" 
-        class="group transform transition-all duration-300 ease-in-out text-center hover:underline me-4 md:me-6 text-gray-500 hover:text-black hover:scale-105 hover:-translate-y-1 inline-block"
+        href="https://maps.app.goo.gl/1w1kjpXu1EMXbn8N9"
         target="_blank"
         rel="noopener noreferrer"
+        class="flex items-center gap-2 hover:text-sisal-400 transition text-center justify-center"
       >
-        <span class="flex items-center justify-center gap-2">
-          <Locate />
-
-          <span>
-            Privada 71 A Ote. 801, Loma Linda, 72477<br />
-            Heroica Puebla de Zaragoza, Pue.
-          </span>
+        <Locate />
+        <span class="text-sm leading-snug">
+          Privada 71 A Ote. 801, Loma Linda, 72477<br />
+          Puebla, Pue. (Junto a Ciudad Universitaria)
         </span>
       </a>
 
-      <div class="flex gap-6 text-sm text-gray-600">
-        <a href="https://www.facebook.com/glook_barber/"
-           class="hover:text-[#1877F2] hover:scale-110 transition duration-300"
-           target="_blank" rel="noopener noreferrer">
+      <!-- Redes sociales -->
+      <div class="flex gap-6 text-sm justify-center">
+        <a href="https://www.facebook.com/glook_barber/" target="_blank" rel="noopener noreferrer" class="hover:text-[#1877F2] transition">
           Facebook
         </a>
-        <a href="https://www.instagram.com/glook_barber/"
-           class="hover:text-[#EF4B5F] hover:scale-110 transition duration-300"
-           target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/glook_barber/" target="_blank" rel="noopener noreferrer" class="hover:text-[#EF4B5F] transition">
           Instagram
         </a>
-        <a href="https://wa.me/12228554038?text=Hola,%20estoy%20interesado(a)%20en%20los%20servicios%20de%20adiestramiento%20de%20perros%20y%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n."
-           class="hover:text-[#075E54] hover:scale-110 transition duration-300"
-           target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/12228554038" target="_blank" rel="noopener noreferrer" class="hover:text-[#25D366] transition">
           WhatsApp
         </a>
       </div>
     </div>
-    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-    <span class="block text-sm text-gray-500 sm:text-center"
-      >© 2025 <a href="/" class="hover:underline font-semibold">G-Look™</a>. Todos los derechos reservados.</span
-    >
+
+    <!-- Separador -->
+    <hr class="border-white/10" />
+
+    <!-- Copyright -->
+    <p class="text-center text-xs ">
+      © 2025 <a href="/" class="hover:underline font-semibold hover:text-sisal-600">G-Look™</a>. Todos los derechos reservados.
+    </p>
   </div>
 </footer>
