@@ -1,48 +1,64 @@
-# Astro Starter Kit: Basics
+# G-Look - Barbería en Puebla
 
-```sh
-pnpm create astro@latest -- --template basics
+**G-Look** es una landing page profesional para una barbería moderna ubicada en Puebla. El sitio presenta información clara sobre servicios, ubicación, horarios, redes sociales y un estilo visual impactante con enfoque en rendimiento y SEO local.
+
+## 🌟 Características
+
+- 👤 Sección de equipo con animaciones y cards personalizadas
+- 🎓 Tabla de servicios dividida en dos columnas con versión optimizada para móvil
+- 🌟 Hero reutilizable con imagen de fondo optimizada
+- 📊 SEO optimizado (meta tags, sitemap.xml, robots.txt, JSON-LD)
+- 🌐 Integración de mapa e información de contacto
+- 📅 CTA y enlaces directos a WhatsApp, Instagram y Facebook
+
+## 🚀 Tecnologías utilizadas
+
+- [Astro](https://astro.build/) (con soporte para Islands y `astro:assets`)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Preact](https://preactjs.com/) (para componentes interactivos)
+- [CountUp.js](https://inorganik.github.io/countUp.js/) (para animaciones de número)
+- Deployment friendly para [Vercel](https://vercel.com/) o [Netlify](https://netlify.com/)
+
+## 📄 Instalación local
+
+```bash
+pnpm install
+pnpm dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚤 Comandos disponibles
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```bash
+pnpm dev         # Ejecuta el entorno local
+pnpm build       # Genera la build estática
+pnpm preview     # Previsualiza la build final
+```
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🌍 Estructura de carpetas
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
+```
 /
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+├─ public/                  # Archivos estáticos (favicon, robots.txt, sitemap.xml)
+├─ src/
+│  ├─ components/           # Componentes reutilizables (cards, botones, iconos)
+│  ├─ layouts/              # Layout principal con metaetiquetas SEO
+│  ├─ pages/                # index.astro
+│  ├─ sections/             # Secciones de la landing (Hero, About, Team, etc.)
+│  └─ styles/               # Tailwind + estilos globales
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📁 Archivos SEO relevantes
 
-## 🧞 Commands
+- `public/robots.txt`
+- `public/sitemap.xml`
+- JSON-LD en el `<footer>`
 
-All commands are run from the root of the project, from a terminal:
+## 📣 Creditos
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Desarrollado por [@Victor](https://github.com/) con amor por el detalle y un enfoque especial en rendimiento, accesibilidad y diseño responsive.
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Si te gustó este proyecto o te ayudó, considera dejar una estrella ⭐ o compartirlo con otros barberos que buscan destacar online.
+
+> "G-Look: Donde el estilo encuentra la precisión."
