@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
-import path from 'path';
 
 import preact from '@astrojs/preact';
 
@@ -11,14 +10,10 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
-    resolve: {
-      alias: {
-        '@': path.resolve('./src')
-      }
-    }
+  
   },
 
   integrations: [preact()],
-  output: 'server',
+  output: 'static',
 	adapter: vercel()
 });
