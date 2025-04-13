@@ -1,0 +1,24 @@
+---
+import '@/styles/global.css';
+import '@fontsource-variable/montserrat';
+
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta name="generator" content={Astro.generator} />
+
+    <title>Dev Victor Martinez</title>
+
+    <!-- Slot para inyectar head desde páginas -->
+    <slot name="head" />
+  </head>
+
+  <body class="min-h-screen flex flex-col bg-[#1B1B1B] text-white font-sans">
+
+    <main id="main-content" role="main" class="h-screen flex items-center justify-center">
+      <slot />
+    </main>
+
+  </body>
+</html>
