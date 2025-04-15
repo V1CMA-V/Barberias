@@ -2,22 +2,30 @@
 import HeaderLink from '@/components/HeaderLink.astro';
 import MobileMenu from '@/components/MobileMenu.tsx';
 
+interface Props {
+  barber: string
+}
+
+const { barber } = Astro.props
+
 // Número de WhatsApp sin espacios ni signos
 const phone = "5560908911";
 
 // Mensaje precargado (encodeado)
 const message = encodeURIComponent(
-  "¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con G-Look. ¿Podrían brindarme más información?"
+  `¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con ${barber}. ¿Podrían brindarme más información?`
 );
 
 const url = `https://wa.me/${phone}?text=${message}`
+
+const indexPage = barber === "G-Look" ? "/G-Look-Barber" : "/DonPerfecto-Barber"
 ---
-<header id="header-nav" class="fixed top-0 w-full px-6 py-4 z-50 bg-transparent">
+<header id="header-nav" role="banner" class="fixed top-0 w-full px-6 py-4 z-50 bg-transparent">
   <div class="max-w-7xl mx-auto flex items-center justify-between gap-6 lg:gap-16">
 
     <!-- Logo -->
-    <HeaderLink checkActive={false} href="/" aria-label="Inicio">
-      <h1 class="md:text-3xl font-bold text_glowing transition">G-Look</h1>
+    <HeaderLink checkActive={false} href={indexPage} aria-label="Inicio">
+      <h1 class={`md:text-3xl font-bold text_glowing transition ${barber === "Don Perfecto" ? "don" : ""}`}>{barber}</h1>
     </HeaderLink>
 
     <!-- Menú de escritorio -->
