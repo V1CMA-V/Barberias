@@ -1,0 +1,32 @@
+---
+interface Props {
+  name: string;
+}
+const { name } = Astro.props;
+---
+
+<div class="relative w-[90vw] max-w-sm aspect-[2/3] rounded-2xl overflow-hidden shadow-xl group transition-all duration-300">
+  <!-- Imagen -->
+  <img
+    src={`/images/team/${name}.webp`}
+    alt={`Fotografía de nuestro barbero ${name}`}
+    class="w-full h-full object-cover transition duration-500 group-hover:brightness-75"
+    loading="lazy"
+  />
+
+  <!-- Capa oscura -->
+  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+  <!-- Contenido: nombre abajo, descripción encima -->
+  <div class="absolute inset-0 z-10 flex flex-col justify-end px-6 pb-6 pt-20 transition-all duration-300">
+    <!-- Nombre siempre alineado abajo -->
+    <h2 class=" text-xl sm:text-2xl font-bold uppercase drop-shadow-md mb-2 ">
+      {name}
+    </h2>
+
+    <!-- Descripción: aparece sobre el nombre -->
+    <p class=" text-sm sm:text-base leading-snug hidden group-hover:block ">
+      <slot />
+    </p>
+  </div>
+</div>
