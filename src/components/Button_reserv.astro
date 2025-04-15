@@ -17,7 +17,7 @@ const message = encodeURIComponent(
 const url = `https://wa.me/${phone}?text=${message}`
 ---
 
-<a href={url} class="text-2xl">
+<a href={url} class="text-2xl" target="_blank" rel="noopener noreferrer">
     <slot />
 </a>
 

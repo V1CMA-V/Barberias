@@ -29,7 +29,9 @@ export default function MobileMenu() {
 
           {/* Botón de acción */}
           <a
-            href="#Contact"
+            href="https://wa.me/5213312345678"
+            target="_blank"
+            rel="noopener noreferrer"
             class="mt-4  border border-white rounded-xl px-6 py-3 uppercase font-semibold tracking-wide button_effect"
           >
             Realizar cita
