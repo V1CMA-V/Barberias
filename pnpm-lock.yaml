@@ -17,6 +17,9 @@ importers:
       '@fontsource-variable/montserrat':
         specifier: 5.2.5
         version: 5.2.5
+      '@fontsource-variable/playfair-display':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@midudev/tailwind-animations':
         specifier: 0.2.0
         version: 0.2.0(tailwindcss@4.0.16)
@@ -314,6 +317,9 @@ packages:
 
   '@fontsource-variable/montserrat@5.2.5':
     resolution: {integrity: sha512-Mfg/AiXwhPLAAgLCqzugFUs/PLprbHzXMhPVrf35q5od4/wHjVqtm0bI000tKGUGDZ3gDpId/+cqufcYHAAAEQ==}
+
+  '@fontsource-variable/playfair-display@5.2.5':
+    resolution: {integrity: sha512-nzSCC5pbWHjkJBqjPe81cPIC7fqJ6U5DwJ6tec7vF1bQ2DJnaKRBZluRQJuseFpACZLTN8LeN/1gBQEA7PnKOw==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2474,6 +2480,8 @@ snapshots:
     optional: true
 
   '@fontsource-variable/montserrat@5.2.5': {}
+
+  '@fontsource-variable/playfair-display@5.2.5': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
