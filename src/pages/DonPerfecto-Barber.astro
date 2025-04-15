@@ -1,0 +1,76 @@
+---
+import Layout from '@/layouts/Layout-DonPerfecto.astro';
+import About from '@/sections/About.astro';
+import Service from '@/sections/ServicesDonPerfecto.astro';
+import Location from '@/sections/LocationDonPerfecto.astro';
+import Contact from '@/sections/Contact.astro';
+import Team from '@/sections/TeamDonPerfecto.astro';
+import HeroDonPerfecto from '@/components/HeroDonPerfecto.astro';
+
+const barber = 'Don Perfecto'
+const citas = 200
+const seguidores = 190
+const logo = '/images/don-Perfecto-Logo_sinFondo.png'
+const mensajeWhatsapp = '¡Hola! Me gustaría agendar una cita en Don Perfecto.'
+
+---
+
+<Layout>
+	
+	<Fragment slot="head">
+		<!-- SEO básico -->
+		<title>Don Perfecto Barbería | Estilo, Precisión y Cuidado en Puebla</title>
+		<meta name="description" content="Descubre los servicios de Don Perfecto, la barbería en Puebla que combina estilo, técnica y atención personalizada. ¡Agenda tu cita hoy!" />
+		<meta name="keywords" content="barbería Puebla, cortes de cabello, barba, Don Perfecto, grooming, estética masculina, barbería CU Puebla" />
+		<meta name="author" content="Don Perfecto Barbería" />
+	  
+		<!-- Open Graph -->
+		<meta property="og:title" content="Don Perfecto Barbería | Estilo, Precisión y Cuidado" />
+		<meta property="og:description" content="Expertos en cortes, barba y grooming en Puebla. Atención personalizada en Ciudad Universitaria." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://glookbarber.com" />
+		<meta property="og:image" content="https://glookbarber.com/images/social-share.jpg" />
+	  
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="G-Look Barbería" />
+		<meta name="twitter:description" content="La mejor barbería en Puebla. Agenda tu cita con los mejores barberos." />
+		<meta name="twitter:image" content="https://glookbarber.com/images/social-share.jpg" />
+	  
+		<!-- Schema.org (estructura para buscadores) -->
+		<script type="application/ld+json">
+		  {
+			"@context": "https://schema.org",
+			"@type": "Barbershop",
+			"name": "G-Look Barbería",
+			"image": "https://glookbarber.com/images/logo.png",
+			"url": "https://glookbarber.com",
+			"telephone": "+52 331 234 5678",
+			"address": {
+			  "@type": "PostalAddress",
+			  "streetAddress": "Privada 71 A Ote. 801, Loma Linda",
+			  "addressLocality": "Puebla",
+			  "postalCode": "72477",
+			  "addressCountry": "MX"
+			},
+			"openingHours": [
+			  "Mo-Fr 09:00-18:00",
+			  "Sa 09:00-13:00"
+			],
+			"sameAs": [
+			  "https://www.facebook.com/pablo.tobonperez/",
+			  "https://www.instagram.com/g_look.barber/",
+			  "https://wa.me/5213312345678"
+			]
+		  }
+		</script>
+	  </Fragment>
+	  
+	
+	<HeroDonPerfecto logo={logo} barber={barber} mensajeWhatsapp={mensajeWhatsapp} />
+	<About barber={barber} citas={citas} seguidores={seguidores} /> 
+	<Team />
+	<Service />
+	<Location barber={barber} />
+	<Contact barber={barber} />
+</Layout>
