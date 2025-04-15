@@ -13,7 +13,7 @@ const phone = number;
 
 // Mensaje precargado (encodeado)
 const message = encodeURIComponent(
-  "¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con G-Look. ¿Podrían brindarme más información?"
+  `¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con ${barber}. ¿Podrían brindarme más información?`
 );
 
 const url = `https://wa.me/${phone}?text=${message}`;
