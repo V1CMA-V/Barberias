@@ -1,5 +1,5 @@
 ---
-import NormalMobile from "./Service/normalMobile.astro";
+import NormalMobile from "@/components/normalMobile.astro";
 
 const PRICES = {
   "Corte": [150, 120],
@@ -49,7 +49,7 @@ const rightServices = services.slice(4);
         <span class="col-span-1">General</span>
         <span class="col-span-1">Estudiante</span>
       </div>
-      <div class="grid grid-cols-4 gap-y-6 gap-x-2 text-center text-sm ">
+      <div class="grid grid-cols-4 gap-y-6 gap-x-2 text-center text-lg ">
         {leftServices.map(service => (
           <>
             <div class="col-span-1  font-medium flex flex-col items-end">
@@ -63,8 +63,8 @@ const rightServices = services.slice(4);
               )}
             </div>
             <div class="col-span-1 h-px bg-gray-300 self-center" />
-            <p class="col-span-1">${PRICES[service][0]}</p>
-            <p class="col-span-1">${PRICES[service][1]}</p>
+            <p class="col-span-1"><strong>${PRICES[service][0]}</strong></p>
+            <p class="col-span-1"><strong>${PRICES[service][1]}</strong></p>
           </>
         ))}
       </div>
@@ -81,7 +81,7 @@ const rightServices = services.slice(4);
         <span class="col-span-1">General</span>
         <span class="col-span-1">Estudiante</span>
       </div>
-      <div class="grid grid-cols-4 gap-y-6 gap-x-2 text-center text-sm ">
+      <div class="grid grid-cols-4 gap-y-6 gap-x-2 text-center text-lg ">
         {rightServices.map(service => (
           <>
             <div class="col-span-1 font-medium flex flex-col items-end">
@@ -95,8 +95,8 @@ const rightServices = services.slice(4);
               )}
             </div>
             <div class="col-span-1 h-px bg-gray-300 self-center" />
-            <p class="col-span-1">${PRICES[service][0]}</p>
-            <p class="col-span-1">${PRICES[service][1]}</p>
+            <p class="col-span-1"><strong>${PRICES[service][0]}</strong></p>
+            <p class="col-span-1"><strong>${PRICES[service][1]}</strong></p>
           </>
         ))}
       </div>
