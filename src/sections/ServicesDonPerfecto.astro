@@ -1,0 +1,81 @@
+---
+interface Service {
+  name: string;
+  price: string;
+  description: string;
+  icon?: string;
+  studentDiscount?: boolean;
+}
+
+const services: Service[] = [
+  {
+    name: "Corte Clásico",
+    price: "$150 MXN",
+    description: "Estilo tradicional con técnica precisa. Siempre impecable.",
+    icon: "/icons/classic-cut.svg",
+    studentDiscount: true,
+  },
+  {
+    name: "Fade Moderno",
+    price: "$180 MXN",
+    description: "Transiciones suaves y definidas con acabado limpio.",
+    icon: "/icons/fade.svg",
+    studentDiscount: true,
+  },
+  {
+    name: "Arreglo de Barba",
+    price: "$100 MXN",
+    description: "Contorno perfecto, afeitado tradicional y aceites premium.",
+    icon: "/icons/beard.svg",
+  },
+  {
+    name: "Ritual Premium",
+    price: "$300 MXN",
+    description: "Corte + barba + toalla caliente + cuidados especiales.",
+    icon: "/icons/premium.svg",
+  },
+];
+---
+
+<section id="Service" class=" px-6">
+  <div class="max-w-6xl pb-20 mx-auto">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl mb-10 font-bold uppercase text-center bling tracking-wide">
+      Servicios
+    </h2>
+
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {services.map((service) => (
+        <div class="relative p-6 bg-black/40 border border-don-gold rounded-xl backdrop-blur-sm shadow-md hover:shadow-xl transition duration-300 group">
+          
+          <!-- Badge de descuento -->
+          {service.studentDiscount && (
+            <span class="absolute top-3 right-3 text-xs px-3 py-1 rounded-full bg-don-gold text-black font-bold shadow-md animate-bounce">
+              - Estudiantes
+            </span>
+          )}
+
+          <!-- Ícono -->
+          {service.icon && (
+            <img
+              src={service.icon}
+              alt=""
+              class="w-12 h-12 mb-4 opacity-90 group-hover:scale-110 transition duration-300 m-auto"
+            />
+          )}
+
+          <!-- Info -->
+          <h3 class="text-xl font-serif text-don-gold mb-2 text-center">{service.name}</h3>
+          <p class="text-sm text-white mb-4 leading-relaxed text-pretty">{service.description}</p>
+
+          <p class="text-don-gold font-bold text-lg group-hover:scale-105 transition-transform duration-200">
+            {service.price}
+          </p>
+        </div>
+      ))}
+    </div>
+    <!-- Nota sobre descuentos -->
+    <p class="mt-10 max-w-xl mx-auto text-center text-sm md:text-base text-white/80 font-light italic">
+      <span class="text-don-gold font-semibold">¿Eres estudiante?</span> Presenta tu credencial vigente y obtén un descuento especial en servicios seleccionados. ¡Porque el estilo también es parte de tu formación!
+    </p>
+  </div>
+</section>
