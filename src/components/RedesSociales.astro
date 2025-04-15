@@ -2,13 +2,23 @@
 import Facebook from "./Icons/Facebook.astro";
 import Instagram from "./Icons/Instagram.astro";
 import WhatsApp from "./Icons/WhatsApp.astro";
+
+interface Props {
+  barber: string
+}
+
+const { barber } = Astro.props
+
+const facebook = barber === "G-Look" ? "glook_barber" : "barberia.donperfecto"
+const insta = barber === "G-Look" ? "g_look.barber" : "don.perfecto"
+const phone = barber === "G-Look" ? "5560908911" : "5625183720"
 ---
 
 <section class="w-full max-w-6xl mx-auto px-6 py-20">
   <div class="flex flex-wrap items-center justify-center gap-12">
     
     <a 
-      href="https://www.facebook.com/glookbarber" 
+      href={`https://www.facebook.com/${facebook}`} 
       target="_blank" 
       rel="noopener noreferrer"
       aria-label="Ir a nuestro perfil de Facebook"
@@ -18,7 +28,7 @@ import WhatsApp from "./Icons/WhatsApp.astro";
     </a>
 
     <a 
-      href="https://www.instagram.com/glookbarber" 
+      href={`https://www.instagram.com/${insta}`} 
       target="_blank" 
       rel="noopener noreferrer"
       aria-label="Ir a nuestro perfil de Instagram"
@@ -28,7 +38,7 @@ import WhatsApp from "./Icons/WhatsApp.astro";
     </a>
 
     <a 
-      href="https://wa.me/5213312345678" 
+      href={`https://wa.me/${phone}`} 
       target="_blank" 
       rel="noopener noreferrer"
       aria-label="Abrir conversación por WhatsApp"
