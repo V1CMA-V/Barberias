@@ -1,12 +1,41 @@
 ---
-import Layout from '@/layouts/Error.astro'
+import Layout from "@/layouts/Layout.astro"
 
+import About from "@/sections/me/About.astro"
+import Education from "@/sections/me/Education.astro"
+import Experience from "@/sections/me/Experience.astro"
+import Hero from "@/sections/me/Hero.astro"
+import Projects from "@/sections/me/Projects.astro"
+import Skills from "@/sections/me/Skills.astro"
+import KeyboardManager from "@/components/me/KeyboardManager.astro"
+
+import { basics } from "@cv"
+const { name, label } = basics
 ---
 
-<Layout>
-	<h1 class="text-9xl font-bold">
-		Pagina creada por <br /> <strong class="uppercase">Victor Martinez</strong>.
-	</h1>
-	<a href="/G-Look-Barber">G-Look Barber</a>
-	<a href="/DonPerfecto-Barber">Don Perfecto Barber</a>
+<Layout title={`Portafolio de ${name} - ${label}`}>
+  <main>
+    <Hero />
+    <About />
+    <Experience />
+    <Education />
+    <Projects />
+    <Skills />
+  </main>
+
+  <KeyboardManager />
 </Layout>
+
+<style>
+  main {
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  @media (width <= 700px) {
+    main {
+      padding: 2rem;
+    }
+  }
+</style>
