@@ -1,0 +1,223 @@
+{
+    "basics": {
+      "name": "Víctor Manuel Martínez Cruz",
+      "label": "Full Stack Developer con 2 años de experiencia",
+      "image": "/me.webp",
+      "email": "vicmarc30@gmail.com",
+      "phone": "+52 5560908911",
+      "url": "https://vicma.dev",
+      "summary": "Desarrollador Web con 1 año de experiencia creando soluciones digitales eficientes. Actualmente resido en Puebla, México, y he colaborado en diversos entornos profesionales: desde trabajar con el desarrollo tecnológico de startups, como creación de landing pages. Me especializo en construir productos escalables, mantener código limpio y fomentar la innovación constante en cada etapa del desarrollo.",
+      "location": {
+        "address": "",
+        "postalCode": "72080",
+        "city": "Puebla",
+        "countryCode": "MX",
+        "region": "México"
+      },
+      "profiles": [
+        {
+          "network": "LinkedIn",
+          "username": "VICMA",
+          "url": "https://www.linkedin.com/in/v%C3%ADctor-manuel-mart%C3%ADnez-cruz-v1cma/"
+        },
+        {
+          "network": "X",
+          "username": "V1CMA",
+          "url": "https://x.com/V1CMA"
+        },
+        {
+          "network": "GitHub",
+          "username": "V1CMA-V",
+          "url": "https://github.com/V1CMA-V"
+        }
+      ]
+    },
+    "work": [
+      {
+        "name": "Freelance",
+        "position": "Desarrollador Web",
+        "url": "https://vicma.dev",
+        "startDate": "2025-01-01",
+        "endDate": null,
+        "summary": "Desarrollo de plataformas web eficientes y escalables. Para el impulso para nuevos proyectos y emprendimientos digitales con la ayuda de mi experiencia y conocimientos.",
+        "highlights": [
+          "Started the company"
+        ]
+      },
+      {
+        "name": "Calidad del Aire en Puebla",
+        "position": "Desarrollador Web y Analista de datos",
+        "startDate": "2024-10-01",
+        "endDate": "2025-3-01",
+        "summary": "Desalle una aplicacion la cual va obteniendo los datos de la calidad del aire en Puebla desde la pagina de la Secretaria de Salud Publica, para analizarla y determinar la calidad del aire por zonas concurridas de Puebla. ",
+        "highlights": [
+          "Started the company"
+        ]
+      },
+      {
+        "name": "Minis-FHA",
+        "position": "Desarrollador Web",
+        "url": "https://minis-fha.vercel.app",
+        "startDate": "2024-03-01",
+        "endDate": "2024-05-01",
+        "summary": "Plataforma para aumentar los clientes de una empresa por medio de la digitalización de los servicios. Impulsando el crecimiento de la empresa con la ayuda de la tecnología.",
+        "highlights": [
+          "Started the company"
+        ]
+      }
+    ],
+    "volunteer": [{
+      "organization": "Secretaria de Salud Publica",
+      "position": "Voluntario",
+      "url": "https://organization.com/",
+      "startDate": "2024-10-01",
+      "endDate": "2025-3-01",
+      "summary": "Description…",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }],
+    "education": [{
+      "institution": "Benémerita Universidad Autónoma de Puebla",
+      "url": "https://www.buap.mx/",
+      "area": "Ingeniero en Ciencias de la Computación",
+      "studyType": "Universitario",
+      "startDate": "2019-01-01",
+      "endDate": "2024-01-01",
+      "score": "8.9",
+      "courses": [
+        "Bases de datos"
+      ]
+    }],
+    "awards": [{
+      "title": "Award",
+      "date": "2025-04-15",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }],
+    "certificates": [{
+      "name": "Certificate",
+      "date": "2025-04-15",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }],
+    "publications": [{
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2025-04-15",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }],
+    "skills": [
+      {
+        "name": "HTML",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web", "Frontend"
+        ]
+      },
+      {
+        "name": "CSS",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web", "Frontend", "Diseño Responsive", "Animaciones"
+        ]
+      },
+      {
+        "name": "JavaScript",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web", "Frontend", "Backend", "Fullstack"
+        ]
+      },
+      {
+        "name": "Tailwind",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"
+        ]
+      },
+      {
+        "name": "Node",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web", "Backend", "JavaScript", "Servidor"
+        ]
+      },
+      {
+        "name": "MySQL",
+        "level": "Avanzado",
+        "keywords": [
+          "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
+        ]
+      },
+      {
+        "name": "Git",
+        "level": "Avanzado",
+        "keywords": [
+          "Control de Versiones", "Colaboración", "Código Fuente"
+        ]
+      },
+      {
+        "name": "GitHub",
+        "level": "Avanzado",
+        "keywords": [
+          "Control de Versiones", "Colaboración", "Código Fuente", "Git"
+        ]
+      },
+      {
+        "name": "Next.js",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web", "Frontend", "React Framework", "SSR", "Static Generation"
+        ]
+      },
+      {
+        "name": "React",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "language": "Spanish",
+        "fluency": "Native speaker"
+      },
+      {
+        "language": "English",
+        "fluency": "Advanced"
+      }
+    ],
+    "interests": [{
+      "name": "Ciencia",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }],
+    "references": [{
+      "name": "Víctor Manuel Martínez Cruz",
+      "reference": "Reference…"
+    }],
+    "projects": [
+      {
+        "name": "Mini FHA",
+        "isActive": true,
+        "description": "Pagiana web para la reservacion de citas y visualizacion de los servicios de un adiestrador de perros ",
+        "highlights": [
+          "Atraccion de nuevos clientes",
+          "En desarrollo"
+        ],
+        "url": "https://minis-fha.vercel.app"
+      }
+    ]
+  }
