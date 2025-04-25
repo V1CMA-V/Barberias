@@ -1,0 +1,26 @@
+---
+const { servicios } = Astro.props as {
+  servicios: {
+    name: string
+    price: string
+    priceStudent?: string
+  }[]
+}
+---
+
+ <!-- Lado izquierdo -->
+ <div class="grid grid-cols-1 md:grid-cols-4 gap-10 items-start w-full text-center">
+  <h4 class="text-sm sm:text-base col-span-2 uppercase bling tracking-wide font-bold">Servicios</h4>
+  <h4 class="text-sm sm:text-base uppercase bling tracking-wide font-bold">General</h4>
+  <h4 class="text-sm sm:text-base uppercase bling tracking-wide font-bold">Estudiante</h4>
+
+  {
+    servicios.map(({name, price, priceStudent}) => (
+      <>
+        <h4 class="text-sm sm:text-base col-span-2 ">{name}</h4>
+        <p class="text-sm sm:text-md"><strong>${price}</strong> mxn</p>
+        {priceStudent && <p class="text-sm sm:text-md"><strong>${priceStudent}</strong> mxn</p>}
+      </>
+    ))
+  }
+</div>

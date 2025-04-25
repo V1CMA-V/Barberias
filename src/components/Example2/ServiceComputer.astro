@@ -1,0 +1,50 @@
+---
+import ColumnaService from "@components2/ColumnaService.astro";
+import ServicePack from "@components2/ServicePack.astro";
+
+const { services, name, phone } = Astro.props as {
+  services: {
+    name: string;
+    image: string;
+    price: string;
+    description: string;
+    discount?: string;
+    priceStudent?: string;
+    benefits?: string[];
+  }[];
+  name: string;
+  phone: string;
+}
+
+const leftServices = services.slice(0, services.length / 2)
+const rightServices = services.slice(services.length / 2)
+
+const promoPack = services.find(service => service.discount === "month")
+---
+
+<div class="md:block hidden relative z-10 max-w-7xl mx-auto px-6 py-20 flex flex-col items-center gap-8">
+    <!-- Tabla de servicios -->
+    <section class="w-full mx-auto px-4 py-16 flex flex-row items-start justify-center gap-6">
+        <!-- Lado izquierdo -->
+        <ColumnaService servicios={leftServices} />
+
+        <!-- Separador vertical -->
+        <div class="w-px bg-white/50 self-stretch mx-4"></div>
+
+        <!-- Lado derecho -->
+        <ColumnaService servicios={rightServices} />
+    </section>
+
+
+    <!-- Paquete del mes -->
+    {promoPack && (
+        <ServicePack 
+        name={name}
+        phone={phone}
+        title={promoPack.name} 
+        price={promoPack.price} 
+        description={promoPack.description}
+        benefits={promoPack.benefits || []} 
+        />
+    )}
+</div>
