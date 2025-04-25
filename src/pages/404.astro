@@ -1,33 +1,49 @@
 ---
+import '@/styles/global.css'
+
+import NoiseBackground from '@/components/NoiseBackground.astro'
 import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title="404 - Pagina no encontrada" >
-    <main>
-        <h1 class="text-9xl font-bold text-center">404 - Pagina no encontrada</h1>
-        <iframe 
-            src="https://giphy.com/embed/QMHoU66sBXqqLqYvGO" 
-            width="480" 
-            height="269" 
-            style="" 
-            frameborder="0" 
-            class="giphy-embed" 
-            allowfullscreen
-        />
-        <a href="/" class="text-theme-turquoise">Volver al inicio</a>
-    </main>
+  <NoiseBackground />
+
+  <main class="flex flex-col items-center justify-center h-screen gap-3">
+    <h1 class="text-4xl font-bold text-white text-balance">404 - Pagina no encontrada</h1>
+    <p class="text-white/90 text-balance">La página que estás buscando no existe o ha sido movida.</p>
+
+    <a href="/" class="text_glowing
+                    text-sm 
+                    button
+                    w-fit
+                    font-medium
+                    no-underline
+                    px-5
+                    py-3
+                    border
+                    border-solid
+                    border-white
+                    rounded-full
+                    uppercase
+                    text-pretty">Volver a la página de inicio</a>
+  </main>
+  
 </Layout>
 
 <style>
-    main {
-      padding: 4rem;
-      margin: auto;
-      width: 100%;
-    }
-  
-    @media (width <= 700px) {
-      main {
-        padding: 2rem;
-      }
-    }
-  </style>
+  html {
+    background: #000000;
+  }
+
+  .button {
+    transition:
+      text-shadow 0.5s ease-out,
+      box-shadow 0.3s ease-out;
+  }
+
+  .button:hover {
+    box-shadow: 0 0 10px #fff;
+    text-shadow:
+      1px 1px 20px #fff;
+  }
+</style>
