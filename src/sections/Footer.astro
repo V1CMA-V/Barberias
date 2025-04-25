@@ -2,28 +2,34 @@
 import Locate from "@/components/Icons/Locate.astro";
 
 interface Props {
-  barber: string
+  name: string,
+  phone: string,
+  googleMaps: string,
+  url: string,
+  socialMedia: {
+    network: string
+    username: string
+    url: string
+    color: string
+  }[]
 }
 
-const { barber } = Astro.props
+const { name, phone, socialMedia, googleMaps, url } = Astro.props
 
-const facebook = barber === "G-Look" ? "glook_barber" : "barberia.donperfecto"
-const insta = barber === "G-Look" ? "g_look.barber" : "don.perfecto"
-const phone = barber === "G-Look" ? "5560908911" : "5560908911"
-const googleMaps = barber === "G-Look" ? "https://maps.app.goo.gl/nfKWnvmTinm7ZjHX6" : "https://maps.app.goo.gl/uufqKeaUr9w5nirP7"
-const indexPage = barber === "G-Look" ? "/G-Look-Barber" : "/DonPerfecto-Barber"
+const color = name === "G-Look" ? "hover:text-sisal-600" : "don hover:text-don-gold"
+
 ---
 
 <footer id="footer" role="contentinfo" class="bg-black  py-10 border-t border-white/10">
-  <div class="w-full max-w-screen-xl mx-auto px-6 flex flex-col gap-8">
+  <div class="w-full max-w-screen-xl mx-auto px-6 flex flex-col gap-8 ">
 
     <!-- Sección superior -->
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
 
       <!-- Logo y nombre -->
-      <a href={indexPage} class={`flex items-center gap-4 ${barber === "G-Look" ? "hover:text-sisal-600" : "don hover:text-don-gold"} transition-colors`}>
-        <img src={`/images/${barber}-Logo.webp`} alt="Logo de {barber}" class="w-14 h-14 rounded-full shadow" />
-        <span class={`text-2xl font-bold uppercase ${barber === "G-Look" ? "" : "don"}  transition-colors`}>{barber}</span>
+      <a href={url} class={`flex items-center gap-4 ${color} transition-colors`}>
+        <img src={`/images/${name}-Logo.webp`} alt={`Logo de ${name}`} class="w-14 h-14 rounded-full shadow" />
+        <span class={`text-2xl font-bold uppercase ${name === "G-Look" ? "" : "don"}  transition-colors`}>{name}</span>
       </a>
 
       <!-- Dirección con ícono -->
@@ -31,25 +37,30 @@ const indexPage = barber === "G-Look" ? "/G-Look-Barber" : "/DonPerfecto-Barber"
         href={googleMaps}
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-2 hover:text-sisal-400 transition text-center justify-center"
+        class={`flex gap-2 ${color} transition-colors font-normal`}
       >
         <Locate />
-        <span class="text-sm leading-snug">
-          <slot name="direction" />
-        </span>
+        <slot name="direction" />
       </a>
 
       <!-- Redes sociales -->
       <div class="flex gap-6 text-sm justify-center">
-        <a href={`https://www.facebook.com/${facebook}`} target="_blank" rel="noopener noreferrer" class="hover:text-[#1877F2] transition">
-          Facebook
-        </a>
-        <a href={`https://www.instagram.com/${insta}`} target="_blank" rel="noopener noreferrer" class="hover:text-[#EF4B5F] transition">
-          Instagram
-        </a>
-        <a href={`https://wa.me/${phone}`} target="_blank" rel="noopener noreferrer" class="hover:text-[#25D366] transition">
-          WhatsApp
-        </a>
+       {
+        socialMedia.map(({ network, url, username, color }) => (
+          <a 
+            href={url}
+            title={`Perfil en ${network} como ${username}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`hover:text-[${color}] transition`}
+          >
+            {network}
+          </a>
+        ))
+       }
+       <a href={`https://wa.me/${phone}`} target="_blank" rel="noopener noreferrer" class="hover:text-[#25D366] transition">
+        WhatsApp
+      </a>
       </div>
     </div>
 
@@ -58,7 +69,7 @@ const indexPage = barber === "G-Look" ? "/G-Look-Barber" : "/DonPerfecto-Barber"
 
     <!-- Copyright -->
     <p class="text-center text-xs ">
-      © 2025 <a href={indexPage} class={`hover:underline font-semibold ${barber === "G-Look" ? "hover:text-sisal-600" : "don hover:text-don-gold"}`}>{barber}™</a>. Todos los derechos reservados.
+      © 2025 <a href={url} class={`hover:underline font-semibold ${color}`}>{name}™</a>. Todos los derechos reservados.
     </p>
   </div>
 </footer>

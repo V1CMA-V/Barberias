@@ -5,33 +5,33 @@ import aboutImage from "@/assets/images/about.webp";
 import { Image } from "astro:assets";
 
 interface Props {
-  barber: string
+  name: string
   citas: number
   seguidores: number
 }
 
-const { barber, citas, seguidores } = Astro.props
+const { name, citas, seguidores } = Astro.props
 ---
 
-<section id="About" class="w-full max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+<section id="About" class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col md:flex-row items-center justify-between p-6 md:p-8">
   
   <!-- Texto -->
-  <div class="flex flex-col gap-10">
+  <div id="theater-text" class="flex flex-col gap-10">
     <h2 class="text-4xl sm:text-5xl uppercase tracking-wide font-semibold text-center lg:text-left bling">
       Sobre Nosotros
     </h2>
 
-    <AboutContent barber={barber} />
+    <AboutContent name={name} />
 
     <AboutStats citas={citas} seguidores={seguidores} />
   </div>
 
   <!-- Imagen -->
-  <div class="rounded-2xl overflow-hidden mask-fade-upper w-full h-full">
+  <div id="theater" class="rounded-2xl overflow-hidden mask-fade-upper w-full h-full">
     <Image
       src={aboutImage}
-      alt=`Interior de la barbería ${barber}`
-      class="object-cover w-full h-full"
+      alt={`Interior de la barbería ${name}`}
+      class="object-cover w-full h-full "
       width={800}
       height={900}
       loading="lazy"

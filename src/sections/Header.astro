@@ -1,48 +1,56 @@
 ---
 import HeaderLink from '@/components/HeaderLink.astro';
+import MenuHeader from '@/components/MenuHeader.astro';
 import MobileMenu from '@/components/MobileMenu.tsx';
 
 interface Props {
-  barber: string
+  name: string
+  phone: string 
+  url: string
 }
 
-const { barber } = Astro.props
-
-// Número de WhatsApp sin espacios ni signos
-const phone = "5560908911";
+const { name, phone, url } = Astro.props
 
 // Mensaje precargado (encodeado)
 const message = encodeURIComponent(
-  `¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con ${barber}. ¿Podrían brindarme más información?`
+  `¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con ${name}. ¿Podrían brindarme más información?`
 );
 
-const url = `https://wa.me/${phone}?text=${message}`
+const whatsappUrl = `https://wa.me/${phone}?text=${message}`
 
-const indexPage = barber === "G-Look" ? "/G-Look-Barber" : "/DonPerfecto-Barber"
+const typeLetter = name === "Don Perfecto" ? "don" : ""
+
 ---
 <header id="header-nav" role="banner" class="fixed top-0 w-full px-6 py-4 z-50 bg-transparent">
   <div class="max-w-7xl mx-auto flex items-center justify-between gap-6 lg:gap-16">
 
     <!-- Logo -->
-    <HeaderLink checkActive={false} href={indexPage} aria-label="Inicio">
-      <h1 class={`md:text-3xl font-bold text_glowing transition ${barber === "Don Perfecto" ? "don" : ""}`}>{barber}</h1>
+    <HeaderLink checkActive={false} href={url} aria-label="Inicio">
+      <h1 class={`md:text-3xl font-bold text_glowing transition ${typeLetter}`}>{name}</h1>
     </HeaderLink>
 
     <!-- Menú de escritorio -->
-    <nav class="hidden md:flex items-center gap-8 text-xl">
-      <HeaderLink class="text_glowing" href="#About">Sobre nosotros</HeaderLink>
-      <HeaderLink class="text_glowing" href="#Service">Servicios</HeaderLink>
-      <HeaderLink class="text_glowing" href="#Location">Ubicación</HeaderLink>
-      <HeaderLink class="text_glowing" href="#Contact">Contáctanos</HeaderLink>
-    </nav>
+    <MenuHeader />
 
     <!-- Botón cita desktop -->
     <a
-      href={url}
+      href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="hidden sm:inline-block sm:text-lg font-medium px-5 py-3 border border-white rounded-2xl uppercase text-pretty button_effect text-center"
-    >
+      class="text_glowing
+                    text-sm 
+                    button
+                    w-fit
+                    font-medium
+                    no-underline
+                    px-5
+                    py-3
+                    border
+                    border-solid
+                    border-white
+                    rounded-full
+                    uppercase
+                    text-pretty">
       Realizar cita
     </a>
 
@@ -50,3 +58,17 @@ const indexPage = barber === "G-Look" ? "/G-Look-Barber" : "/DonPerfecto-Barber"
     <MobileMenu client:only="preact" />
   </div>
 </header>
+
+<style>
+  .button {
+    transition:
+      text-shadow 0.5s ease-out,
+      box-shadow 0.3s ease-out;
+  }
+
+  .button:hover {
+    box-shadow: 0 0 10px #fff;
+    text-shadow:
+      1px 1px 20px #fff;
+  }
+</style>
