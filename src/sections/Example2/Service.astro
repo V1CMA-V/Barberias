@@ -1,0 +1,40 @@
+---
+import Hero from "@components2/HeroOptimized.astro"; // O HeroOptimized si lo migras
+import ServiceImage from "@/assets/images/servicios.webp";
+import ServiceMobile from "@components2/ServiceMobile.astro";
+import ServiceComputer from "@components2/ServiceComputer.astro";
+
+const { services, name, phone } = Astro.props as {
+  services: {
+    name: string;
+    image: string;
+    price: string;
+    description: string;
+    discount?: string;
+    priceStudent?: string;
+    benefits?: string[];
+  }[];
+  name: string;
+  phone: string;
+};
+
+---
+
+<section id="Service" class="relative w-full py-10 overflow-hidden">
+  
+  <!-- Fondo Hero (no interfiere con contenido) -->
+  <Hero image={ServiceImage} alt={`${name} - Corte de cabello estilo ${name}`} oppacity={true}>
+    <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-center bling tracking-wide py-10">
+      Servicios
+    </h3>
+    <p class="text-center text-pretty text-sm sm:text-base text-gray-300">
+      Todos los servicios incluyen <strong>bebida de cortesía</strong> 
+    </p>
+    <!-- Versión móvil -->
+    <ServiceMobile services={services} />
+
+    <!-- Versión escritorio -->
+    <ServiceComputer services={services} name={name} phone={phone}/>
+  </Hero>
+  
+</section>
