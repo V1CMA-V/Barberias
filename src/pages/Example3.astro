@@ -1,0 +1,54 @@
+---
+import '@/styles/global.css'
+
+import LayoutBarberia from "@/layouts/LayoutBarberia.astro";
+
+import Header from "@sections3/Header.astro"
+import Hero from "@sections3/Hero.astro"
+import Story from "@sections3/Story.astro"
+import Services from "@sections3/Services.astro"
+import Gallery from "@sections3/Gallery.astro"
+import Team from "@sections3/Team.astro"
+import Contact from "@sections3/Contact.astro"
+import Footer from "@sections3/Footer.astro"
+
+import { El_Templo } from "@barbers"
+
+const { name,
+    label,
+    phone,
+    location,
+    logo,
+    about,
+    summary,
+    icon,
+    socialMedia,
+    url,
+    team,
+    services
+} =     El_Templo
+
+const { address, google_maps } = location
+const { citas, seguidores } = about.numbers
+---
+
+<LayoutBarberia title={name} summary={summary} url={url} icon={icon}>
+    <Header />
+
+    <main>
+        <Hero />
+        <Story />
+        <Services />
+        <Gallery />
+        <Team />
+        <Contact />        
+    </main>
+
+    <Footer />
+</LayoutBarberia>
+
+<style>
+    html {
+        background: #161616;
+    }
+</style>
