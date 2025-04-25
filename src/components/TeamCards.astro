@@ -1,0 +1,54 @@
+---
+interface Props {
+    name: string;
+    image: string;
+    description: string;
+    styles: string[];
+    number: string;
+}
+
+const { name, image, description, styles, number } = Astro.props
+
+const message = encodeURIComponent(
+  `Hola ${name}, me gustaría agendar una cita con usted.`
+)
+
+const whatsappUrl = `https://wa.me/${number}?text=${message}`
+---
+
+
+<div
+  class="relative group min-w-[280px] md:min-w-[340px] h-[460px] md:h-[520px] rounded-xl overflow-hidden border border-don-gold shadow-xl snap-center "
+>
+  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+    <!-- Imagen -->
+    <img
+      src={image}
+      alt={name}
+      class=" w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+    />
+
+    <!-- Nombre fijo abajo -->
+    <div class="absolute bottom-0 w-full text-center text-don-gold text-xl font-semibold bg-gradient-to-t from-black/70 to-transparent py-3">
+      {name}
+    </div>
+
+    <!-- Descripción al hacer hover -->
+    <div
+      class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/70 backdrop-blur-sm text-white px-4 flex flex-col gap-9 items-center justify-center text-center"
+    >
+      <p class="text-sm md:text-base">{description}</p>
+
+      <section class="flex flex-col gap-2">
+        <h4 class="text-md md:text-base text-don-gold"><strong>Estilos</strong></h4>
+        <div class="flex flex-wrap justify-center gap-2">
+          {
+            styles.map((style) => (
+              <p class="text-xs md:text-base uppercase py-2 px-4 bg-don-gold hover:bg-don-gold/80 rounded-full"><strong>{style}</strong></p>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </a>
+</div>

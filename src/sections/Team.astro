@@ -1,11 +1,31 @@
 ---
-import Card from "@/components/Card.astro";
+import Card from "@/components/TeamCards.astro";
+
+interface Props {
+  team: {
+    name: string;
+    image: string;
+    description: string;
+    styles: string[];
+    number: string;
+  }[];
+}
+
+const { team } = Astro.props
 ---
 
 <section id="Team" class="w-full max-w-7xl mx-auto p-6 sm:p-20 my-24">
   <h3 class="mx-auto mb-16 text-center text-3xl md:text-5xl font-semibold uppercase tracking-wide bling">
     Nuestro equipo
   </h3>
-
-  <Card />
-</section>
+  <section id="Team" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex overflow-x-auto gap-6 snap-x snap-mandatory scrollbar-hide">
+        {
+          team.map(({ name, image, description, styles, number }) => (
+            <Card name={name} image={image} description={description} styles={styles} number={number} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
