@@ -19,6 +19,7 @@
       "@/*": [
         "src/*"
       ],
+      // Components for different examples
       // Components Example1
       "@components1/*": [
         "src/components/Example1/*"
@@ -27,6 +28,10 @@
       "@components2/*": [
         "src/components/Example2/*"
       ],
+      "@components3/*": [
+        "src/components/Example3/*"
+      ],
+      // Sections for different examples
       // Sections Example1
       "@sections1/*": [
         "src/sections/Example1/*"
@@ -34,6 +39,10 @@
       // Sections Example2
       "@sections2/*": [
         "src/sections/Example2/*"
+      ],
+      // Sections Example3
+      "@sections3/*": [
+        "src/sections/Example3/*"
       ]
     },
     "jsx": "react-jsx",
