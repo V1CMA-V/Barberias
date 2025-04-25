@@ -1,17 +1,14 @@
 ---
 interface Props {
-    barber: string
-    number: string
+    name: string
+    phone: string
 }
 
-const { barber, number } = Astro.props
-
-// Número de WhatsApp sin espacios ni signos
-const phone = number;
+const { name, phone } = Astro.props
 
 // Mensaje precargado (encodeado)
 const message = encodeURIComponent(
-  `¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con ${barber}. ¿Podrían brindarme más información?`
+  `¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con ${name}. ¿Podrían brindarme más información?`
 );
 
 const url = `https://wa.me/${phone}?text=${message}`
