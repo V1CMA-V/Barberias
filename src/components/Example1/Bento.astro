@@ -1,0 +1,43 @@
+---
+import BentoItem from "@components1/BentoItem.astro";
+
+
+const { services } = Astro.props as {
+  services: {
+    specialPack?: string[]
+    name: string;
+    price: string;
+    image: string;
+    description: string;
+    discount?: string;
+    benefits?: string[];
+  }[];
+}
+---
+
+<section class={`
+    w-full max-w-[1400px]
+    grid lg:grid-cols-10 auto-rows-[30rem] gap-4
+    mx-auto p-6 md:p-12 lg:p-20
+    `}>
+   {
+      services.map(({ name, image, price, description, discount, benefits }) =>
+        <BentoItem
+          title={name}
+          price={price}
+          description={description}
+          benefits={benefits}
+          discount={discount}
+        >
+          <div
+            slot="image"
+            class="background transition-scale absolute bottom-0 left-0 top-0
+              -z-10 h-full w-full
+              bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110
+            "
+            style={`background-image: url(/images/haircut/${image})`}
+          />
+        </BentoItem>
+      )
+    }
+   </section>
