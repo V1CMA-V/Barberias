@@ -28,7 +28,6 @@ body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
-		/* background: #1B1B1B; */
 		color: #FFF;
 		font-family: 'Montserrat Variable', sans-serif;
 		display: flex;
@@ -67,12 +66,12 @@ p strong {
     mask-image: linear-gradient(to top, black 80%, transparent 100%);
 }
 
-@utility text_glowing {
+.text_glowing {
     transition: text-shadow 0.3s ease;
 }
 
 .text_glowing:hover {
-    text-shadow: 1px 1px 20px#FFF;
+text-shadow: 1px 1px 20px #fff;
 }
 
 @utility button_effect {
@@ -109,6 +108,7 @@ p strong {
     background: rgba(255, 255, 255, 0.5);
 }
 
+/* Animation */
 /* Header navbar effect */
 
 #header-nav {
@@ -124,6 +124,42 @@ p strong {
             0px 0px 0 1px rgba(0, 0, 0, 0.3);
         background: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(10px);
+    }
+}
+
+#theater-text h2,
+#theater-text p {
+    animation: entry-animation linear both;
+    animation-timeline: view();
+}
+#theater {
+    animation-range: entry 10% cover 40%;
+}
+#theater-text h2 {
+    animation-range: entry 10% cover 30%;
+}
+#theater-text p {
+    animation-range: entry 10% cover 20%;
+}
+
+@keyframes entry-animation {
+    0% {
+        opacity: 0;
+        translate: var(--entry-animation) 0;
+    }
+    100% {
+        opacity: 1;
+        translate: 0 0;
+    }
+    }
+    @keyframes cover-animation {
+    0% {
+        opacity: 0;
+        translate: var(--cover-animation) 0;
+    }
+    100% {
+        opacity: 1;
+        translate: 0 0;
     }
 }
 
