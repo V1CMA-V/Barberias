@@ -1,31 +1,32 @@
 {
-    "basics": {
-      "name": "Víctor Manuel Martínez Cruz",
-      "label": "Full Stack Developer con 2 años de experiencia",
-      "image": "/me.webp",
-      "email": "vicmarc30@gmail.com",
-      "phone": "+52 5560908911",
-      "url": "https://vicma.dev",
-      "summary": "Desarrollador Web con 1 año de experiencia creando soluciones digitales eficientes. Actualmente resido en Puebla, México, y he colaborado en diversos entornos profesionales: desde trabajar con el desarrollo tecnológico de startups, como creación de landing pages. Me especializo en construir productos escalables, mantener código limpio y fomentar la innovación constante en cada etapa del desarrollo.",
-      "location": {
-        "address": "",
-        "postalCode": "72080",
-        "city": "Puebla",
-        "countryCode": "MX",
-        "region": "México"
+  "basics": {
+    "name": "Víctor Manuel Martínez Cruz",
+    "icon": "/favicon_me.svg",
+    "label": "Full Stack Developer con 2 años de experiencia",
+    "image": "/me.webp",
+    "email": "vicmarc30@gmail.com",
+    "phone": "+52 5560908911",
+    "url": "https://vicma.dev",
+    "summary": "Desarrollador Web con 1 año de experiencia creando soluciones digitales eficientes. Actualmente resido en Puebla, México, y he colaborado en diversos entornos profesionales: desde trabajar con el desarrollo tecnológico de startups, como creación de landing pages. Me especializo en construir productos escalables, mantener código limpio y fomentar la innovación constante en cada etapa del desarrollo.",
+    "location": {
+      "address": "",
+      "postalCode": "72080",
+      "city": "Puebla",
+      "countryCode": "MX",
+      "region": "México"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "VICMA",
+        "url": "https://www.linkedin.com/in/v1cma"
       },
-      "profiles": [
-        {
-          "network": "LinkedIn",
-          "username": "VICMA",
-          "url": "https://www.linkedin.com/in/v1cma"
-        },
-        {
-          "network": "X",
-          "username": "V1CMA",
-          "url": "https://x.com/V1CMA"
-        },
-        {
+      {
+        "network": "X",
+        "username": "V1CMA",
+        "url": "https://x.com/V1CMA"
+      },
+      {
           "network": "GitHub",
           "username": "V1CMA-V",
           "url": "https://github.com/V1CMA-V"
@@ -215,9 +216,35 @@
         "description": "Pagiana web para la reservacion de citas y visualizacion de los servicios de un adiestrador de perros ",
         "highlights": [
           "Atraccion de nuevos clientes",
-          "En desarrollo"
+          "Diseño moderno y elegante",
+          "En desarrollo",
+          "Responsive"
         ],
         "url": "https://minis-fha.vercel.app"
+      },
+      {
+        "name": "Barberia 1",
+        "isActive": true,
+        "description": "Pagina web la captacion de clientes, visualizacion de los servicios de una barberia con tono moderno y elegante.",
+        "highlights": [
+          "Atraccion de nuevos clientes",
+          "Diseño moderno y elegante",
+          "En desarrollo",
+          "Responsive"
+        ],
+        "url": "/Example1"
+      },
+      {
+        "name": "Barberia 2",
+        "isActive": true,
+        "description": "Pagina web para la captacion de clientes, visualizacion de los servicios de una barberia con tono moderno y urbano. ",
+        "highlights": [
+          "Atraccion de nuevos clientes",
+          "Diseño moderno y urbano",
+          "En desarrollo",
+          "Responsive"
+        ],
+        "url": "/Example2"
       }
     ]
   }
