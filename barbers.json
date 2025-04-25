@@ -1,0 +1,373 @@
+{
+    "El_Templo": {
+    "name": "El Templo",
+    "label": "Donde cada corte es un ritual",
+    "summary": "Una barbería con estilo urbano y elegante. 3 años atendiendo con pasión y precisión en Cholula, Puebla.",
+    "logo": "/images/el-templo-Logo-sinFondo.png",
+    "icon": "/images/el-templo-favicon.png",
+    "url": "https://barberiavic.vercel.app/ElTemplo-Barber",
+    "phone": "5523456789",
+    "email": "eltemplo.barber@gmail.com",
+    "socialMedia": [
+        {
+        "network": "Facebook",
+        "username": "ElTemploBarber",
+        "url": "https://www.facebook.com/eltemplobarber",
+        "color": "#1877F2"
+        },
+        {
+        "network": "Instagram",
+        "username": "el.templo",
+        "url": "https://www.instagram.com/el.templo",
+        "color": "#EF4B5F"
+        }
+    ],
+    "about": {
+        "description": "En El Templo, cada cliente recibe un servicio personalizado como parte de una experiencia completa.",
+        "numbers": {
+        "citas": "320",
+        "seguidores": "1500"
+        }
+    },
+    "team": [
+        {
+            "name": "Carlos Medina",
+            "image": "/images/team/Carlos.webp",
+            "description": "Especialista en cortes clásicos con precisión y estilo.",
+            "styles": ["Urbano", "Elegante", "Rapido"],
+            "number": "5560908911"
+        },
+        {
+            "name": "David Ríos",
+            "image": "/images/team/Jorge.webp",
+            "description": "Fundador. Especialista en barbería urbana y cortes de precisión.",
+            "styles": ["Urbano", "Moderno", "Fade"],
+            "number": "5523456789"
+        },
+        {
+            "name": "Mario Torres",
+            "image": "/images/team/Francisco.webp",
+            "description": "Experto en degradados y arreglos de barba.",
+            "styles": ["Fade", "Barba", "Diseños"],
+            "number": "5523456789"
+        },
+        {
+            "name": "Kevin Morales",
+            "image": "/images/team/Luis.webp",
+            "description": "Estilista de toques finos y modernos.",
+            "styles": ["Clásico", "Elegante", "Express"],
+            "number": "5523456789"
+        }
+    ],
+    "services": [
+        {
+            "name": "Corte Express",
+            "image": "/corte-clasico.webp",
+            "price": 130,
+            "description": "Corte rápido, limpio y con estilo para los días con prisa."
+        },
+        {
+            "name": "Barba Ritual",
+            "image": "/arreglo-de-barba.webp",
+            "price": 120,
+            "description": "Arreglo de barba con toalla caliente y aceites esenciales.",
+            "discount": "student",
+            "priceStudent": 100
+        },
+        {
+            "name": "Combo Corte + Barba",
+            "image": "/ritual-premium.webp",
+            "price": 230,
+            "description": "El combo favorito. Corte impecable y barba perfilada.",
+            "discount": "student",
+            "priceStudent": 180
+        },
+        {
+            "name": "Diseño de Grecas",
+            "image": "/grecas.webp",
+            "price": 80,
+            "description": "Grecas únicas para resaltar tu estilo."
+        },
+        {
+            "name": "Pack El Templo",
+            "image": "/todo-incluido.webp",
+            "price": 350,
+            "description": "Incluye corte, barba, limpieza facial y bebida de cortesía. Ideal para clientes frecuentes.",
+            "discount": "month",
+            "benefits": [
+              "1 Corte clásico o moderno",
+              "1 Arreglo de barba",
+              "1 Limpieza facial",
+              "1 bebida fría o café"
+            ]
+          }
+    ],
+    "location": {
+        "address": "Av. 14 Poniente 1908, Centro, 72760 San Pedro Cholula, Pue.",
+        "city": "Cholula",
+        "state": "Puebla",
+        "country": "Mexico",
+        "postalCode": "72760",
+        "google_link": "https://maps.app.goo.gl/FakeLocation12345",
+        "google_maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.000000000000!2d-98.30500000000001!3d19.055000000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x0000000000000000!2sBarber%C3%ADa%20El%20Templo!5e0!3m2!1ses!2smx!4v0000000000000!5m2!1ses!2smx",
+        "openingHours": {
+        "monday_friday": "10:00 - 19:00",
+        "saturday": "10:00 - 18:00",
+        "sunday": "Cerrado"
+        }
+    }
+    },
+
+    "Don_Perfecto": {
+        "name": "Don Perfecto",
+        "label": "Barberia con 2 años de experiencia",
+        "summary": "Barbero con 10 años de experiencia. Atendemos a todos tus necesidades, ubicados en Puebla, México.",
+        "logo": "/images/don-Perfecto-Logo_sinFondo.png",
+        "icon": "/images/Don Perfecto-Logo.webp",
+        "url": "https://barberiavic.vercel.app/DonPerfecto-Barber",
+        "phone": "5560908911",
+        "email": "donperfecto@gmail.com",
+        "socialMedia": [
+            {
+                "network": "Facebook",
+                "username": "DonPerfecto",
+                "url": "https://www.facebook.com/barberia.donperfecto",
+                "color": "#1877F2"
+            },
+            {
+                "network": "Instagram",
+                "username": "DonPerfecto",
+                "url": "https://www.instagram.com/don.perfecto",
+                "color": "#EF4B5F"
+            }
+        ],
+        "about": {
+            "description": "Don Perfecto es un barbero con 10 años de experiencia.",
+            "numbers": {
+                "citas": "200",
+                "seguidores": "1000"
+            }
+        },
+        "team": [
+            {
+                "name": "Carlos Medina",
+                "image": "/images/team/Carlos.webp",
+                "description": "Especialista en cortes clásicos con precisión y estilo.",
+                "styles": ["Urbano", "Elegante", "Rapido"],
+                "number": "5560908911"
+            },
+            {
+                "name": "Luis Huerta",
+                "image": "/images/team/Luis.webp",
+                "description": "Fade maestro y detalles nítidos en cada corte.",
+                "styles": ["Urbano", "Elegante", "Rapido"],
+                "number": "5560908911"
+            },
+            {
+                "name": "Andrés González",
+                "image": "/images/team/Francisco.webp",
+                "description": "Toque artístico y perfeccionismo en barba y cabello.",
+                "styles": ["Urbano", "Elegante", "Rapido"],
+                "number": "5560908911"
+            },
+            {
+                "name": "Jorge Serrano",
+                "image": "/images/team/Jorge.webp",
+                "description": "Barbero con 1 año de experiencia.",
+                "styles": ["Urbano", "Elegante", "Rapido"],
+                "number": "5560908911"
+            }
+        ],
+        "services": [
+            {
+                "name": "Corte Clásico",
+                "image": "/corte-clasico.webp",
+                "price": 150,
+                "description": "Estilo tradicional con técnica precisa. Siempre impecable.",
+                "discount": "student"
+            },
+            {
+                "name": "Arreglo de Barba",
+                "image": "/arreglo-de-barba.webp",
+                "price": 100,
+                "description": "Contorno perfecto, afeitado tradicional y aceites premium."
+            },
+            {
+                "name": "Ritual Premium",
+                "image": "/ritual-premium.webp",
+                "price": 300,
+                "description": "Corte + barba + toalla caliente + cuidados especiales."
+            },
+            {
+                "name": "Fade Moderno",
+                "image": "/fade-moderno.webp",
+                "price": 180,
+                "description": "Transiciones suaves y definidas con acabado limpio.",
+                "discount": "student"
+            }
+        ],
+        "location": {
+            "address": "C. 10 Sur 7109, Loma Linda, 72477 Heroica Puebla de Zaragoza, Pue.",
+            "city": "Puebla",
+            "state": "Puebla",
+            "country": "Mexico",
+            "postalCode": "72477",
+            "google_link": "https://maps.app.goo.gl/uufqKeaUr9w5nirP7",
+            "google_maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.456635770005!2d-98.21550092414031!3d18.99958975436559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfbff4da8ef45d%3A0xa2b5c4b892ee7317!2sBarber%C3%ADa%20Don%20Perfecto!5e0!3m2!1sen!2smx!4v1744747013281!5m2!1sen!2smx" ,
+            "openingHours": {
+                "monday_friday": "9:00 - 18:00",
+                "saturday": "9:00 - 18:00",
+                "sunday": "Cerrado"
+            }
+        }
+    },
+
+    "G_Look": {
+        "name": "G-Look",
+        "label": "Barbería con 2 años de experiencia",
+        "summary": "Barbería con 10 años de experiencia. Atendemos a todos tus necesidades, ubicados en Puebla, México.",
+        "logo": "/images/G-Look-Logo_sinFondo.png",
+        "icon": "/images/G-Look-Logo.webp",
+        "url": "https://barberiavic.vercel.app/G-Look-Barber",
+        "phone": "5560908911",
+        "email": "glook@gmail.com",
+        "socialMedia": [
+            {
+                "network": "Facebook",
+                "username": "G-Look",
+                "url": "https://www.facebook.com/barberia.glook",
+                "color": "#1877F2"
+            },
+            {
+                "network": "Instagram",
+                "username": "G-Look",
+                "url": "https://www.instagram.com/g_look.barber",
+                "color": "#EF4B5F"
+            }
+        ],
+        "about": {
+            "description": "G-Look es un barbero con 10 años de experiencia.",
+            "numbers": {
+                "citas": "200",
+                "seguidores": "500"
+            }
+        },
+        "team": [
+            {
+                "name": "Víctor Martínez",
+                "image": "/me.webp",
+                "description": "Barbero con 1 año de experiencia.",
+                "styles": ["Urbano", "Elegante", "Rapido"],
+                "number": "5560908911"
+            },
+            {
+                "name": "Carlos Medina",
+                "image": "/images/team/Carlos.webp",
+                "description": "Especialista en cortes clásicos con precisión y estilo.",
+                "styles": ["Urbano", "Elegante", "Rapido"],
+                "number": "5560908911"
+            },
+            {
+                "name": "Luis Huerta",
+                "image": "/images/team/Luis.webp",
+                "description": "Fade maestro y detalles nítidos en cada corte.",
+                "styles": ["Urbano", "Elegante", "Rapido"],
+                "number": "5560908911"
+            },
+            {
+                "name": "Andrés González",
+                "image": "/images/team/Francisco.webp",
+                "description": "Toque artístico y perfeccionismo en barba y cabello.",
+                "styles": ["Urbano", "Elegante", "Rapido"],
+                "number": "5560908911"
+            },
+            {
+                "name": "Jorge Serrano",
+                "image": "/images/team/Jorge.webp",
+                "description": "Barbero con 1 año de experiencia.",
+                "styles": ["Urbano", "Elegante", "Rapido"],
+                "number": "5560908911"
+            }
+        ],
+        "services": [
+            {
+                "name": "Corte",
+                "image": "/corte-clasico.webp",
+                "price": 150,
+                "description": "Estilo tradicional con técnica precisa. Siempre impecable.",
+                "discount": "student",
+                "priceStudent": 120
+            },
+            {
+                "name": "Arreglo de Barba",
+                "image": "/arreglo-de-barba.webp",
+                "price": 150,
+                "description": "Contorno perfecto, afeitado tradicional y aceites premium."
+            },
+            {
+                "name": "Ritual Premium",
+                "image": "/ritual-premium.webp",
+                "price": 300,
+                "description": "Corte + barba + toalla caliente + cuidados especiales."
+            },
+            {
+                "name": "Corte y Barba",
+                "image": "/fade-moderno.webp",
+                "price": 250,
+                "description": "Transiciones suaves y definidas con acabado limpio.",
+                "discount": "student",
+                "priceStudent": 220
+            },
+            {
+                "name": "Corte y Barba",
+                "image": "/arreglo-de-barba.webp",
+                "price": 250,
+                "description": "Corte + barba ",
+                "discount": "student",
+                "priceStudent": 220
+            },
+            {
+                "name": "Limpieza Facial",
+                "image": "/corte-clasico.webp",
+                "price": 150,
+                "description": "Limpieza facial con productos de calidad."
+            },
+            {
+                "name": "Servicio de Grooming",
+                "image": "/corte-clasico.webp",
+                "price": 150,
+                "description": "Limpieza facial con productos de calidad."
+            },
+            {
+                "name": "Ceja/Greca (sencilla)",
+                "image": "/corte-clasico.webp",
+                "price": 250,
+                "description": "Transiciones suaves y definidas con acabado limpio.",
+                "discount": "student",
+                "priceStudent": 220
+            },
+            {
+                "name": "Todo Incluido",
+                "image": "/todo-incluido.webp",
+                "price": 350,
+                "description": "Estilo completo con corte, barba y cuidados.",
+                "benefits": ["3 Cortes", "2 Snacks Frios", "Un Servicio de Barba", "Una Mascarilla"],
+                "discount": "month"
+            }
+        ],
+        "location": {
+            "address": "Privada 71 A Ote. 801, Loma Linda, 72477 Heroica Puebla de Zaragoza, Pue.",
+            "city": "Puebla",
+            "state": "Puebla",
+            "country": "Mexico",
+            "postalCode": "72477",
+            "google_link": "https://maps.app.goo.gl/CrLQSMrkiVbBuwbJA",
+            "google_maps": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7544.879616571248!2d-98.213972!3d19.000332!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfbf00256c6e6f%3A0xf2d19bbb8badb5b3!2sG-look%20Barber!5e0!3m2!1sen!2smx!4v1745456587231!5m2!1sen!2smx",
+            "openingHours": {
+                "monday_friday": "11:00 - 20:00",
+                "saturday": "11:00 - 18:30",
+                "sunday": "Cerrado"
+            }
+        }
+    }
+}
