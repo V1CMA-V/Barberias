@@ -1,0 +1,23 @@
+---
+const { google_link, address } = Astro.props as {
+    google_link: string;
+    address: string;
+}
+---
+
+<div class="text-base sm:text-lg leading-relaxed max-w-prose">
+    <a 
+      href={google_link}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex flex-col sm:flex-row items-center justify-center gap-2 hover:underline text-pretty transition"
+    >
+      <span class="text-xl">📍</span>
+      <span>
+        Estamos en <strong class="text-sisal-500">
+          {address}
+        </strong>, a un costado de <strong class="text-sisal-500">Ciudad Universitaria</strong>.
+      </span>
+    </a>
+    <p class="mt-4 font-semibold text-pretty">¡Te esperamos!</p>
+  </div>

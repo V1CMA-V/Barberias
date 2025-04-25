@@ -1,0 +1,26 @@
+---
+const { monday_friday, saturday, sunday } = Astro.props as {
+    monday_friday: string;
+    saturday: string;
+    sunday: string;
+}
+---
+
+<div class="w-full">
+    <h4 class="text-2xl font-semibold uppercase tracking-wide text-center mb-4 bling">Horario de Atención</h4>
+    <ul class="grid grid-cols-2 gap-y-2 text-sm sm:text-base text-center divide-y divide-white/10 max-w-md mx-auto">
+      
+      <li class="col-span-2 py-1 flex justify-between px-2 sm:px-6">
+        <span class="font-medium text-gray-300">Lunes a Viernes</span>
+        <span>{monday_friday}</span>
+      </li>
+      <li class="col-span-2 py-1 flex justify-between px-2 sm:px-6">
+        <span class="font-medium text-gray-300">Sábado</span>
+        <span>{saturday}</span>
+      </li>
+      <li class="col-span-2 py-1 flex justify-between px-2 sm:px-6">
+        <span class="font-medium text-gray-300">Domingo</span>
+        <span>{sunday}</span>
+      </li>
+    </ul>
+  </div>

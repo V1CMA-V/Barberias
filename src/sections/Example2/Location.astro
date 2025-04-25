@@ -1,0 +1,42 @@
+---
+import Direction from "@components2/Direction.astro";
+import Horario from "@components2/Horario.astro";
+import Map from "@/components/Map.astro";
+
+const { location } = Astro.props as {
+  location: {
+    address: string;
+    google_link: string;
+    google_maps: string;
+    openingHours: {
+      monday_friday: string;
+      saturday: string;
+      sunday: string;
+    };
+  };
+}
+
+const { address, google_link, google_maps, openingHours } = location;
+
+const { monday_friday, saturday, sunday } = openingHours;
+---
+
+<section id="Location" class="w-full max-w-7xl mx-auto p-6 sm:p-20 my-24">
+  <h3 class="text-4xl font-bold uppercase tracking-wide text-center bling mb-16">
+    Ubicación
+  </h3>
+
+  <div class="flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-20">
+    <!-- Mapa -->
+    <Map google_maps={google_maps}/>
+
+    <!-- Info -->
+    <div class="w-full lg:w-1/2 flex flex-col justify-center items-center gap-10 text-center">
+      <!-- Dirección -->
+      <Direction google_link={google_link} address={address}/>
+      
+      <!-- Horario -->
+      <Horario monday_friday={monday_friday} saturday={saturday} sunday={sunday}/>
+    </div>
+  </div>
+</section>
