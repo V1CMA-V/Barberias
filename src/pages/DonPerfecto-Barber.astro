@@ -1,77 +1,62 @@
 ---
-import Layout from '@/layouts/Layout-DonPerfecto.astro';
-import About from '@/sections/About.astro';
-import Service from '@/sections/ServicesDonPerfecto.astro';
-import Location from '@/sections/LocationDonPerfecto.astro';
-import Contact from '@/sections/Contact.astro';
-import Team from '@/sections/TeamDonPerfecto.astro';
-import HeroDonPerfecto from '@/components/HeroDonPerfecto.astro';
+import '@/styles/global.css'
 
-const barber = 'Don Perfecto'
-const citas = 200
-const seguidores = 190
-const logo = '/images/don-Perfecto-Logo_sinFondo.png'
-const mensajeWhatsapp = '¡Hola! Me gustaría agendar una cita en Don Perfecto.'
+import Layout2 from '@/layouts/LayoutBarberia.astro'
+
+import NoiseBackground from '@/components/NoiseBackground.astro'
+
+import FloatingCta from '@/components/FloatingCta.astro'
+import Header from '@/sections/Header.astro'
+import Footer from '@/sections/Footer.astro'
+import About from '@/sections/About.astro'
+import Team from '@/sections/Team.astro'
+
+import Hero from '@sections1/Hero.astro'
+import Service from '@sections1/Service.astro'
+import Location from '@sections1/Location.astro'
+
+import { Don_Perfecto } from "@barbers"
+
+const { name, 
+        label, 
+        phone, 
+        location, 
+        logo, 
+        about, 
+        summary, 
+        icon, 
+        socialMedia, 
+        url, 
+        team, 
+        services 
+    } = Don_Perfecto
+
+const { address, google_maps } = location
+const { citas, seguidores } = about.numbers
 
 ---
 
-<Layout>
-	
-	<Fragment slot="head">
-		<!-- SEO básico -->
-		<title>Don Perfecto Barbería | Estilo, Precisión y Cuidado en Puebla</title>
-		<meta name="description" content="Descubre los servicios de Don Perfecto, la barbería en Puebla que combina estilo, técnica y atención personalizada. ¡Agenda tu cita hoy!" />
-		<meta name="keywords" content="barbería Puebla, cortes de cabello, barba, Don Perfecto, grooming, estética masculina, barbería CU Puebla" />
-		<meta name="author" content="Don Perfecto Barbería" />
-	  
-		<!-- Open Graph -->
-		<meta property="og:title" content="Don Perfecto Barbería | Estilo, Precisión y Cuidado" />
-		<meta property="og:description" content="Expertos en cortes, barba y grooming en Puebla. Atención personalizada en Ciudad Universitaria." />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://donperfecto-barber.com" />
-		<meta property="og:image" content="https://donperfecto-barber.com/images/social-share.jpg" />
-	  
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Don Perfecto Barbería" />
-		<meta name="twitter:description" content="La mejor barbería en Puebla. Agenda tu cita con los mejores barberos." />
-		<meta name="twitter:image" content="https://donperfecto-barber.com/images/social-share.jpg" />
-	  
-		<!-- Schema.org (estructura para buscadores) -->
-		<script type="application/ld+json">
-		  {
-			"@context": "https://schema.org",
-			"@type": "Barbershop",
-			"name": "Don Perfecto Barbería",
-			"image": "https://donperfecto-barber.com/images/logo.png",
-			"url": "https://donperfecto-barber.com",
-			"telephone": "+52 331 234 5678",
-			"address": {
-			  "@type": "PostalAddress",
-			  "streetAddress": "C. 10 Sur 7109, Loma Linda, 72477 Heroica Puebla de Zaragoza, Pue.",
-			  "addressLocality": "Puebla de Zaragoza",
-			  "postalCode": "72477",
-			  "addressCountry": "MX"
-			},
-			"openingHours": [
-			  "Mo-Fr 11:00-18:00",
-			  "Sa 10:30-13:00",
-			  "Su 10:30-13:00"
-			],
-			"sameAs": [
-			  "https://www.facebook.com/barberia.donperfecto/",
-			  "https://www.instagram.com/don.perfecto/",
-			  "https://wa.me/5213312345678"
-			]
-		  }
-		</script>
-	  </Fragment>
-	  
-	
-	<HeroDonPerfecto logo={logo} barber={barber} mensajeWhatsapp={mensajeWhatsapp} />
-	<About barber={barber} citas={citas} seguidores={seguidores} /> 
-	<Team />
-	<Service />
-	<Location barber={barber} />
-	<Contact barber={barber} />
-</Layout>
+<Layout2 title={`${name} - ${label}`} summary={summary} url={url} icon={icon}>
+    <NoiseBackground />
+    
+    <Header name={name} phone={phone} url={url} />
+    <main>
+        <Hero logo={logo}  name={name} phone={phone}/>
+        <About name={name} citas={Number(citas)} seguidores={Number(seguidores)}/>
+        <Team team={team}/>
+        <Service services={services} />
+        <Location location={location} />
+        
+        <FloatingCta name={name} number={phone} />
+    </main>
+    <Footer name={name} phone={phone} socialMedia={socialMedia} googleMaps={google_maps} url={url}>
+        <p slot="direction">{address}</p>
+    </Footer>
+</Layout2>
+
+<style>
+    html {
+      background: #000000;
+    }
+</style>
+
