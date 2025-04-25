@@ -1,44 +1,49 @@
 ---
-import '@/styles/standart.css'
+import '@/styles/global.css'
 
-import Layout from "@/layouts/Layout.astro"
-
-import About from "@/sections/me/About.astro"
-import Education from "@/sections/me/Education.astro"
-import Experience from "@/sections/me/Experience.astro"
-import Hero from "@/sections/me/Hero.astro"
-import Projects from "@/sections/me/Projects.astro"
-import Skills from "@/sections/me/Skills.astro"
-import KeyboardManager from "@/components/me/KeyboardManager.astro"
-
-import { basics } from "@cv"
-const { name, label } = basics
+import NoiseBackground from '@/components/NoiseBackground.astro'
+import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout title={`Portafolio de ${name} - ${label}`}>
-  <main>
-    <Hero />
-    <About />
-    <Experience />
-    <Education />
-    <Projects />
-    <Skills />
+<Layout title="404 - Pagina no encontrada" >
+  <NoiseBackground />
 
+  <main class="flex flex-col items-center justify-center h-screen gap-3">
+    <h1 class="text-4xl font-bold text-white text-balance">Dev Víctor Manuel Martínez Cruz</h1>
+    <p class="text-white/90 text-balance">Desarrollador web con experiencia en el desarrollo de aplicaciones web y aplicaciones móviles.</p>
+
+    <a href="https://vicma.vercel.app/" class="text_glowing
+                    text-sm 
+                    button
+                    w-fit
+                    font-medium
+                    no-underline
+                    px-5
+                    py-3
+                    border
+                    border-solid
+                    border-white
+                    rounded-full
+                    uppercase
+                    text-pretty">Volver a la página de inicio</a>
   </main>
-
-  <KeyboardManager />
+  
 </Layout>
 
 <style>
-  main {
-    padding: 4rem;
-    margin: auto;
-    width: 100%;
+  html {
+    background: #000000;
   }
 
-  @media (width <= 700px) {
-    main {
-      padding: 2rem;
-    }
+  .button {
+    transition:
+      text-shadow 0.5s ease-out,
+      box-shadow 0.3s ease-out;
+  }
+
+  .button:hover {
+    box-shadow: 0 0 10px #fff;
+    text-shadow:
+      1px 1px 20px #fff;
   }
 </style>
