@@ -1,14 +1,17 @@
 ---
+import '@fontsource-variable/montserrat';
 
-import { basics } from "@cv"
 
 interface Props {
-  title: string
+  title?: string
+  logo?: string
+  summary?: string
+  url?: string
+  icon?: string
 }
 
-const { title } = Astro.props
+const { title, summary, url, icon } = Astro.props
 
-const { image, summary, url, icon } = basics
 ---
 
 <!doctype html>
@@ -19,7 +22,6 @@ const { image, summary, url, icon } = basics
     <meta name="description" content={summary} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href={icon} />
-    <link rel="preload" as="image" href={image} />
 
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
@@ -28,7 +30,7 @@ const { image, summary, url, icon } = basics
     <meta property="og:image" content="" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
+    <meta property="twitter:domain" content={url?.split("//")[1] ?? ''} />
     <meta property="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
