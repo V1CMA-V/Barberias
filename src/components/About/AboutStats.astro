@@ -13,20 +13,24 @@ const { citas, seguidores } = Astro.props
 
 <div class="flex flex-wrap justify-center gap-8 pt-6">
     <div class="grid grid-cols-1  gap-y-10">
-        <div class="flex flex-col justify-center items-center">
-          <span class="numbers text-7xl font-bold tabular-nums tracking-wide flex items-center">
-            <Scissors />
-            <CountUp client:visible initial={0} final={citas} />
-          </span>
-          <span class="uppercase opacity-70">Citas realizadas</span>
+        <div class="flex justify-center items-center">
+          <Scissors class="w-25 h-25"/>
+          <p class="flex flex-col items-center gap-2">
+            <span class="numbers text-7xl font-bold tabular-nums tracking-wide bling">
+              <CountUp client:visible initial={0} final={citas} />
+            </span>
+            <span class="uppercase opacity-70">Citas realizadas</span>
+          </p>
         </div>
     
-        <div class="flex flex-col justify-center items-center">
-          <span class="numbers text-7xl font-bold tabular-nums tracking-wide flex items-center gap-2">
-            <Instagram />
-            <CountUp client:visible initial={0} final={seguidores} />
-          </span>
-          <span class="uppercase opacity-70">Seguidores </span>
+        <div class="flex  justify-center items-center">
+          <Instagram class="w-30 h-30"/>
+          <p class="flex flex-col items-center gap-2">
+            <span class="numbers text-7xl font-bold tabular-nums tracking-wide bling">
+              <CountUp client:visible initial={0} final={seguidores} />
+            </span>
+            <span class="uppercase opacity-70">Seguidores </span>
+          </p>
         </div>
     </div>
 </div>
