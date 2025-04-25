@@ -13,6 +13,9 @@
       "@cv": [
         "./cv.json"
       ],
+      "@barbers": [
+        "./barbers.json"
+      ],
       "@/*": [
         "src/*"
       ]
