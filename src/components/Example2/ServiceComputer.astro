@@ -16,8 +16,9 @@ const { services, name, phone } = Astro.props as {
   phone: string;
 }
 
-const leftServices = services.slice(0, services.length / 2)
-const rightServices = services.slice(services.length / 2)
+const filteredServices = services.filter(service => service.discount !== "month");
+const leftServices = filteredServices.slice(0, filteredServices.length / 2);
+const rightServices = filteredServices.slice(filteredServices.length / 2);
 
 const promoPack = services.find(service => service.discount === "month")
 ---
