@@ -1,0 +1,62 @@
+---
+import '@/styles/global.css'
+
+import Layout2 from '@/layouts/LayoutBarberia.astro'
+
+import NoiseBackground from '@/components/NoiseBackground.astro'
+
+import FloatingCta from '@/components/FloatingCta.astro'
+import Header from '@/sections/Header.astro'
+import Footer from '@/sections/Footer.astro'
+import About from '@/sections/About.astro'
+import Team from '@/sections/Team.astro'
+
+import Hero from '@sections1/Hero.astro'
+import Service from '@sections1/Service.astro'
+import Location from '@sections1/Location.astro'
+
+import { El_Templo } from "@barbers"
+
+const { name, 
+        label, 
+        phone, 
+        location, 
+        logo, 
+        about, 
+        summary, 
+        icon, 
+        socialMedia, 
+        url, 
+        team, 
+        services 
+    } = El_Templo
+
+const { address, google_maps } = location
+const { citas, seguidores } = about.numbers
+
+---
+
+<Layout2 title={`${name} - ${label}`} summary={summary} url={url} icon={icon}>
+    <NoiseBackground />
+    
+    <Header name={name} phone={phone} url={url} />
+    <main>
+        <Hero logo={logo}  name={name} phone={phone}/>
+        <About name={name} citas={Number(citas)} seguidores={Number(seguidores)}/>
+        <Team team={team}/>
+        <Service services={services} />
+        <Location location={location} />
+        
+        <FloatingCta name={name} number={phone} />
+    </main>
+    <Footer name={name} phone={phone} socialMedia={socialMedia} googleMaps={google_maps} url={url}>
+        <p slot="direction">{address}</p>
+    </Footer>
+</Layout2>
+
+<style>
+    html {
+      background: #000000;
+    }
+</style>
+
