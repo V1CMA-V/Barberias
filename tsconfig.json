@@ -18,6 +18,22 @@
       ],
       "@/*": [
         "src/*"
+      ],
+      // Components Example1
+      "@components1/*": [
+        "src/components/Example1/*"
+      ],
+      // Components Example2
+      "@components2/*": [
+        "src/components/Example2/*"
+      ],
+      // Sections Example1
+      "@sections1/*": [
+        "src/sections/Example1/*"
+      ],
+      // Sections Example2
+      "@sections2/*": [
+        "src/sections/Example2/*"
       ]
     },
     "jsx": "react-jsx",
