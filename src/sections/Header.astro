@@ -6,10 +6,9 @@ import MobileMenu from '@/components/MobileMenu.tsx';
 interface Props {
   name: string
   phone: string 
-  url: string
 }
 
-const { name, phone, url } = Astro.props
+const { name, phone } = Astro.props
 
 // Mensaje precargado (encodeado)
 const message = encodeURIComponent(
@@ -24,8 +23,8 @@ const typeLetter = name === "Don Perfecto" ? "don" : ""
 <header id="header-nav" role="banner" class="fixed top-0 w-full px-6 py-4 z-50 bg-transparent">
   <div class="max-w-7xl mx-auto flex items-center justify-between gap-6 lg:gap-16">
 
-    <!-- Logo -->
-    <HeaderLink checkActive={false} href={url} aria-label="Inicio">
+    <!-- Tittle -->
+    <HeaderLink checkActive={false} href="/Example2" aria-label="Inicio">
       <h1 class={`md:text-3xl font-bold text_glowing transition ${typeLetter}`}>{name}</h1>
     </HeaderLink>
 
