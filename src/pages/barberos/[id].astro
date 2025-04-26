@@ -1,0 +1,72 @@
+---
+// src/pages/barberos/[id].astro
+import '@/styles/global.css';
+import LayoutBarberia from '@/layouts/LayoutBarberia.astro';
+import { El_Templo } from '@barbers';
+import NoiseBackground from '@/components/NoiseBackground.astro';
+
+const { team } = El_Templo;
+const { id } = Astro.params;
+const barber = team.find((c) => c.id === id);
+if (!barber) {
+  return Astro.redirect('/404');
+}
+
+const { name, image, description, styles, number } = barber;
+const { url, icon } = El_Templo;
+---
+<LayoutBarberia title={name} summary={description} url={url} icon={icon}>
+  <NoiseBackground />
+  <main class="flex flex-col items-center justify-center gap-8 h-screen px-6">
+    <article class="flex flex-col md:flex-row gap-10 items-center">
+      <img
+        transition:name={`barber-${id}-image`}
+        src={image}
+        alt={`Foto de ${name}`}
+        class="object-cover w-64 h-64 md:w-100 md:h-100 rounded-4xl"
+      />
+
+      <div class="flex flex-col gap-6 animate-blurred-fade-in items-center">
+        <h1 class="text-don-gold font-bold text-4xl text-center">{name}</h1>
+        <p class="text-pretty text-center max-w-prose">{description}</p>
+
+        <div class="flex gap-6 items-center">
+          <a href={`tel:${number}`} class="hover:text-don-gold">
+            {number}
+          </a>
+          <a href={`https://wa.me/${number}`} class="hover:text-[#25D366]">
+            WhatsApp
+          </a>
+        </div>
+
+        <div class="flex gap-2 flex-wrap justify-center">
+          {styles.map((style) => (
+            <span class="text-don-gold px-2 py-1 rounded-full bg-don-gold/10 hover:scale-105 transition">
+              {style}
+            </span>
+          ))}
+        </div>
+
+        <a
+          href="/Example3#team"
+          class="text_glowing text-sm button px-5 py-3 border border-white rounded-full uppercase text-pretty transition"
+        >
+          Volver a barberos
+        </a>
+      </div>
+    </article>
+  </main>
+</LayoutBarberia>
+
+<style>
+  html {
+    background: #161616;
+  }
+  .button {
+    transition: text-shadow 0.5s ease-out, box-shadow 0.3s ease-out;
+  }
+  .button:hover {
+    box-shadow: 0 0 10px #fff;
+    text-shadow: 1px 1px 20px #fff;
+  }
+</style>
