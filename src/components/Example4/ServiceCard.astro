@@ -16,7 +16,7 @@ const { name, image, price, description, discount, priceStudent, benefits } = As
 
 ---
 
-<article class={`flex flex-col md:flex-row bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg h-64 ${discount == 'pack' ? 'col-span-2' : ''}`}>
+<article id="animate-reveal" class={`flex flex-col md:flex-row bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg h-64 ${discount == 'pack' ? 'col-span-2' : ''}`}>
   <!-- Texto (izquierda) -->
   <div class="flex-1 p-6 flex flex-col justify-center space-y-2 text-white">
     <h3 class="text-2xl font-semibold">{name}</h3>
@@ -47,3 +47,27 @@ const { name, image, price, description, discount, priceStudent, benefits } = As
     />
   </div>
 </article>
+
+
+<style>
+  #animate-reveal {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+  
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      translate: 0 200px;
+      scale: 0;
+    }
+
+    to {
+      opacity: 1;
+      translate: 0 0;
+      scale: 1;
+    }
+    
+  }
+</style>
