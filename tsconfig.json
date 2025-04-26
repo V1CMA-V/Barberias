@@ -28,6 +28,9 @@
       "@components3/*": [
         "src/components/Example3/*"
       ],
+      "@components4/*": [
+        "src/components/Example4/*"
+      ],
       // Sections for different examples
       // Sections Example1
       "@sections1/*": [
@@ -40,6 +43,10 @@
       // Sections Example3
       "@sections3/*": [
         "src/sections/Example3/*"
+      ],
+      // Sections Example4
+      "@sections4/*": [
+        "src/sections/Example4/*"
       ]
     },
     "jsx": "react-jsx",

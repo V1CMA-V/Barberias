@@ -1,0 +1,37 @@
+---
+import '@/styles/global.css'
+
+import LayoutBarberia from "@/layouts/LayoutBarberia.astro";
+import Gallery from "@sections4/Gallery.astro";
+import Services from "@sections4/Services.astro";
+import Hero from "@sections4/Hero.astro";
+import Info from "@sections4/Info.astro";
+import Info2 from "@sections4/Info2.astro";
+import MostPopular from "@sections4/MostPopular.astro";
+import Footer from "@sections4/Footer.astro";
+import Location from "@sections4/Location.astro";
+import Header from "@sections4/Header.astro";
+---
+
+<LayoutBarberia title="Example 4" summary="Example 4" url="https://vicma.vercel.app" icon="/favicon.svg">
+    <Header />
+
+    <main>
+        <Hero />
+        <MostPopular />
+        <Services />
+        <Info />
+        <Gallery />
+        <Info2 />
+        <Location />
+
+    </main>
+    <Footer />
+
+</LayoutBarberia>
+
+<style>
+  html {
+    background: #1B1B1B;
+  }
+</style>

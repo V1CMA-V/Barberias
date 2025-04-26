@@ -1,0 +1,25 @@
+---
+import HeaderLink from "@components3/HeaderLink.astro";
+
+---
+
+<header id="Header-scroll" class="fixed top-0 w-full px-6 py-10 z-50 bg-transparent">
+    <div class="max-w-3xl mx-auto flex items-center justify-between gap-6 lg:gap-16 pt-10 border-t-2 border-white">
+        <HeaderLink class="text_glowing font-bold " checkActive={false} href="#services">
+            Servicios
+        </HeaderLink>
+        <HeaderLink class="text_glowing font-bold " checkActive={false} href="#contact">
+            Contacto
+        </HeaderLink>
+        <HeaderLink class="text_glowing font-bold " checkActive={false} href="#about">
+            Sobre nosotros
+        </HeaderLink>
+    </div>
+</header>
+
+<style>
+    .header {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+</style>
