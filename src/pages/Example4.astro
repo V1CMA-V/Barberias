@@ -11,13 +11,23 @@ import MostPopular from "@sections4/MostPopular.astro";
 import Footer from "@sections4/Footer.astro";
 import Location from "@sections4/Location.astro";
 import Header from "@sections4/Header.astro";
+
+import { El_Templo } from "@barbers"
+import NoiseBackground from '@/components/NoiseBackground.astro';
+
+const {
+    name,
+    phone,
+} = El_Templo
 ---
 
 <LayoutBarberia title="Example 4" summary="Example 4" url="https://vicma.vercel.app" icon="/favicon.svg">
+    <NoiseBackground />
+    
     <Header />
 
     <main>
-        <Hero />
+        <Hero logo="/images/El Templo-Logo.webp" name={name} phone={phone} />
         <MostPopular />
         <Services />
         <Info />
