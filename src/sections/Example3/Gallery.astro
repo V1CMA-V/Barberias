@@ -1,0 +1,56 @@
+---
+// src/sections/Gallery.astro
+import { Image } from 'astro:assets';
+
+interface Img {
+  src: string;
+  alt: string;
+  cols: string;
+  rows: string;
+}
+
+const gallery: Img[] = [
+{ src: '/images/example3/gallery-6.webp', alt: 'Vista general', cols: "col-span-2", rows: "row-span-3" },
+{ src: '/images/example3/gallery-1.webp', alt: 'Barberos con cliente', cols: 'col-span-3', rows: 'row-span-1' },
+  { src: '/images/example3/gallery-3.webp', alt: 'Detalle de tijeras', cols: "col-span-2", rows: "row-span-1" },
+  { src: '/images/example3/gallery-4.webp', alt: 'Sala de espera', cols: "col-span-1", rows: "row-span-1" },
+  { src: '/images/example3/gallery-5.webp', alt: 'Retoque de barba', cols: "col-span-2", rows: "row-span-1" },
+];
+---
+
+<section id="gallery" class="py-20">
+  <div class="w-full mx-auto px-6 lg:px-0">
+    <h2 class="text-4xl font-serif font-semibold text-white mb-12 text-center">
+      Galería de El Templo
+    </h2>
+    <div
+      class="
+        grid 
+        grid-cols-6 
+        grid-flow-row-dense 
+      ">
+    {
+        gallery.map(({ src, alt, cols, rows }) => (
+
+            <div
+              class={`
+                relative
+                overflow-hidden
+                ${cols}
+                ${rows}
+              `}
+            >
+              <Image
+                src={src}
+                alt={alt}
+                width={800}
+                height={600}
+                class="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+        ))
+    }
+    </div>
+  </div>
+</section>
