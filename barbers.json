@@ -35,6 +35,7 @@
     },
     "team": [
         {
+            "id": "carlos-Medina",
             "name": "Carlos Medina",
             "image": "/images/team/Carlos.webp",
             "description": "Especialista en cortes clásicos con precisión y estilo.",
@@ -42,6 +43,7 @@
             "number": "5560908911"
         },
         {
+            "id": "david-Rios",
             "name": "David Ríos",
             "image": "/images/team/Jorge.webp",
             "description": "Fundador. Especialista en barbería urbana y cortes de precisión.",
@@ -49,6 +51,7 @@
             "number": "5523456789"
         },
         {
+            "id": "mario-Torres",
             "name": "Mario Torres",
             "image": "/images/team/Francisco.webp",
             "description": "Experto en degradados y arreglos de barba.",
@@ -56,6 +59,7 @@
             "number": "5523456789"
         },
         {
+            "id": "kevin-Morales",
             "name": "Kevin Morales",
             "image": "/images/team/Luis.webp",
             "description": "Estilista de toques finos y modernos.",
