@@ -1,22 +1,26 @@
 ---
 import Direction from "@components2/Direction.astro";
 import Horario from "@components2/Horario.astro";
-import Map from "@/components/Map.astro";
+import LeafletMap from "@components3/LeafletMap.jsx";
 
 const { location } = Astro.props as {
   location: {
-    address: string;
-    google_link: string;
-    google_maps: string;
-    openingHours: {
-      monday_friday: string;
-      saturday: string;
-      sunday: string;
-    };
+    address: string
+        google_link: string
+        maps: {
+            lat: number
+            lng: number
+            zoom: number
+        }
+        openingHours: {
+            monday_friday: string
+            saturday: string
+            sunday: string
+        }
   };
 }
 
-const { address, google_link, google_maps, openingHours } = location;
+const { address, google_link, maps, openingHours } = location;
 
 const { monday_friday, saturday, sunday } = openingHours;
 ---
@@ -28,7 +32,18 @@ const { monday_friday, saturday, sunday } = openingHours;
 
   <div class="flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-20">
     <!-- Mapa -->
-    <Map google_maps={google_maps}/>
+    <div class="flex flex-col gap-2 w-full">
+      <LeafletMap client:load lat={maps.lat} lng={maps.lng} zoom={maps.zoom} markerText="El Templo Barbería" />
+      <!-- Botón a Google Maps -->
+      <a
+        href={google_link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-center mt-6 inline-block px-6 py-3 border border-don-gold text-don-gold rounded-lg uppercase text-sm font-semibold hover:bg-don-gold hover:text-don-bg transition-all duration-300"
+      >
+        Ver en Google Maps
+      </a>
+    </div>
 
     <!-- Info -->
     <div class="w-full lg:w-1/2 flex flex-col justify-center items-center gap-10 text-center">
