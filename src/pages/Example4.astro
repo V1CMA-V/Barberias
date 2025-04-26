@@ -21,7 +21,8 @@ const {
     email,
     services,
     about,
-    location
+    location,
+    socialMedia
 } = El_Templo
 ---
 
@@ -40,7 +41,7 @@ const {
         <Location location={location} />
 
     </main>
-    <Footer />
+    <Footer name={name} email={email} phone={phone} socialMedia={socialMedia} location={location} />
 
 </LayoutBarberia>
 
