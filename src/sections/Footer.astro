@@ -4,7 +4,7 @@ import Locate from "@/components/Icons/Locate.astro";
 interface Props {
   name: string,
   phone: string,
-  googleMaps: string,
+  google_link: string,
   url: string,
   socialMedia: {
     network: string
@@ -14,7 +14,7 @@ interface Props {
   }[]
 }
 
-const { name, phone, socialMedia, googleMaps, url } = Astro.props
+const { name, phone, socialMedia, google_link, url } = Astro.props
 
 const color = name === "G-Look" ? "hover:text-sisal-600" : "don hover:text-don-gold"
 
@@ -34,7 +34,7 @@ const color = name === "G-Look" ? "hover:text-sisal-600" : "don hover:text-don-g
 
       <!-- Dirección con ícono -->
       <a 
-        href={googleMaps}
+        href={google_link}
         target="_blank"
         rel="noopener noreferrer"
         class={`flex gap-2 ${color} transition-colors font-normal`}

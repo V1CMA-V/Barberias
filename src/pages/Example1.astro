@@ -23,7 +23,8 @@ const { name,
         location, 
         logo, 
         about, 
-        summary, 
+        summary,
+        
         icon, 
         socialMedia, 
         url, 
@@ -31,7 +32,7 @@ const { name,
         services 
     } = El_Templo
 
-const { address, google_maps } = location
+const { address, google_link} = location
 const { citas, seguidores } = about.numbers
 
 ---
@@ -49,7 +50,7 @@ const { citas, seguidores } = about.numbers
         
         <FloatingCta name={name} number={phone} />
     </main>
-    <Footer name={name} phone={phone} socialMedia={socialMedia} googleMaps={google_maps} url={url}>
+    <Footer name={name} phone={phone} socialMedia={socialMedia} google_link={google_link} url={url}>
         <p slot="direction">{address}</p>
     </Footer>
 </Layout2>
