@@ -9,12 +9,12 @@ interface Props {
 
 const { title, description, benefits, price, discount} = Astro.props
 
-const priceClass = discount === 'month' ? 'text-white text-4xl bling' : 'text-don-gold'
+const priceClass = discount === 'pack' ? 'text-white text-4xl bling' : 'text-don-gold'
 
 let spanClass = 'col-span-10'
 if (discount === 'student') {
     spanClass = 'col-span-6 lg:col-span-6'
-} else if (discount === 'month') {
+} else if (discount === 'pack') {
     spanClass = 'col-span-10'
 } else {
     spanClass = 'col-span-5 lg:col-span-4'

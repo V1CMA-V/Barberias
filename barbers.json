@@ -97,7 +97,7 @@
             "image": "/todo-incluido.webp",
             "price": 350,
             "description": "Incluye corte, barba, limpieza facial y bebida de cortesía. Ideal para clientes frecuentes.",
-            "discount": "month",
+            "discount": "pack",
             "benefits": [
               "1 Corte clásico o moderno",
               "1 Arreglo de barba",
