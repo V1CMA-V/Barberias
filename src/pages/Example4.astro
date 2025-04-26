@@ -18,8 +18,10 @@ import NoiseBackground from '@/components/NoiseBackground.astro';
 const {
     name,
     phone,
+    email,
     services,
-    about
+    about,
+    location
 } = El_Templo
 ---
 
@@ -35,7 +37,7 @@ const {
         <Info name={name} about={about} />
         <Gallery />
         <Info2 name={name} about={about} />
-        <Location />
+        <Location location={location} />
 
     </main>
     <Footer />
