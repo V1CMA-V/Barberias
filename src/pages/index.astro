@@ -1,49 +1,80 @@
 ---
-import '@/styles/global.css'
+// src/pages/index.astro
+import '@/styles/global.css';
+import NoiseBackground from '@/components/NoiseBackground.astro';
+import LayoutBarberia from '@/layouts/LayoutBarberia.astro';
+import { Image } from 'astro:assets';
 
-import NoiseBackground from '@/components/NoiseBackground.astro'
-import Layout from '@/layouts/LayoutBarberia.astro'
+const examples = [
+  {
+    title: 'Example 1',
+    href: '/Example1',
+    img: '/Example1.webp',
+    alt: 'Landing page Example 1',
+    description: 'Estilo, calidad y comodidad en cada corte de pelo.',
+  },
+  {
+    title: 'Example 2',
+    href: '/Example2',
+    img: '/Example2.webp',
+    alt: 'Landing page Example 2',
+    description: 'Diseño moderno y experiencia premium para tu barbería.',
+  },
+  {
+    title: 'Example 3',
+    href: '/Example3',
+    img: '/Example3.webp',
+    alt: 'Landing page Example 3',
+    description: 'Landing page optimizada para conversión y reservas.',
+  },
+];
 ---
-
-<Layout title="404 - Pagina no encontrada" >
+<LayoutBarberia title="Portafolio – Víctor Martínez" summary="Mis proyectos de landing pages para barberías" url="https://vicma.vercel.app" icon="/favicon.svg">
+  <!-- Fondo animado -->
   <NoiseBackground />
 
-  <main class="flex flex-col items-center justify-center h-screen gap-3">
-    <h1 class="text-4xl font-bold text-white text-balance">Dev Víctor Manuel Martínez Cruz</h1>
-    <p class="text-white/90 text-balance">Desarrollador web con experiencia en el desarrollo de aplicaciones web y aplicaciones móviles.</p>
+  <main class="flex flex-col items-center justify-center py-20 px-6">
+    <!-- Encabezado -->
+    <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4 text-center">
+      Portafolio de Landings
+    </h1>
+    <p class="text-white/80 mb-12 text-center max-w-2xl">
+      Aquí tienes algunos de los proyectos de landing pages que he desarrollado para barberías. Haz clic en cualquiera para verlo en vivo.
+    </p>
 
-    <a href="https://vicma.vercel.app/" class="text_glowing
-                    text-sm 
-                    button
-                    w-fit
-                    font-medium
-                    no-underline
-                    px-5
-                    py-3
-                    border
-                    border-solid
-                    border-white
-                    rounded-full
-                    uppercase
-                    text-pretty">Volver a la página de inicio</a>
+    <!-- Grid de ejemplos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
+      {examples.map((ex) => (
+        <a
+          href={ex.href}
+          class="group block overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition"
+          scroll-behavior="smooth"
+        >
+          <!-- Imagen optimizada -->
+          <div class="w-full h-48 md:h-56 lg:h-64 overflow-hidden">
+            <Image
+              src={ex.img}
+              alt={ex.alt}
+              width={800}
+              height={600}
+              class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Texto -->
+          <div class="p-6">
+            <h2 class="text-2xl font-semibold text-white mb-2">{ex.title}</h2>
+            <p class="text-white/80">{ex.description}</p>
+          </div>
+        </a>
+      ))}
+    </div>
   </main>
-  
-</Layout>
+</LayoutBarberia>
 
 <style>
   html {
     background: #000000;
-  }
-
-  .button {
-    transition:
-      text-shadow 0.5s ease-out,
-      box-shadow 0.3s ease-out;
-  }
-
-  .button:hover {
-    box-shadow: 0 0 10px #fff;
-    text-shadow:
-      1px 1px 20px #fff;
   }
 </style>
