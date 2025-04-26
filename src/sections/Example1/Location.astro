@@ -1,21 +1,25 @@
 ---
 import IconsClock from "@/components/Icons/clock.astro";
-import Map from "@/components/Map.astro";
+import LeafletMap from "@components3/LeafletMap.jsx";
 
 const { location } = Astro.props as {
   location: {
     address: string
-    google_link: string
-    google_maps: string
-    openingHours: {
-      monday_friday: string
-      saturday: string
-      sunday: string
-    };
+        google_link: string
+        maps: {
+            lat: number
+            lng: number
+            zoom: number
+        }
+        openingHours: {
+            monday_friday: string
+            saturday: string
+            sunday: string
+        }
   };
 }
 
-const { address, google_link, google_maps, openingHours } = location
+const { address, google_link, openingHours, maps } = location
 const { monday_friday, saturday, sunday } = openingHours
 ---
 
@@ -38,8 +42,9 @@ const { monday_friday, saturday, sunday } = openingHours
     </p>
 
     <!-- Mapa -->
-    <Map google_maps={google_maps} />
-
+    <div class="flex flex-col gap-2 w-full">
+      <LeafletMap client:load lat={maps.lat} lng={maps.lng} zoom={maps.zoom} markerText="El Templo Barbería" />
+    </div>
     <!-- Botón a Google Maps -->
     <a
       href={google_link}

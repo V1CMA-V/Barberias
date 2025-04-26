@@ -111,11 +111,11 @@
             }
         ],
         "location": {
-            "address": "Av. 14 Poniente 1908, Centro, 72760 San Pedro Cholula, Pue.",
-            "city": "Cholula",
+            "address": "Esq. 11 sur, Av. Reforma, Centro histórico de Puebla, 72000 Heroica Puebla de Zaragoza, Pue.",
+            "city": "Puebla",
             "state": "Puebla",
             "country": "Mexico",
-            "postalCode": "72760",
+            "postalCode": "72000",
             "google_link": "https://maps.app.goo.gl/MuTGJG7zcRtnxEzK7",
             "maps": {
                 "lat": 19.0481002,
