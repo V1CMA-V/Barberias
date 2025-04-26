@@ -18,6 +18,7 @@ import NoiseBackground from '@/components/NoiseBackground.astro';
 const {
     name,
     phone,
+    services
 } = El_Templo
 ---
 
@@ -29,7 +30,7 @@ const {
     <main>
         <Hero logo="/images/El Templo-Logo.webp" name={name} phone={phone} />
         <MostPopular />
-        <Services />
+        <Services services={services} />
         <Info />
         <Gallery />
         <Info2 />

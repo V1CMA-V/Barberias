@@ -1,0 +1,49 @@
+---
+// src/components/ServiceCard.astro
+import { Image } from 'astro:assets';
+
+interface Props {
+  name: string;
+  image: string;
+  price: string;
+  description: string;
+  discount?: string;
+  priceStudent?: string;
+  benefits?: string[];
+}
+
+const { name, image, price, description, discount, priceStudent, benefits } = Astro.props as Props;
+
+---
+
+<article class={`flex flex-col md:flex-row bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg h-64 ${discount == 'pack' ? 'col-span-2' : ''}`}>
+  <!-- Texto (izquierda) -->
+  <div class="flex-1 p-6 flex flex-col justify-center space-y-2 text-white">
+    <h3 class="text-2xl font-semibold">{name}</h3>
+    <p class="text-sm text-white/80">{description}</p>
+    <div class="mt-2">
+      <span class="font-bold text-lg">${price}</span>
+      {discount && <span class="ml-2 text-sm line-through text-red-400">{discount}</span>}
+    </div>
+    {priceStudent && (
+      <p class="text-xs text-green-300">Precio estudiante: ${priceStudent}</p>
+    )}
+    {benefits && (
+      <ul class="mt-2 list-disc list-inside text-xs text-white/80 space-y-1">
+        {benefits.map((b) => <li>{b}</li>)}
+      </ul>
+    )}
+  </div>
+
+  <!-- Imagen (derecha) -->
+  <div class="flex-1 relative h-48 md:h-auto">
+    <Image
+      src={`/images/haircut/${image}`}
+      alt={`Servicio: ${name}`}
+      width={800}
+      height={600}
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+</article>
