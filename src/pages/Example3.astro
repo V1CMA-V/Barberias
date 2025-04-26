@@ -16,10 +16,9 @@ import { El_Templo } from "@barbers"
 import NoiseBackground from '@/components/NoiseBackground.astro';
 
 const { name,
-    label,
+    email,
     phone,
     location,
-    logo,
     about,
     summary,
     icon,
@@ -29,8 +28,6 @@ const { name,
     services
 } =     El_Templo
 
-const { address, google_maps } = location
-const { citas, seguidores } = about.numbers
 ---
 
 <LayoutBarberia title={name} summary={summary} url={url} icon={icon}>
@@ -44,7 +41,7 @@ const { citas, seguidores } = about.numbers
         <Services services={services} />
         <Gallery />
         <Team name={name} team={team} />
-        <Contact />        
+        <Contact location={location} phone={phone} email={email} />        
     </main>
 
     <Footer />
