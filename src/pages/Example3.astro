@@ -13,6 +13,7 @@ import Contact from "@sections3/Contact.astro"
 import Footer from "@sections3/Footer.astro"
 
 import { El_Templo } from "@barbers"
+import NoiseBackground from '@/components/NoiseBackground.astro';
 
 const { name,
     label,
@@ -33,10 +34,12 @@ const { citas, seguidores } = about.numbers
 ---
 
 <LayoutBarberia title={name} summary={summary} url={url} icon={icon}>
+    <!-- <NoiseBackground /> -->
+    
     <Header />
 
     <main>
-        <Hero />
+        <Hero logo="/images/hero.webp" name={name} summary={summary} />
         <Story />
         <Services />
         <Gallery />
