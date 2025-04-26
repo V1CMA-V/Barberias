@@ -23,7 +23,11 @@
         }
     ],
     "about": {
-        "description": "En El Templo, cada cliente recibe un servicio personalizado como parte de una experiencia completa.",
+        "description": [
+            "En 2025 nació El Templo, un santuario moderno donde el cuidado de la imagen se vive como un ritual. Inspirados en la arquitectura clásica de los templos, quisimos crear un espacio que combine tradición y vanguardia, un refugio en el centro de Puebla para que cada cliente encuentre su mejor versión.",
+  "Detrás de cada corte y afeitado está nuestro maestro barbero, don Luis Hernández, quien aprendió el oficio desde niño de la mano de su abuelo. Con más de 15 años de experiencia, Luis ha perfeccionado técnicas europeas y mexicanas, cuidando cada detalle —desde la navaja hasta la toalla tibia— para ofrecer un servicio verdaderamente artesanal.",
+  "En El Templo no solo renovamos el estilo, sino que también fortalecemos la confianza. Nuestro compromiso es crear un ambiente cálido y profesional, donde cada visita sea una experiencia de bienestar. Te invitamos a descubrir el ritual y ser parte de nuestra comunidad."
+        ],
         "numbers": {
         "citas": "320",
         "seguidores": "1500"
