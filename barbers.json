@@ -1,14 +1,14 @@
 {
     "El_Templo": {
-    "name": "El Templo",
-    "label": "Donde cada corte es un ritual",
-    "summary": "Una barbería con estilo urbano y elegante. 3 años atendiendo con pasión y precisión en Cholula, Puebla.",
-    "logo": "/images/el-templo-Logo-sinFondo.png",
-    "icon": "/images/el-templo-favicon.png",
-    "url": "https://barberiavic.vercel.app/ElTemplo-Barber",
-    "phone": "5523456789",
-    "email": "eltemplo.barber@gmail.com",
-    "socialMedia": [
+        "name": "El Templo",
+        "label": "Donde cada corte es un ritual",
+        "summary": "Una barbería con estilo urbano y elegante. 3 años atendiendo con pasión y precisión en Cholula, Puebla.",
+        "logo": "/images/el-templo-Logo-sinFondo.png",
+        "icon": "/images/el-templo-favicon.png",
+        "url": "https://barberiavic.vercel.app/ElTemplo-Barber",
+        "phone": "5523456789",
+        "email": "eltemplo.barber@gmail.com",
+        "socialMedia": [
             {
             "network": "Facebook",
             "username": "ElTemploBarber",
