@@ -37,6 +37,7 @@ body {
     height: 100%;
     color: #FFF;
     font-family: 'Montserrat Variable', sans-serif;
+    scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
