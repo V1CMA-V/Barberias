@@ -1,7 +1,6 @@
 ---
 import AboutContent from "@/components/About/AboutContent.astro";
 import AboutStats from "@/components/About/AboutStats.astro";
-import aboutImage from "@/assets/images/about.webp";
 import { Image } from "astro:assets";
 
 interface Props {
@@ -27,9 +26,9 @@ const { name, citas, seguidores } = Astro.props
   </div>
 
   <!-- Imagen -->
-  <div id="theater" class="rounded-2xl overflow-hidden mask-fade-upper w-full h-full">
+  <div id="theater" class="rounded-2xl overflow-hidden mask-fade-upper w-full h-full bg-amber-300">
     <Image
-      src={aboutImage}
+      src="/images/team/Andres.webp"
       alt={`Interior de la barbería ${name}`}
       class="object-cover w-full h-full "
       width={800}
