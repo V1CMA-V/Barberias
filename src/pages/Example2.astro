@@ -28,14 +28,14 @@ const { name,
     services
 } =     El_Templo
 
-const { address, google_maps } = location
+const { address, google_link, maps } = location
 const { citas, seguidores } = about.numbers
 ---
 
-<Layout2 title={`${name} - ${label}`} logo={logo} summary={summary} url={url} icon={icon}>
+<Layout2 title={`${name} - ${label}`} summary={summary} url={url} icon={icon}>
     <NoiseBackground />
 
-    <Header name={name} phone={phone} url={url} />
+    <Header name={name} phone={phone} />
     
     <main>
         <Hero name={name} label={label} phone={phone}>
@@ -47,7 +47,7 @@ const { citas, seguidores } = about.numbers
         <Location location={location}/>
     </main>
 
-    <Footer name={name} phone={phone} socialMedia={socialMedia} googleMaps={google_maps} url={url}>
+    <Footer name={name} phone={phone} socialMedia={socialMedia} google_link={google_link} url={url}>
         <p slot="direction">{address}</p>
     </Footer>
 </Layout2>
