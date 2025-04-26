@@ -23,13 +23,13 @@ const { name, image, price, description, discount, priceStudent, benefits } = As
     <p class="text-sm text-white/80">{description}</p>
     <div class="mt-2">
       <span class="font-bold text-lg">${price}</span>
-      {discount && <span class="ml-2 text-sm line-through text-red-400">{discount}</span>}
+      {discount !== 'pack' && <span class="ml-2 text-sm line-through text-red-400">{discount}</span>}
     </div>
     {priceStudent && (
       <p class="text-xs text-green-300">Precio estudiante: ${priceStudent}</p>
     )}
-    {benefits && (
-      <ul class="mt-2 list-disc list-inside text-xs text-white/80 space-y-1">
+    {benefits  && (
+      <ul class="mt-2 list-disc list-inside text-xs text-white/80 space-y-1 grid grid-cols-2">
         {benefits.map((b) => <li>{b}</li>)}
       </ul>
     )}
