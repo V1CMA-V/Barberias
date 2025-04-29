@@ -1,8 +1,8 @@
 ---
 // src/pages/index.astro
-import '@/styles/global.css';
 import NoiseBackground from '@/components/NoiseBackground.astro';
 import LayoutBarberia from '@/layouts/LayoutBarberia.astro';
+import '@/styles/global.css';
 import { Image } from 'astro:assets';
 
 const examples = [
@@ -27,9 +27,16 @@ const examples = [
     alt: 'Landing page Example 3',
     description: 'Landing page optimizada para conversión y reservas.',
   },
+  {
+    title: 'Example 4',
+    href: '/Example4',
+    img: '/Example4.webp',
+    alt: 'Landing page Example 4',
+    description: 'Landing page optimizada para conversión y reservas.',
+  },
 ];
 ---
-<LayoutBarberia title="Portafolio – Víctor Martínez" summary="Mis proyectos de landing pages para barberías" url="https://vicma.vercel.app" icon="/favicon.svg">
+<LayoutBarberia title="Portafolio | Víctor Martínez" summary="Mis proyectos de landing pages para barberías" url="https://vicma.vercel.app" icon="/favicon.svg">
   <!-- Fondo animado -->
   <NoiseBackground />
 

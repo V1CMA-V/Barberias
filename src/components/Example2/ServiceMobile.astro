@@ -9,30 +9,44 @@ const { services } = Astro.props as {
     priceStudent?: string;
     benefits?: string[];
   }[];
-}
+};
 ---
 
 <div class="md:hidden col-span-full grid grid-cols-1 gap-6 px-4 py-10">
-  {services.map(({ name, discount, price, priceStudent }) => (
-    <div class="border border-white/10 rounded-2xl p-4 bg-white/5 backdrop-blur-md shadow-md">
-      <div class="flex justify-between items-center mb-2">
-        <h4 class="font-semibold text-base text-white">{name}</h4>
-        {discount && (
-          <span
-            class={`text-xs font-bold px-2 py-1 rounded ${
-              discount === 'month'
-                ? 'bg-yellow-500/20 text-yellow-300'
-                : 'bg-blue-500/20 text-blue-300'
-            }`}
-          >
-            {discount === 'month' ? 'Paquete del Mes' : 'Estudiante'}
+  {
+    services.map(({ name, discount, price, priceStudent, benefits }) => (
+      <div class="border border-white/10 rounded-2xl p-4 bg-white/5 backdrop-blur-md shadow-md">
+        <div class="flex justify-between items-center mb-2">
+          <h4 class="font-semibold text-base text-white">{name}</h4>
+          {discount && (
+            <span
+              class={`text-xs font-bold px-2 py-1 rounded ${
+                discount === "pack"
+                  ? "bg-green-500/20 text-green-300"
+                  : "bg-blue-500/20 text-blue-300"
+              }`}
+            >
+              {discount === "pack" ? "Paquete especial" : "Estudiante"}
+            </span>
+          )}
+        </div>
+        <div class="text-sm flex flex-col gap-1 text-white/90">
+          <span>
+            💈 General: <strong>{price}</strong>
           </span>
-        )}
+          {priceStudent && (
+            <span>
+              🎓 Estudiante: <strong>{priceStudent}</strong>
+            </span>
+          )}
+        </div>
+
+        <div class="grid grid-cols-2 gap-1 py-5 text-white/90">
+          {benefits?.map((benefit) => (
+            <span>✅ {benefit}</span>
+          ))}
+        </div>
       </div>
-      <div class="text-sm flex flex-col gap-1 text-white/90">
-        <span>💈 General: <strong>{price}</strong></span>
-        {priceStudent && <span>🎓 Estudiante: <strong>{priceStudent}</strong></span>}
-      </div>
-    </div>
-  ))}
+    ))
+  }
 </div>
