@@ -1,29 +1,24 @@
 ---
 interface Props {
-  checkActive?: boolean;
-  href: string;
-  class?: string;
+  checkActive?: boolean
+  href: string
+  class?: string
 }
 
-const {
-  href,
-  class: className,
-  checkActive = true,
-  ...restOfProps
-} = Astro.props;
+const { href, class: className, checkActive = true, ...restOfProps } = Astro.props
 
 // Detectar si estamos en la misma ruta (para navegación interna)
-const currentPath = Astro.url.pathname;
-const isSamePath = href.startsWith("#") || currentPath === href;
-const isActive = isSamePath && checkActive;
+const currentPath = Astro.url.pathname
+const isSamePath = href.startsWith('#') || currentPath === href
+const isActive = isSamePath && checkActive
 ---
 
 <a
   href={href}
-  aria-current={isActive ? "page" : undefined}
+  aria-current={isActive ? 'page' : undefined}
   class:list={[
-    "border-b-2 uppercase font-bold transition-colors duration-200 text_glowing",
-    isActive ? "border-white" : "border-transparent",
+    'border-b-2 uppercase font-bold transition-colors duration-200 text_glowing',
+    isActive ? 'border-white' : 'border-transparent',
     className,
   ]}
   {...restOfProps}
