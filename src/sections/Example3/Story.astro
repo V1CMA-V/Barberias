@@ -1,65 +1,78 @@
 ---
 const { name, about } = Astro.props as {
-    name: string
-    about: {
-        description: string[]
-    }
+  name: string
+  about: {
+    description: string[]
+  }
 }
 
 const { description } = about
 ---
 
-<section id="story" 
-    class="
-    flex items-center justify-between gap-10
-    max-w-5xl mx-auto
-    my-24
-">
-    <!-- Image -->
-    <div class="bg-cover w-full h-full relative">
-        <img id="animate-rotation" src="/images/example3/label.png" alt="" class="w-full h-full object-cover">
-        <span class="bling text-[#6d9484] font-bold text-7xl don absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">T</span>
+<section
+  id='story'
+  aria-labelledby='section-story-title'
+  class='flex flex-col lg:flex-row items-center justify-between gap-10 max-w-6xl mx-auto my-24 px-6'
+>
+  <!-- Imagen decorativa con animación -->
+  <figure class='w-full max-w-md lg:max-w-sm relative'>
+    <img
+      id='animate-rotation'
+      src='/images/example3/label.png'
+      alt='Diseño decorativo representando la historia de la barbería'
+      width='500'
+      height='500'
+      loading='lazy'
+      class='w-full h-auto object-cover'
+    />
+    <figcaption
+      class='bling text-[#6d9484] font-bold text-7xl font-serif absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
+    >
+      T
+    </figcaption>
+  </figure>
+
+  <!-- Información textual -->
+  <article id='animate-text' class='flex flex-col gap-4 text-center lg:text-left max-w-xl'>
+    <h3 id='section-story-title' class='text_fenix-accent text_glowing font-bold text-xl'>Story</h3>
+    <h2 class='don font-bold text-4xl text-[#6d9484]'>
+      {name}
+    </h2>
+
+    <div class='text-pretty space-y-4'>
+      {description.map(item => <p class='text-white font-normal leading-relaxed'>{item}</p>)}
     </div>
-    <!-- Information -->
-    <div id="animate-text" class="flex flex-col gap-4">
-        <h3 class="text_glowing text-fenix-accent font-bold text-xl">Story</h3>
-        <h2 class="text_glowing don font-bold text-4xl text-center text-[#6d9484]">{name}</h2>
-        <div class="text-pretty">
-            {description.map((item) => (
-                <p><span class="text-white font-normal">{item}</span></p>
-            ))}
-        </div>
-    </div>
+  </article>
 </section>
 
 <style>
-    #animate-rotation {
-        animation: rotation-image linear both;
-        animation-timeline: view();
-        animation-range: entry 20% cover 50%;
-    }
+  #animate-rotation {
+    animation: rotation-image linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
 
-    #animate-text {
-        animation: come-text linear both;
-        animation-timeline: view();
-        animation-range: entry 20% cover 50%;
-    }
+  #animate-text {
+    animation: come-text linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
 
-    @keyframes come-text {
-        from {
-            opacity: 0;
-            translate: 100px 0;
-        }
-        to {
-            opacity: 1;
-            translate: 0 0;
-        }
+  @keyframes come-text {
+    from {
+      opacity: 0;
+      translate: 100px 0;
     }
-    
-    @keyframes rotation-image {
-        to {
-            scale: 1.2;
-            rotate: 360deg;
-        }
+    to {
+      opacity: 1;
+      translate: 0 0;
     }
+  }
+
+  @keyframes rotation-image {
+    to {
+      scale: 1.2;
+      rotate: 360deg;
+    }
+  }
 </style>
