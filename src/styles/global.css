@@ -3,190 +3,148 @@
 
 /* Colors */
 @theme {
-    /* Fénix (Bordeaux) */
-    --color-fenix-50:  #fdf5f6;
-    --color-fenix-100: #f9e6e8;
-    --color-fenix-200: #f2c0c4;
-    --color-fenix-300: #ea9aa0;
-    --color-fenix-400: #e1757d;
-    --color-fenix-500: #d7505a;
-    --color-fenix-600: #c3424e;
-    --color-fenix-700: #992f3c;
-    --color-fenix-800: #6d1f2b;
-    --color-fenix-900: #471319;
-    --color-fenix-950: #2a0a0e;
+  /* Fénix (Bordeaux) */
+  --color-fenix-50: #fdf5f6;
+  --color-fenix-100: #f9e6e8;
+  --color-fenix-200: #f2c0c4;
+  --color-fenix-300: #ea9aa0;
+  --color-fenix-400: #e1757d;
+  --color-fenix-500: #d7505a;
+  --color-fenix-600: #c3424e;
+  --color-fenix-700: #992f3c;
+  --color-fenix-800: #6d1f2b;
+  --color-fenix-900: #471319;
+  --color-fenix-950: #2a0a0e;
 
-    /* Fénix – Neutros y acentos */
-    --color-fenix-bg:     #1a1a1a;   /* para fondos oscuros */
-    --color-fenix-text:   #ffffff;   /* texto principal */
-    --color-fenix-accent: #ffcb05;   /* dorado para botones y destacados */
+  /* Fénix – Neutros y acentos */
+  --color-fenix-bg: #1a1a1a; /* para fondos oscuros */
+  --color-fenix-text: #ffffff; /* texto principal */
+  --color-fenix-accent: #ffcb05; /* dorado para botones y destacados */
 
-    /* Don Perfecto */
-    --color-don-gold: #D4AF37;
-    --color-don-bg: #0b121e;
-    --color-don-text: #FFFFFF;
-
-
+  /* Don Perfecto */
+  --color-don-gold: #d4af37;
+  --color-don-bg: #0b121e;
+  --color-don-text: #ffffff;
 }
 
 /* HTML */
 html,
 body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    color: #FFF;
-    font-family: 'Montserrat Variable', sans-serif;
-    scroll-behavior: smooth;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-family: "Montserrat Variable", sans-serif;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 p {
-    line-height: 1.4;
-    margin-bottom: 1em;
-    font-weight: 100;
-    font-size: 1em;
-    letter-spacing: 0.5px;
+  line-height: 1.4;
+  margin-bottom: 1em;
+  font-weight: 100;
+  font-size: 1em;
+  letter-spacing: 0.5px;
 }
 
 p strong {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .don {
-    font-family: 'Playfair Display Variable', serif;
+  font-family: "Playfair Display Variable", serif;
 }
 
 /* Effects */
 
 @utility mask-fade-bottom {
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 @utility mask-fade-upper {
-    mask-image: linear-gradient(to top, black 80%, transparent 100%);
+  mask-image: linear-gradient(to top, black 80%, transparent 100%);
 }
 
 @utility mask-fade-vertical {
-    /* Para navegadores WebKit */
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      black       10%,
-      black       90%,
-      transparent 100%
-    );
-    /* Para el estándar moderno */
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      black       10%,
-      black       90%,
-      transparent 100%
-    );
-  }
+  /* Para navegadores WebKit */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  /* Para el estándar moderno */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
 
 .text_glowing {
-    transition: text-shadow 0.3s ease;
+  transition: text-shadow 0.3s ease;
 }
 
 .text_glowing:hover {
-text-shadow: 1px 1px 20px #fff;
+  text-shadow: 1px 1px 20px #fff;
 }
 
 @utility button_effect {
-    transition:
-      text-shadow 0.5s ease-out,
-      box-shadow 0.3s ease-out;
+  transition: text-shadow 0.5s ease-out, box-shadow 0.3s ease-out;
 }
 
 .button_effect:hover {
-    box-shadow: 0 0 10px #fff;
-    text-shadow: 1px 1px 20px #fff;
+  box-shadow: 0 0 10px #fff;
+  text-shadow: 1px 1px 20px #fff;
 }
 
 .bling {
-    text-shadow: 1px 1px 20px#FFF;
+  text-shadow: 1px 1px 20px#FFF;
 }
 
 /* Scrollbar custom */
 
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: transparent;
-    backdrop-filter: blur(10px);
-    border-radius: 5px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* Animation */
 /* Header navbar effect */
 
 #header-nav {
-    animation: blur linear both;
-    animation-timeline: scroll();
-    animation-range: 0 500px;
+  animation: blur linear both;
+  animation-timeline: scroll();
+  animation-range: 0 500px;
 }
 
 @keyframes blur {
-    to {
-        box-shadow:
-            0px 5px 50px -5px rgba(0, 0, 0, 0.1),
-            0px 0px 0 1px rgba(0, 0, 0, 0.3);
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px);
-    }
+  to {
+    box-shadow: 0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+      0px 0px 0 1px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+  }
 }
-
-#theater-text h2,
-#theater-text p {
-    animation: entry-animation linear both;
-    animation-timeline: view();
-}
-#theater {
-    animation-range: entry 10% cover 40%;
-}
-#theater-text h2 {
-    animation-range: entry 10% cover 30%;
-}
-#theater-text p {
-    animation-range: entry 10% cover 20%;
-}
-
-@keyframes entry-animation {
-    0% {
-        opacity: 0;
-        translate: var(--entry-animation) 0;
-    }
-    100% {
-        opacity: 1;
-        translate: 0 0;
-    }
-    }
-    @keyframes cover-animation {
-    0% {
-        opacity: 0;
-        translate: var(--cover-animation) 0;
-    }
-    100% {
-        opacity: 1;
-        translate: 0 0;
-    }
-}
-
