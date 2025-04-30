@@ -1,51 +1,53 @@
 ---
-import '@/styles/global.css'
+import "@/styles/global.css";
 
 import LayoutBarberia from "@/layouts/LayoutBarberia.astro";
 
-import Header from "@sections3/Header.astro"
-import Hero from "@sections3/Hero.astro"
-import Story from "@sections3/Story.astro"
-import Services from "@sections3/Services.astro"
-import Gallery from "@sections3/Gallery.astro"
-import Team from "@sections3/Team.astro"
-import Contact from "@sections3/Contact.astro"
-import Footer from "@sections3/Footer.astro"
+import Contact from "@sections3/Contact.astro";
+import Footer from "@sections3/Footer.astro";
+import Gallery from "@sections3/Gallery.astro";
+import Header from "@sections3/Header.astro";
+import Hero from "@sections3/Hero.astro";
+import Services from "@sections3/Services.astro";
+import Story from "@sections3/Story.astro";
+import Team from "@sections3/Team.astro";
 
-import { El_Templo } from "@barbers"
+import FloatingCta from "@/components/FloatingCta.astro";
+import { El_Templo } from "@barbers";
 
-const { name,
-    email,
-    phone,
-    location,
-    about,
-    summary,
-    icon,
-    url,
-    team,
-    services
-} =     El_Templo
-
+const {
+  name,
+  email,
+  phone,
+  location,
+  about,
+  summary,
+  icon,
+  url,
+  team,
+  services,
+} = El_Templo;
 ---
 
 <LayoutBarberia title={name} summary={summary} url={url} icon={icon}>
-    
-    <Header />
+  <Header />
 
-    <main>
-        <Hero logo="/images/hero.webp" name={name} summary={summary} />
-        <Story name={name} about={about} />
-        <Services services={services} />
-        <Gallery />
-        <Team name={name} team={team} />
-        <Contact location={location} phone={phone} email={email} />        
-    </main>
+  <main>
+    <Hero logo="/images/hero.webp" name={name} summary={summary} />
+    <Story name={name} about={about} />
+    <Services services={services} />
+    <Gallery />
+    <Team name={name} team={team} />
+    <Contact location={location} phone={phone} email={email} />
+  </main>
 
-    <Footer logo="/images/El Templo-Logo.webp" name={name} />
+  <Footer logo="/images/El Templo-Logo.webp" name={name} />
+
+  <FloatingCta name={name} number={phone} />
 </LayoutBarberia>
 
 <style>
-    html {
-        background: #161616;
-    }
+  html {
+    background: #161616;
+  }
 </style>
