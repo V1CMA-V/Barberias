@@ -1,70 +1,62 @@
 ---
-import CloseIcon from "@/components/Icons/Close.astro";
-import HeaderLink from "@components3/HeaderLink.astro";
+import CloseIcon from '@/components/Icons/Close.astro'
+import HeaderLink from '@components3/HeaderLink.astro'
 ---
 
-<header
-  id="header-nav"
-  role="banner"
-  class="fixed top-0 w-full px-6 py-4 z-50 bg-transparent"
->
-  <div class="max-w-7xl mx-auto flex items-center md:justify-between gap-16">
+<header id='header-nav' role='banner' class='fixed top-0 w-full px-6 py-4 z-50 bg-transparent'>
+  <div class='max-w-7xl mx-auto flex items-center md:justify-between gap-16'>
     <!-- Línea decorativa superior -->
-    <div class="w-full h-1 bg-white"></div>
+    <div class='w-full h-1 bg-white'></div>
 
     <!-- Logo visible solo en mobile para abrir menú -->
     <a
-      href="#header-menu"
-      aria-label="Abrir menú"
-      class="md:hidden relative z-10 flex items-center justify-center h-auto"
+      href='#header-menu'
+      aria-label='Abrir menú'
+      class='md:hidden relative z-10 flex items-center justify-center h-auto'
     >
       <img
-        src="/images/El Templo-Logo.webp"
-        alt="Logo de la Barbería El Templo"
-        width="320"
-        height="320"
-        loading="lazy"
-        class="rounded-full w-80"
+        src='/images/El Templo-Logo.webp'
+        alt='Logo de la Barbería El Templo'
+        width='320'
+        height='320'
+        loading='lazy'
+        class='rounded-full w-80'
       />
     </a>
 
     <!-- Navegación unificada -->
     <nav
-      id="header-menu"
-      role="navigation"
-      aria-label="Menú principal"
-      class="fixed md:static inset-0 w-full h-dvh md:h-auto bg-[#242424]/90 md:bg-transparent flex flex-col md:flex-row items-center justify-center gap-8 text-xl lg:text-2xl transition-transform duration-300 -translate-y-full target:translate-y-0 md:translate-y-0"
+      id='header-menu'
+      role='navigation'
+      aria-label='Menú principal'
+      class='fixed md:static inset-0 w-full h-dvh md:h-auto bg-[#242424]/90 md:bg-transparent flex flex-col md:flex-row items-center justify-center gap-8 text-xl lg:text-2xl transition-transform duration-300 -translate-y-full target:translate-y-0 md:translate-y-0'
     >
-      <HeaderLink href="#story" checkActive={false}>Historia</HeaderLink>
-      <HeaderLink href="#services" checkActive={false}>Servicios</HeaderLink>
+      <HeaderLink href='#story' checkActive={false}>Historia</HeaderLink>
+      <HeaderLink href='#services' checkActive={false}>Servicios</HeaderLink>
 
       <!-- Logo centrado solo en escritorio -->
       <img
-        id="logo-animated"
-        aria-hidden="true"
-        src="/images/El Templo-Logo.webp"
-        alt="Logo de la Barbería El Templo"
-        width="320"
-        height="320"
-        loading="lazy"
-        class="hidden md:block rounded-full w-28 hover:contrast-125 transition duration-300"
+        id='logo-animated'
+        aria-hidden='true'
+        src='/images/El Templo-Logo.webp'
+        alt='Logo de la Barbería El Templo'
+        width='320'
+        height='320'
+        loading='lazy'
+        class='hidden md:block rounded-full w-28 hover:contrast-125 transition duration-300 cursor-crosshair'
       />
 
-      <HeaderLink href="#team" checkActive={false}>Equipo</HeaderLink>
-      <HeaderLink href="#contact" checkActive={false}>Contacto</HeaderLink>
+      <HeaderLink href='#team' checkActive={false}>Equipo</HeaderLink>
+      <HeaderLink href='#contact' checkActive={false}>Contacto</HeaderLink>
 
       <!-- Botón cerrar menú solo en mobile -->
-      <a
-        href="#header-nav"
-        class="md:hidden absolute top-6 right-6"
-        aria-label="Cerrar menú"
-      >
+      <a href='#header-nav' class='md:hidden absolute top-6 right-6' aria-label='Cerrar menú'>
         <CloseIcon />
       </a>
     </nav>
 
     <!-- Línea decorativa inferior -->
-    <div class="w-full h-1 bg-white"></div>
+    <div class='w-full h-1 bg-white'></div>
   </div>
 </header>
 
