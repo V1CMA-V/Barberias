@@ -15,14 +15,14 @@ import Team from '@sections3/Team.astro'
 import FloatingCta from '@/components/FloatingCta.astro'
 import { El_Templo } from '@barbers'
 
-const { name, email, phone, location, about, summary, icon, url, team, services } = El_Templo
+const { name, label, email, phone, location, about, summary, icon, url, team, services } = El_Templo
 ---
 
 <LayoutBarberia title={name} summary={summary} url={url} icon={icon}>
   <Header />
 
   <main>
-    <Hero logo='/images/hero.webp' name={name} summary={summary} />
+    <Hero logo='/images/hero.webp' name={name} label={label} />
     <Story name={name} about={about} />
     <Services services={services} />
     <Gallery />

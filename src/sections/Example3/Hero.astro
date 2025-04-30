@@ -1,77 +1,50 @@
 ---
-// Hero.astro
-import { Image } from 'astro:assets';
+const { name, label } = Astro.props as {
+  name: string
+  label: string
+}
 
-const { logo, name, summary } = Astro.props as {
-  /** URL o path al asset que sirve de fondo */
-  logo: string;
-  /** Nombre de la barbería */
-  name: string;
-  /** Texto descriptivo bajo el título */
-  summary: string;
-};
+const letters = name.split('')
 ---
 
-<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden mb-24">
-  <!-- Fondo optimizado con Astro Image -->
-  <Image
-    src={logo}
-    alt=""
-    width={1920}      
-    height={1080}     
-    loading="lazy"
-    class="absolute inset-0 object-cover -z-20 pointer-events-none opacity-40 mask-fade-vertical"
-    aria-hidden="true"
+<section
+  id='sobre-nosotros'
+  aria-label={`Sección introductoria de ${name}`}
+  class='relative w-full max-w-[100vw] h-[100svh] overflow-hidden'
+>
+  <!-- Imagen de fondo -->
+  <img
+    src='/images/hero.webp'
+    alt={`Imagen principal de fondo de la barbería ${name}`}
+    loading='lazy'
+    width='1920'
+    height='1080'
+    class='absolute inset-0 w-full h-full object-cover object-top z-0 opacity-60 mask-fade-bottom'
   />
 
-  <!-- Overlay degradado para mejorar contraste -->
-  <!-- <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none -z-10"></div> -->
-
-  <!-- Contenedor de contenido -->
+  <!-- Contenido centrado -->
   <div
-    class="
-      relative
-      z-10
-      max-w-3xl
-      mx-auto
-      flex flex-col items-center justify-center
-      gap-6
-      text-center
-    "
+    class='absolute inset-0 z-10 flex flex-col justify-center items-center text-center px-4 gap-6 animate-blurred-fade-in animate-duration-[2s] animate-ease-in-out'
   >
+    <!-- Título animado por letras -->
     <h1
-      transition:name="barber-name"
-      class="
-        text-3xl sm:text-4xl md:text-5xl
-        font-serif font-medium
-        text-white
-        uppercase
-        leading-tight
-        drop-shadow-md
-      "
+      class='flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 text-4xl md:text-6xl lg:text-8xl font-serif uppercase text-white drop-shadow'
     >
-      Barbería<br />
-      <strong class="hover:text-fenix-accent transition duration-300">{name}</strong>
+      {
+        letters.map((letter, index) => (
+          <span
+            class='inline-block animate-slide-in-top'
+            style={`animation-delay: ${index * 100}ms`}
+          >
+            {letter}
+          </span>
+        ))
+      }
     </h1>
 
-    <p class="text-base text-white">{summary}</p>
-
-    <a
-  href="/"
-  role="button"
-  class=""
->
-  <span class="
-    mt-6 inline-block px-6 py-3
-    rounded-lg border border-fenix-accent
-    text-fenix-accent font-semibold
-    transition-colors duration-300 ease-in-out
-    hover:bg-fenix-accent/85 hover:text-white 
-    motion-safe:animate-fade-in"
-    >
-    Reservar cita
-  </span>
-</a>
-
+    <!-- Subtítulo -->
+    <p class='text-lg md:text-xl lg:text-2xl font-jura text-white/80 max-w-2xl'>
+      {label}
+    </p>
   </div>
 </section>
