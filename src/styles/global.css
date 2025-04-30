@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@midudev/tailwind-animations";
 
 /* Colors */
@@ -34,7 +34,7 @@ body {
   width: 100%;
   height: 100%;
   color: #fff;
-  font-family: "Montserrat Variable", sans-serif;
+  font-family: 'Montserrat Variable', sans-serif;
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@ p strong {
 }
 
 .don {
-  font-family: "Playfair Display Variable", serif;
+  font-family: 'Playfair Display Variable', serif;
 }
 
 /* Effects */
@@ -82,13 +82,7 @@ p strong {
     transparent 100%
   );
   /* Para el estándar moderno */
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .text_glowing {
@@ -100,7 +94,9 @@ p strong {
 }
 
 @utility button_effect {
-  transition: text-shadow 0.5s ease-out, box-shadow 0.3s ease-out;
+  transition:
+    text-shadow 0.5s ease-out,
+    box-shadow 0.3s ease-out;
 }
 
 .button_effect:hover {
@@ -142,7 +138,8 @@ p strong {
 
 @keyframes blur {
   to {
-    box-shadow: 0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      0px 5px 50px -5px rgba(0, 0, 0, 0.1),
       0px 0px 0 1px rgba(0, 0, 0, 0.3);
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
