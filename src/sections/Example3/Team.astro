@@ -1,50 +1,62 @@
 ---
-// src/sections/Team.astro
 const { name, team } = Astro.props as {
-  name: string;
-  team: { id: string; name: string; image: string }[];
-};
+  name: string
+  team: { id: string; name: string; image: string }[]
+}
 ---
+
 <section
-  id="team"
-  class="flex flex-col items-center gap-8 max-w-7xl mx-auto py-20 px-6"
+  id='team'
+  aria-labelledby='team-title'
+  class='flex flex-col items-center gap-12 max-w-7xl mx-auto py-20 px-6'
 >
-  <h3 class="text_glowing text-fenix-accent font-bold text-xl uppercase">
-    Team
-  </h3>
-  <h2 class="text_glowing don font-bold text-4xl text-center text-[#6d9484]">
+  <!-- Encabezados -->
+  <h3 class='text_glowing text-fenix-accent font-bold text-xl uppercase'>Team</h3>
+
+  <h2 id='team-title' class='text_glowing don font-bold text-4xl text-center text-[#6d9484]'>
     Conoce a nuestra familia
   </h2>
-  <p class="text-pretty text-center max-w-2xl">
+
+  <p class='text-pretty text-center max-w-2xl text-white/80'>
     Un equipo de profesionales que siempre te brindarán un
-    <strong class="text-don-gold">servicio de calidad</strong>. En
-    <strong class="text-don-gold">{name}</strong> tenemos la variedad de profesionales para brindarte un servicio de excelencia.
+    <strong class='text-don-gold'>servicio de calidad</strong>. En
+    <strong class='text-don-gold'>{name}</strong> tenemos la variedad de profesionales para brindarte
+    un servicio de excelencia.
   </p>
 
-  <div class="flex overflow-x-auto gap-6 pt-8">
-    {team.map(({ id, name: barberName, image }) => (
-      <div
-        class="relative group min-w-[280px] md:min-w-[340px] h-[460px] md:h-[520px]
-               rounded-xl overflow-hidden border border-don-gold shadow-xl"
-      >
-        <a href={`/barberos/${id}`} rel="noopener noreferrer">
-          <img
-            transition:name={`barber-${id}-image`}
-            src={image}
-            alt={barberName}
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          />
-
-          <div
-            class="absolute inset-0 flex flex-col items-center justify-center
-                   bg-black/70 backdrop-blur-sm opacity-0 group-hover:opacity-100
-                   transition-opacity duration-500 text-white px-4 text-center"
+  <!-- Grid responsivo de barberos -->
+  <div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full'>
+    {
+      team.map(({ id, name: barberName, image }) => (
+        <article
+          role='listitem'
+          class='relative group h-[460px] md:h-[520px] rounded-xl overflow-hidden border border-don-gold shadow-xl'
+        >
+          <a
+            href={`/barberos/${id}`}
+            rel='noopener noreferrer'
+            aria-label={`Perfil de ${barberName}`}
+            class='block w-full h-full'
           >
-            <h4 class="text-md md:text-base text-don-gold"><strong>Conoce a</strong></h4>
-            <h3 class="text-xl md:text-2xl font-bold">{barberName}</h3>
-          </div>
-        </a>
-      </div>
-    ))}
+            <img
+              src={image}
+              alt={`Foto de ${barberName}`}
+              loading='lazy'
+              transition:name={`barber-${id}-image`}
+              class='w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105'
+            />
+
+            <div class='absolute inset-0 flex flex-col items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white px-4 text-center'>
+              <h4 class='text-sm md:text-base text-don-gold'>
+                <strong>Conoce a</strong>
+              </h4>
+              <h3 transition:name={`barber-${id}-name`} class='text-xl md:text-2xl font-bold'>
+                {barberName}
+              </h3>
+            </div>
+          </a>
+        </article>
+      ))
+    }
   </div>
 </section>
