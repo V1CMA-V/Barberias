@@ -1,37 +1,42 @@
 ---
-// src/sections/Services.astro
-import ServiceCard from '@components4/ServiceCard.astro';
+import ServiceCard from '@components4/ServiceCard.astro'
 
 const { services } = Astro.props as {
   services: {
-    name: string;
-    image: string;
-    price: string;
-    description: string;
-    discount?: string;
-    priceStudent?: string;
-    benefits?: string[];
-  }[];
-};
+    name: string
+    image: string
+    price: string
+    description: string
+    discount?: string
+    priceStudent?: string
+    benefits?: string[]
+  }[]
+}
 ---
 
-<section id="services" class="py-20">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl sm:text-5xl font-serif font-semibold text-center text-white mb-12">
+<section id='services' role='region' aria-labelledby='services-title' class='py-20'>
+  <div class='max-w-6xl mx-auto px-6'>
+    <h2
+      id='services-title'
+      class='text-4xl sm:text-5xl font-serif font-semibold text-center text-white mb-16'
+    >
       Nuestros Servicios
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {services.map((svc) => (
-        <ServiceCard
-          name={svc.name}
-          image={svc.image}
-          price={svc.price}
-          description={svc.description}
-          discount={svc.discount}
-          priceStudent={svc.priceStudent}
-          benefits={svc.benefits}
-        />
-      ))}
+
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+      {
+        services.map((svc, i) => (
+          <ServiceCard
+            name={svc.name}
+            image={svc.image}
+            price={svc.price}
+            description={svc.description}
+            discount={svc.discount}
+            priceStudent={svc.priceStudent}
+            benefits={svc.benefits}
+          />
+        ))
+      }
     </div>
   </div>
 </section>
