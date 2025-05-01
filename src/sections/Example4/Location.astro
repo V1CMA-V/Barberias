@@ -1,63 +1,96 @@
 ---
-import LeafletMap from "@components3/LeafletMap.jsx";
-
+import LeafletMap from '@components3/LeafletMap.jsx'
 
 const { location } = Astro.props as {
-    location: {
-        address: string
-        google_link: string
-        maps: {
-            lat: number
-            lng: number
-            zoom: number
-        }
-        openingHours: {
-            monday_friday: string
-            saturday: string
-            sunday: string
-        }
+  location: {
+    address: string
+    google_link: string
+    maps: {
+      lat: number
+      lng: number
+      zoom: number
     }
+    openingHours: {
+      monday_friday: string
+      saturday: string
+      sunday: string
+    }
+  }
 }
 
 const { address, google_link, openingHours, maps } = location
 ---
-<section id="contact" class="py-20 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center">
-    <h3 class="text-3xl md:text-5xl font-bold uppercase tracking-wide bling py-10">
-        Location
-    </h3>
-    <LeafletMap client:load lat={maps.lat} lng={maps.lng} zoom={maps.zoom} markerText="El Templo barbería" />
-    
-    <div class="flex flex-col md:flex-row items-center justify-center gap-8 py-10">
-        <!-- Dirección -->
-        <div class="flex-1 flex flex-col items-center text-center px-6">
-          <h4 class="text-2xl font-bold uppercase tracking-wide bling mb-2">
-            Dirección
-          </h4>
-          <p class="text-pretty mb-2">{address}</p>
-          <a
-            href={google_link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          <span class="text-don-gold hover:underline ">Ver en Google Maps</span>
-          </a>
-        </div>
-      
-        <!-- Horario de Atención -->
-        <div class="flex-1 flex flex-col items-center text-center px-6">
-          <h4 class="text-2xl font-bold uppercase tracking-wide bling mb-2">
-            Horario de Atención
-          </h4>
-          <p class="text-pretty mb-1">
-            Lunes a Viernes: <strong>{openingHours.monday_friday}</strong>
-          </p>
-          <p class="text-pretty mb-1">
-            Sábado: <strong>{openingHours.saturday}</strong>
-          </p>
-          <p class="text-pretty">
-            Domingo: <strong>{openingHours.sunday}</strong>
-          </p>
-        </div>
-      </div>
-      
+
+<section
+  id='contact'
+  class='py-20 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center animate-fade-up'
+  aria-labelledby='location-heading'
+>
+  <h3
+    id='location-heading'
+    class='text-3xl md:text-5xl font-bold uppercase tracking-wide bling py-10'
+  >
+    Ubicación
+  </h3>
+
+  <!-- Mapa -->
+  <div class='rounded-xl overflow-hidden shadow-lg'>
+    <LeafletMap
+      client:load
+      lat={maps.lat}
+      lng={maps.lng}
+      zoom={maps.zoom}
+      markerText='El Templo Barbería'
+    />
+  </div>
+
+  <!-- Info adicional -->
+  <div class='flex flex-col md:flex-row items-center justify-center gap-8 py-10'>
+    <!-- Dirección -->
+    <address class='flex-1 not-italic flex flex-col items-center text-center px-6'>
+      <h4 class='text-2xl font-bold uppercase tracking-wide bling mb-2'>Dirección</h4>
+      <p class='text-pretty mb-2'>{address}</p>
+      <a
+        href={google_link}
+        target='_blank'
+        rel='noopener noreferrer'
+        class='text-don-gold hover:underline'
+      >
+        Ver en Google Maps
+      </a>
+    </address>
+
+    <!-- Horario -->
+    <div class='flex-1 flex flex-col items-center text-center px-6'>
+      <h4 class='text-2xl font-bold uppercase tracking-wide bling mb-2'>Horario de Atención</h4>
+      <p class='text-pretty mb-1'>
+        Lunes a Viernes: <time>{openingHours.monday_friday}</time>
+      </p>
+      <p class='text-pretty mb-1'>
+        Sábado: <time>{openingHours.saturday}</time>
+      </p>
+      <p class='text-pretty'>
+        Domingo: <time>{openingHours.sunday}</time>
+      </p>
+    </div>
+  </div>
 </section>
+
+<style>
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+  }
+</style>
