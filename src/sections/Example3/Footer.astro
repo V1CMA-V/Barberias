@@ -1,12 +1,40 @@
 ---
-const { name, logo } = Astro.props as { name: string, logo: string }
+const { name, logo } = Astro.props as {
+  name: string
+  logo: string
+}
 ---
-<footer class="flex items-center justify-between gap-10 border-t border-white/10 py-20">
-    <div class="w-full flex flex-col md:flex-row items-center justify-between px-5 py-10 ">
-        <div class="flex items-center gap-2">
-            <img src={logo} alt="{name} logo" class="w-16 h-16 rounded-full">
-            <a href="/" >Barbería <span class="font-bold hover:underline hover:text-don-gold transition duration-300">{name}</span>. 2025 Todos los derechos reservados.</a>
-        </div>
-        <a href="https://vicma.vercel.app" target="_blank" rel="noopener noreferrer" class="text-don-gold hover:underline transition duration-300">Si te interesa esta página para tu negocio, no dudes en contactarme.</a>
+
+<footer
+  class='w-full border-t border-white/10 py-10 text-sm text-white/80 bg-transparent'
+  aria-label='Pie de página'
+>
+  <div class='max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-6'>
+    <!-- Logo + marca -->
+    <div class='flex items-center gap-3 text-center md:text-left'>
+      <img
+        src={logo}
+        alt={`Logo de la barbería ${name}`}
+        class='w-14 h-14 rounded-full object-cover'
+        loading='lazy'
+      />
+      <p>
+        Barbería <span class='font-bold hover:underline hover:text-don-gold transition-colors'
+          >{name}</span
+        >.<br />
+        © 2025 Todos los derechos reservados.
+      </p>
     </div>
+
+    <!-- CTA de contacto -->
+    <a
+      href='https://vicma.vercel.app'
+      target='_blank'
+      rel='noopener noreferrer'
+      class='text-don-gold hover:underline text-center md:text-right transition-colors'
+      aria-label='Ir al portafolio del desarrollador'
+    >
+      ¿Te interesa una página como esta para tu negocio? Contáctame.
+    </a>
+  </div>
 </footer>
