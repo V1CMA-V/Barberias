@@ -1,91 +1,86 @@
 ---
-// src/components/Footer.astro
-import { Image } from 'astro:assets';
+import { Image } from 'astro:assets'
 
 interface Props {
-  name: string;
-  email: string;
-  phone: string;
-  socialMedia: { network: string; color: string; url: string }[];
+  name: string
+  email: string
+  phone: string
+  socialMedia: { network: string; color: string; url: string }[]
   location: {
-    address: string;
-    google_link: string;
-  };
+    address: string
+    google_link: string
+  }
 }
 
-const { name, email, phone, socialMedia, location } = Astro.props as Props;
-const currentYear = new Date().getFullYear();
+const { name, email, phone, socialMedia, location } = Astro.props as Props
+const currentYear = new Date().getFullYear()
 ---
 
-<footer class="bg-black/50 text-white py-12">
-  <!-- Columnas principales -->
-  <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+<footer class='bg-black/60 text-white py-16 revealed-up'>
+  <div
+    class='max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-center'
+  >
     <!-- Contacto -->
-    <div class="flex flex-col space-y-3 ">
-      <h3 class="text-2xl font-bold uppercase tracking-wide bling">Contacto</h3>
-      <ul class="space-y-2">
+    <div class='flex flex-col space-y-4'>
+      <h3 class='text-2xl font-bold uppercase tracking-wide bling'>Contacto</h3>
+      <ul class='space-y-2 text-pretty'>
+        <li><a href='#services' class='hover:text-don-gold transition'>Servicios</a></li>
+        <li><a href='#contact' class='hover:text-don-gold transition'>Contacto</a></li>
+        <li><a href={`mailto:${email}`} class='hover:text-don-gold transition'>{email}</a></li>
+        <li><a href={`tel:${phone}`} class='hover:text-don-gold transition'>{phone}</a></li>
         <li>
-          <a href="#services" class="text-pretty hover:text-don-gold transition">
-            Servicios
-          </a>
-        </li>
-        <li>
-          <a href="#contact" class="text-pretty hover:text-don-gold transition">
-            Contacto
-          </a>
-        </li>
-        <li>
-          <a href={`mailto:${email}`} class="text-pretty hover:text-don-gold transition">
-            {email}
-          </a>
-        </li>
-        <li>
-          <a href={`tel:${phone}`} class="text-pretty hover:text-don-gold transition">
-            {phone}
-          </a>
-        </li>
-        <li>
-          <a
-            href={`https://wa.me/${phone}`}
-            class="text-pretty hover:text-[#25D366] transition"
-          >
-            WhatsApp
-          </a>
+          <a href={`https://wa.me/${phone}`} class='hover:text-[#25D366] transition'>WhatsApp</a>
         </li>
       </ul>
     </div>
 
     <!-- Redes Sociales -->
-    <div class="flex flex-col space-y-3 items-center">
-      <img src="/images/footer-img.svg" alt="{name} Footer" class="w-36 h-36 bg-cover ">
-      <h3 class="text-2xl font-bold uppercase tracking-wide bling">Redes Sociales</h3>
-      <div class="flex space-x-4">
-        {socialMedia.map(({ network, url, color }) => (
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={network}
-            style={`color: ${color}`}
-            class="text-xl hover:opacity-80 transition-opacity"
-          >
-            {network}
-          </a>
-        ))}
+    <div class='flex flex-col items-center space-y-4'>
+      <Image
+        src='/images/footer-img.svg'
+        alt={`${name} logo`}
+        width={250}
+        height={250}
+        class='rounded-full object-cover'
+        loading='lazy'
+      />
+      <h3 class='text-2xl font-bold uppercase tracking-wide bling'>Redes Sociales</h3>
+      <div class='flex space-x-4'>
+        {
+          socialMedia.map(({ network, url, color }) => (
+            <a
+              href={url}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={network}
+              style={`color: ${color}`}
+              class='text-xl font-bold hover:opacity-80 transition-opacity'
+            >
+              {network}
+            </a>
+          ))
+        }
       </div>
-      <img src="/images/footer-img.svg" alt="{name} Footer" class="w-36 h-36 bg-cover ">
+      <Image
+        src='/images/footer-img.svg'
+        alt={`${name} logo`}
+        width={250}
+        height={250}
+        class='rounded-full object-cover rotate-180'
+        loading='lazy'
+      />
     </div>
 
     <!-- Ubicación -->
-    <div class="flex flex-col space-y-3">
-      <h3 class="text-2xl font-bold uppercase tracking-wide bling">Ubicación</h3>
-      <address class="not-italic space-y-2 text-pretty">
+    <div class='flex flex-col space-y-4 items-center'>
+      <h3 class='text-2xl font-bold uppercase tracking-wide bling'>Ubicación</h3>
+      <address class='not-italic text-pretty text-center'>
         <p>{location.address}</p>
         <a
           href={location.google_link}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-don-gold transition"
+          target='_blank'
+          rel='noopener noreferrer'
+          class='hover:text-don-gold transition'
         >
           Ver en Google Maps
         </a>
@@ -93,18 +88,51 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
 
-  <!-- Pie de página -->
-  <div class="mt-12 border-t border-white/20 pt-8 flex flex-col items-center space-y-4">
+  <!-- Pie final -->
+  <div
+    class='mt-16 border-t border-white/20 pt-8 flex flex-col items-center space-y-4 text-sm text-pretty text-center'
+  >
     <Image
-      src="/images/El Templo-Logo.webp"
-      alt={`${name} logo`}
+      src='/images/El Templo-Logo.webp'
+      alt={`Logo de ${name}`}
       width={80}
       height={80}
-      class="rounded-full object-cover"
-      loading="lazy"
+      class='rounded-full object-cover'
+      loading='lazy'
     />
-    <p class="text-pretty text-sm">
-      © {currentYear} {name}. Todos los derechos reservados.
+    <p>
+      © {currentYear}
+      {name}. Todos los derechos reservados.
+    </p>
+    <p class='text-white/70 text-xs'>
+      Sitio desarrollado por
+      <a
+        href='https://vicma.vercel.app'
+        target='_blank'
+        rel='noopener noreferrer'
+        class='hover:underline text-don-gold font-semibold ml-1'
+      >
+        Víctor Martínez
+      </a>
     </p>
   </div>
 </footer>
+
+<style>
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      translate: 0 200px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
+  .revealed-up {
+    animation: fade-up 0.8s ease-out both;
+    animation-timeline: view();
+    animation-range: entry 15% cover 30%;
+  }
+</style>
