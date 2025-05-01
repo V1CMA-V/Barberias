@@ -13,11 +13,28 @@ const url = `https://wa.me/${phone}?text=${message}`
 
 <section
   id='hero'
-  class='relative w-full min-h-screen bg-black flex items-center justify-center overflow-hidden px-6 animate-fade-in-down animate-duration-[2s] animate-ease-in-out'
+  class='relative h-dvh w-full max-w-[100vw] overflow-hidden'
   aria-labelledby='hero-title'
 >
-  <div class='flex flex-col items-center gap-10 max-w-3xl text-center'>
-    <!-- Título -->
+  <!-- Video de fondo con overlay oscuro -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload='auto'
+    class='absolute inset-0 w-full h-full object-cover object-center z-0'
+  >
+    <source src='/videos/hero.mp4' type='video/mp4' />
+  </video>
+
+  <!-- Capa oscura sobre el video -->
+  <div class='absolute inset-0 bg-black/60 z-10'></div>
+
+  <!-- Contenido central -->
+  <div
+    class='relative z-20 h-full flex flex-col items-center justify-center gap-8 text-center px-6 animate-hero-fade text-white'
+  >
     <h1
       id='hero-title'
       class='text-4xl md:text-5xl font-serif font-light uppercase leading-tight tracking-wide drop-shadow text-pretty'
@@ -25,7 +42,6 @@ const url = `https://wa.me/${phone}?text=${message}`
       Barbería <span class='text-don-gold font-bold'>{name}</span>
     </h1>
 
-    <!-- Logo visible y accesible -->
     <Image
       src={logo}
       alt={`Logo de la barbería ${name}`}
@@ -35,7 +51,6 @@ const url = `https://wa.me/${phone}?text=${message}`
       class='rounded-full shadow-xl'
     />
 
-    <!-- CTA -->
     <a
       href={url}
       class='px-6 py-4 border border-don-gold uppercase font-semibold text-don-gold hover:bg-don-gold hover:text-black transition duration-300'
@@ -44,3 +59,20 @@ const url = `https://wa.me/${phone}?text=${message}`
     </a>
   </div>
 </section>
+
+<style>
+  @keyframes hero-fade {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-hero-fade {
+    animation: hero-fade 1s ease-out both;
+  }
+</style>
