@@ -1,29 +1,36 @@
 ---
-import BentoItem from "@components1/BentoItem.astro";
-
+import BentoItem from '@components1/BentoItem.astro'
 
 const { services } = Astro.props as {
   services: {
     specialPack?: string[]
-    name: string;
-    price: string;
-    image: string;
-    description: string;
-    discount?: string;
-    benefits?: string[];
-  }[];
+    name: string
+    price: string
+    image: string
+    description: string
+    discount?: string
+    benefits?: string[]
+  }[]
 }
 ---
 
-<section id="services"
-  class={`
-  w-full max-w-[1400px] mx-auto p-6 md:p-12 lg:p-20 py-20
-  
-  `}>
-  <h2 class="text-5xl font-serif font-bold text-white mb-14 text-center hover:text-don-gold bling transition-colors duration-300">Nuestros Servicios</h3>
-  <div class="grid lg:grid-cols-10 auto-rows-[30rem] gap-4">
+<section
+  id='services'
+  aria-labelledby='services-title'
+  class='w-full max-w-[1400px] mx-auto px-6 py-20 md:px-12 lg:px-20'
+>
+  <h2
+    id='services-title'
+    class='text-4xl sm:text-5xl font-serif font-bold text-white mb-14 text-center hover:text-don-gold bling transition-colors duration-300'
+  >
+    Nuestros Servicios
+  </h2>
+
+  <div
+    class='grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(22rem,_auto)]'
+  >
     {
-      services.map(({ name, image, price, description, discount, benefits }) =>
+      services.map(({ name, image, price, description, discount, benefits }) => (
         <BentoItem
           title={name}
           price={price}
@@ -32,15 +39,14 @@ const { services } = Astro.props as {
           discount={discount}
         >
           <div
-            slot="image"
-            class="background transition-scale absolute bottom-0 left-0 top-0
-              -z-10 h-full w-full
-              bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110
-            "
+            slot='image'
+            role='presentation'
+            aria-hidden='true'
+            class='background transition-scale absolute inset-0 -z-10 w-full h-full bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110'
             style={`background-image: url(/images/haircut/${image})`}
           />
         </BentoItem>
-      )
+      ))
     }
   </div>
 </section>
