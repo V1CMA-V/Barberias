@@ -1,49 +1,54 @@
 ---
-import { Image } from 'astro:assets'
+import LightboxGallery from '@components3/LightboxGallery.tsx'
 
-interface Img {
-  src: string
-  alt: string
-  cols: string
-  rows: string
-}
-
-const gallery: Img[] = [
+const gallery = [
   {
     src: '/images/example3/gallery-6.webp',
     alt: 'Vista general del local',
     cols: 'col-span-2',
     rows: 'row-span-3',
+    width: 1000,
+    height: 1200,
   },
   {
     src: '/images/example3/gallery-1.webp',
     alt: 'Barberos atendiendo a un cliente',
     cols: 'col-span-2',
     rows: 'row-span-2',
+    width: 1000,
+    height: 800,
   },
   {
     src: '/images/example3/gallery-3.webp',
     alt: 'Detalle de tijeras sobre mesa',
     cols: 'col-span-2',
     rows: 'row-span-1',
+    width: 800,
+    height: 600,
   },
   {
     src: '/images/example3/gallery-4.webp',
     alt: 'Sala de espera moderna',
     cols: 'col-span-1',
     rows: 'row-span-2',
+    width: 600,
+    height: 900,
   },
   {
     src: '/images/example3/gallery-1.webp',
     alt: 'Barberos atendiendo a un cliente',
     cols: 'col-span-1',
     rows: 'row-span-2',
+    width: 1000,
+    height: 800,
   },
   {
     src: '/images/example3/gallery-5.webp',
     alt: 'Retoque de barba con navaja',
     cols: 'col-span-2',
     rows: 'row-span-1',
+    width: 1000,
+    height: 600,
   },
 ]
 ---
@@ -52,34 +57,11 @@ const gallery: Img[] = [
   <div class='w-full mx-auto px-6 lg:px-0'>
     <h2
       id='gallery-title'
-      class='text-4xl sm:text-5xl font-serif font-semibold text-white mb-12 text-center'
+      class='text-4xl sm:text-5xl font-serif font-semibold text-white mb-12 text-center text-balance'
     >
       Galería de El Templo
     </h2>
 
-    <div
-      class='grid
-        grid-cols-2 sm:grid-cols-4 md:grid-cols-6
-        auto-rows-[180px]
-        gap-4
-        grid-flow-dense'
-      role='group'
-      aria-label='Galería de imágenes de la barbería El Templo'
-    >
-      {
-        gallery.map(({ src, alt, cols, rows }) => (
-          <figure class={`relative overflow-hidden ${cols} ${rows}`}>
-            <Image
-              src={src}
-              alt={alt}
-              width={800}
-              height={600}
-              loading='lazy'
-              class='object-cover w-full h-full aspect-[4/3] transition-transform duration-500 hover:scale-105 rounded-lg'
-            />
-          </figure>
-        ))
-      }
-    </div>
+    <LightboxGallery client:load images={gallery} />
   </div>
 </section>
