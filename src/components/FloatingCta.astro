@@ -1,6 +1,4 @@
 ---
-// FloatingCta.astro
-
 interface Props {
   name: string
   number: string
@@ -8,23 +6,39 @@ interface Props {
 
 const { name, number } = Astro.props
 
-// Número de WhatsApp sin espacios ni signos
-const phone = number;
-
-// Mensaje precargado (encodeado)
+const phone = number.replace(/[^\d]/g, '')
 const message = encodeURIComponent(
   `¡Hola! 🖐 Me gustaría reservar el día ___ para un servicio con ${name}. ¿Podrían brindarme más información?`
-);
-
-const url = `https://wa.me/${phone}?text=${message}`;
+)
+const url = `https://wa.me/${phone}?text=${message}`
 ---
 
-<a 
+<!-- Móvil: botón flotante -->
+<a
   href={url}
-  target="_blank"
-  rel="noopener noreferrer"
-  class="animate-pulse fixed bottom-6 right-6 z-50 bg-white text-black font-bold py-3 px-6 rounded-full shadow-lg uppercase tracking-wide hover:scale-105 transition-all md:hidden"
-  aria-label="Enviar mensaje por WhatsApp"
+  target='_blank'
+  rel='noopener noreferrer'
+  aria-label={`Enviar mensaje por WhatsApp para reservar con ${name}`}
+  class='fixed bottom-6 right-6 z-50 bg-don-gold text-black font-bold py-3 px-6 rounded-full shadow-lg uppercase tracking-wide hover:scale-105 transition-all md:hidden'
 >
   💬 Cita
+</a>
+
+<!-- Escritorio: caja clicable completa -->
+<a
+  href={url}
+  target='_blank'
+  rel='noopener noreferrer'
+  aria-label={`Enviar mensaje a WhatsApp para reservar con ${name}`}
+  class='hidden md:flex fixed bottom-6 right-6 z-50'
+>
+  <div
+    role='button'
+    class='flex items-center gap-4 bg-white text-black px-5 py-4 rounded-xl shadow-xl border border-black/10 hover:scale-105 transition-all'
+  >
+    <span class='text-sm font-medium'>
+      ¿Quieres agendar una cita con <strong>{name}</strong>?
+    </span>
+    💬 WhatsApp
+  </div>
 </a>
