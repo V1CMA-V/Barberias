@@ -1,6 +1,7 @@
 ---
 import CloseIcon from '@/components/Icons/Close.astro'
 import HeaderLink from '@components3/HeaderLink.astro'
+import { Image } from 'astro:assets'
 ---
 
 <header id='header-nav' role='banner' class='fixed top-0 w-full px-6 py-4 z-50 bg-transparent'>
@@ -14,11 +15,11 @@ import HeaderLink from '@components3/HeaderLink.astro'
       aria-label='Abrir menú'
       class='md:hidden relative z-10 flex items-center justify-center h-auto'
     >
-      <img
+      <Image
         src='/images/El Templo-Logo.webp'
         alt='Logo de la Barbería El Templo'
-        width='320'
-        height='320'
+        width={320}
+        height={320}
         loading='lazy'
         class='rounded-full w-80'
       />
@@ -35,13 +36,13 @@ import HeaderLink from '@components3/HeaderLink.astro'
       <HeaderLink href='#services' checkActive={false}>Servicios</HeaderLink>
 
       <!-- Logo centrado solo en escritorio -->
-      <img
+      <Image
         id='logo-animated'
         aria-hidden='true'
         src='/images/El Templo-Logo.webp'
         alt='Logo de la Barbería El Templo'
-        width='320'
-        height='320'
+        width={320}
+        height={320}
         loading='lazy'
         class='hidden md:block rounded-full w-28 hover:contrast-125 transition duration-300 cursor-crosshair'
       />

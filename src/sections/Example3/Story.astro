@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 const { name, about } = Astro.props as {
   name: string
   about: {
@@ -16,7 +18,7 @@ const { description } = about
 >
   <!-- Imagen decorativa con animación -->
   <figure class='w-full max-w-md lg:max-w-sm relative'>
-    <img
+    <Image
       id='animate-rotation'
       src='/images/example3/label.png'
       alt='Diseño decorativo representando la historia de la barbería'

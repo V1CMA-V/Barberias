@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 const { name, label } = Astro.props as {
   name: string
   label: string
@@ -13,7 +15,7 @@ const letters = name.split('')
   class='relative w-full max-w-[100vw] h-[100svh] overflow-hidden'
 >
   <!-- Imagen de fondo -->
-  <img
+  <Image
     src='/images/hero.webp'
     alt={`Imagen principal de fondo de la barbería ${name}`}
     loading='lazy'

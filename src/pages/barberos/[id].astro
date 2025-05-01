@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import NoiseBackground from '@/components/NoiseBackground.astro'
 import LayoutBarberia from '@/layouts/LayoutBarberia.astro'
 import '@/styles/global.css'
@@ -23,11 +25,13 @@ const { url, icon } = El_Templo
       aria-labelledby='barber-title'
     >
       <!-- Imagen con viewTransition -->
-      <img
+      <Image
         transition:name={`barber-${id}-image`}
         src={image}
         alt={`Foto de ${name}`}
         class='object-cover w-64 h-64 md:w-[25rem] md:h-[25rem] rounded-4xl shadow-lg'
+        width={500}
+        height={500}
       />
 
       <!-- Información del barbero -->
