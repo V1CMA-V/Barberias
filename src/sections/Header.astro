@@ -1,11 +1,11 @@
 ---
-import HeaderLink from '@/components/HeaderLink.astro';
-import MenuHeader from '@/components/MenuHeader.astro';
-import MobileMenu from '@/components/MobileMenu.tsx';
+import HeaderLink from '@/components/HeaderLink.astro'
+import MenuHeader from '@/components/MenuHeader.astro'
+import MobileMenu from '@/components/MobileMenu.tsx'
 
 interface Props {
   name: string
-  phone: string 
+  phone: string
 }
 
 const { name, phone } = Astro.props
@@ -13,18 +13,17 @@ const { name, phone } = Astro.props
 // Mensaje precargado (encodeado)
 const message = encodeURIComponent(
   `¡Hola! 👋 Me gustaría reservar el día ___ para un servicio con ${name}. ¿Podrían brindarme más información?`
-);
+)
 
 const whatsappUrl = `https://wa.me/${phone}?text=${message}`
 
-const typeLetter = name === "Don Perfecto" ? "don" : ""
-
+const typeLetter = name === 'Don Perfecto' ? 'don' : ''
 ---
-<header id="header-nav" role="banner" class="fixed top-0 w-full px-6 py-4 z-50 bg-transparent">
-  <div class="max-w-7xl mx-auto flex items-center justify-between gap-6 lg:gap-16">
 
+<header id='header-nav' role='banner' class='fixed top-0 w-full px-6 py-4 z-50 bg-transparent'>
+  <div class='max-w-7xl mx-auto flex items-center justify-between gap-6 lg:gap-16'>
     <!-- Tittle -->
-    <HeaderLink checkActive={false} href="/Example2" aria-label="Inicio">
+    <HeaderLink checkActive={false} href='/Example2' aria-label='Inicio'>
       <h1 class={`md:text-3xl font-bold text_glowing transition ${typeLetter}`}>{name}</h1>
     </HeaderLink>
 
@@ -34,10 +33,10 @@ const typeLetter = name === "Don Perfecto" ? "don" : ""
     <!-- Botón cita desktop -->
     <a
       href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text_glowing
-                    text-sm 
+      target='_blank'
+      rel='noopener noreferrer'
+      class='hidden md:block text_glowing
+                    text-sm
                     button
                     w-fit
                     font-medium
@@ -49,12 +48,13 @@ const typeLetter = name === "Don Perfecto" ? "don" : ""
                     border-white
                     rounded-full
                     uppercase
-                    text-pretty">
+                    text-pretty'
+    >
       Realizar cita
     </a>
 
     <!-- Menú móvil -->
-    <MobileMenu client:only="preact" />
+    <MobileMenu client:only='preact' />
   </div>
 </header>
 
@@ -67,7 +67,6 @@ const typeLetter = name === "Don Perfecto" ? "don" : ""
 
   .button:hover {
     box-shadow: 0 0 10px #fff;
-    text-shadow:
-      1px 1px 20px #fff;
+    text-shadow: 1px 1px 20px #fff;
   }
 </style>
