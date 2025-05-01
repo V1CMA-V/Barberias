@@ -1,70 +1,115 @@
 ---
-import LeafletMap from "@components3/LeafletMap.jsx";
+import LeafletMap from '@components3/LeafletMap.jsx'
 
 const { location, phone, email } = Astro.props as {
-    phone: string
-    email: string
-    location: {
-        address: string
-        google_link: string
-        maps: {
-            lat: number
-            lng: number
-            zoom: number
-        }
-        openingHours: {
-            monday_friday: string
-            saturday: string
-            sunday: string
-        }
+  phone: string
+  email: string
+  location: {
+    address: string
+    google_link: string
+    maps: {
+      lat: number
+      lng: number
+      zoom: number
     }
+    openingHours: {
+      monday_friday: string
+      saturday: string
+      sunday: string
+    }
+  }
 }
 
 const { address, google_link, openingHours, maps } = location
-
 ---
 
-<section id="contact" class="max-w-6xl mx-auto my-24 flex flex-col gap-7">
-    <h3 class="text_glowing text-fenix-accent font-bold text-xl uppercase">
-        Contacto
-    </h3>
-    <h2 class="text_glowing don font-bold text-4xl text-center text-[#6d9484]">
-        Ubicación y Horario
+<section
+  id='contact'
+  aria-labelledby='contact-title'
+  class='max-w-6xl mx-auto my-24 px-6 flex flex-col gap-12 animate-contact-fade'
+>
+  <div class='text-center'>
+    <h3 class='text_glowing text-fenix-accent font-bold text-xl uppercase'>Contacto</h3>
+    <h2 id='contact-title' class='text_glowing don font-bold text-4xl text-[#6d9484]'>
+      Ubicación y Horario
     </h2>
+  </div>
 
-    <div class="flex gap-7 items-center">
-        <div class="flex flex-col gap-4">
-            <div class="flex flex-col gap-2 items-center">
-                <h3 class="text_glowing don font-bold text-2xl text-[#6d9484]">Información de Contacto</h3>
-                <p>{address}</p>
-                <a href={`tel:${phone}`} class="hover:text-don-gold">
-                    {phone}
-                  </a>
-                <a href={`https://wa.me/${phone}`} class="hover:text-[#25D366]">
-                    WhatsApp
-                </a>
-                <a href={`mailto:${email}`} class="hover:text-don-gold">
-                    {email}
-                </a>
-                
-                <div class="flex justify-center items-center gap-10">
-                    <a href="#" class="hover:text-blue-600">Facebook</a>
-                    <a href="#" class="hover:text-red-500">Instagram</a>
-                </div>
-            </div>
-            <div class="flex flex-col gap-2">
-                <h3 class="text_glowing don font-bold text-2xl text-[#6d9484]">Horario de Atención</h3>
-                <p class="text-pretty">Lunes a Viernes: <strong>{openingHours.monday_friday}</strong></p>
-                <p class="text-pretty">Sábado: <strong>{openingHours.saturday}</strong></p>
-                <p class="text-pretty">Domingo: <strong>{openingHours.sunday}</strong></p>
-            </div>
-        </div>
+  <div class='flex flex-col lg:flex-row gap-10 items-start'>
+    <!-- Información -->
+    <div class='flex flex-col gap-8 w-full lg:w-1/2'>
+      <section aria-labelledby='info-title' class='text-center lg:text-left'>
+        <h3 id='info-title' class='text_glowing don font-bold text-2xl text-[#6d9484] mb-2'>
+          Información de Contacto
+        </h3>
 
-        <!-- Mapa con Leaflet -->
-        <!-- Cargamos sólo en cliente: -->
-        <div class="flex flex-col gap-2 w-full">
-            <a href={google_link} target="_blank" rel="noopener noreferrer" class="hover:text-don-gold text-center">Ver en Google Maps</a>
-            <LeafletMap client:load lat={maps.lat} lng={maps.lng} zoom={maps.zoom} markerText="El Templo Barbería" />
+        <address class='not-italic flex flex-col gap-1 text-pretty'>
+          <p>{address}</p>
+          <a href={`tel:${phone}`} class='hover:text-don-gold'>{phone}</a>
+          <a href={`https://wa.me/${phone}`} class='hover:text-[#25D366]'> WhatsApp </a>
+          <a href={`mailto:${email}`} class='hover:text-don-gold'>{email}</a>
+        </address>
+
+        <div class='flex justify-center lg:justify-start items-center gap-6 mt-4'>
+          <a href='#' aria-label='Ir a Facebook' class='hover:text-blue-600'> Facebook </a>
+          <a href='#' aria-label='Ir a Instagram' class='hover:text-red-500'> Instagram </a>
         </div>
+      </section>
+
+      <!-- Horario -->
+      <section aria-labelledby='schedule-title' class='text-center lg:text-left'>
+        <h3 id='schedule-title' class='text_glowing don font-bold text-2xl text-[#6d9484] mb-2'>
+          Horario de Atención
+        </h3>
+        <p class='text-pretty'>
+          Lunes a Viernes: <strong>{openingHours.monday_friday}</strong>
+        </p>
+        <p class='text-pretty'>
+          Sábado: <strong>{openingHours.saturday}</strong>
+        </p>
+        <p class='text-pretty'>
+          Domingo: <strong>{openingHours.sunday}</strong>
+        </p>
+      </section>
     </div>
+
+    <!-- Mapa -->
+    <div class='flex flex-col gap-4 w-full lg:w-1/2'>
+      <a
+        href={google_link}
+        target='_blank'
+        rel='noopener noreferrer'
+        class='hover:text-don-gold text-center lg:text-left'
+      >
+        Ver en Google Maps
+      </a>
+
+      <LeafletMap
+        client:load
+        lat={maps.lat}
+        lng={maps.lng}
+        zoom={maps.zoom}
+        markerText='El Templo Barbería'
+      />
+    </div>
+  </div>
 </section>
+
+<style>
+  .animate-contact-fade {
+    animation: contact-fade-slide linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+
+  @keyframes contact-fade-slide {
+    from {
+      opacity: 0;
+      transform: translateY(200px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
