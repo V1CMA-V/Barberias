@@ -1,40 +1,65 @@
 ---
-import HeaderLink from "@components3/HeaderLink.astro";
+import Close from '@/components/Icons/Close.astro'
+import MenuIcon from '@/components/Icons/MenuIcon.astro'
+import HeaderLink from '@components3/HeaderLink.astro'
 ---
 
-<header id="Header-scroll" class="pt-9 fixed top-0 w-full px-6 py-4 z-50 bg-transparent scale-150">
-    <div class="max-w-3xl mx-auto pt-9 border-t-2 border-white flex items-center justify-center gap-8 lg:gap-16">
-       
-        <HeaderLink class="text_glowing font-bold " checkActive={false} href="#services">
-            Servicios
-        </HeaderLink>
-        
-        <HeaderLink class="text_glowing font-bold " checkActive={false} href="#contact">
-            Contacto
-        </HeaderLink>
-        <HeaderLink class="text_glowing font-bold " checkActive={false} href="#about">
-            Sobre nosotros
-        </HeaderLink>
+<header
+  id='Header-scroll'
+  role='banner'
+  class='fixed top-0 w-full z-50 bg-transparent px-6 py-4 -translate-y-28'
+>
+  <!-- Línea decorativa superior -->
+  <div class='max-w-3xl mx-auto border-t-2 border-white flex items-center justify-between'>
+    <span class='text-white text-lg font-bold md:hidden'>El Templo</span>
 
-        
-    </div>
+    <!-- Botón abrir menú (solo móvil) -->
+    <a href='#header-menu' class='md:hidden' aria-label='Abrir menú'>
+      <MenuIcon />
+    </a>
+  </div>
+
+  <!-- Menú principal -->
+  <nav
+    id='header-menu'
+    role='navigation'
+    aria-label='Menú principal'
+    class='fixed md:static inset-0 w-full h-dvh md:h-auto bg-black/90 md:bg-transparent flex flex-col md:flex-row items-center justify-center gap-8 text-xl lg:text-2xl transition-transform duration-300 -translate-y-full target:translate-y-0 md:translate-y-0'
+  >
+    <HeaderLink class='text_glowing font-bold' checkActive={false} href='#services'>
+      Servicios
+    </HeaderLink>
+
+    <HeaderLink class='text_glowing font-bold' checkActive={false} href='#contact'>
+      Contacto
+    </HeaderLink>
+
+    <HeaderLink class='text_glowing font-bold' checkActive={false} href='#about'>
+      Sobre nosotros
+    </HeaderLink>
+
+    <!-- Botón cerrar menú (solo móvil) -->
+    <a href='#Header-scroll' class='absolute top-6 right-6 md:hidden' aria-label='Cerrar menú'>
+      <Close />
+    </a>
+  </nav>
 </header>
 
 <style>
-    #Header-scroll {
-        animation: enhance-header-3 linear both;
-        animation-timeline: scroll(root);
-        animation-range: 0 300px;
-    }
+  #Header-scroll {
+    animation: enhance-header-3 linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 300px;
+  }
 
-    @keyframes enhance-header-3 {
-        to {
-            box-shadow:
-            0px 5px 50px -5px rgba(0, 0, 0, 0.1),
-            0px 0px 0 1px rgba(0, 0, 0, 0.3);
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            scale: 1;
-        }
+  @keyframes enhance-header-3 {
+    to {
+      box-shadow:
+        0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+        0px 0px 0 1px rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      translate: 0 0;
     }
+  }
 </style>
