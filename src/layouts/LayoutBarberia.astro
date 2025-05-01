@@ -1,46 +1,47 @@
 ---
 // src/layouts/LayoutBarberia.astro
-import '@fontsource-variable/montserrat';
-import { ClientRouter as ViewTransitions } from 'astro:transitions';
+import '@fontsource-variable/montserrat'
+import { ClientRouter as ViewTransitions } from 'astro:transitions'
 
 interface Props {
-  title?: string;
-  summary?: string;
-  url?: string;
-  icon?: string;
+  title?: string
+  summary?: string
+  url?: string
+  icon?: string
 }
 
-const { title, summary, url, icon } = Astro.props;
+const { title, summary, url, icon } = Astro.props
 ---
-<!DOCTYPE html>
-<html lang="es">
+
+<!doctype html>
+<html lang='es'>
   <head>
     <ViewTransitions />
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>{title}</title>
-    <meta name="description" content={summary} />
-    <link rel="icon" href={icon} type="image/svg+xml" />
+    <meta name='description' content={summary} />
+    <link rel='icon' href={icon} type='image/svg+xml' />
 
     <!-- Open Graph -->
-    <meta property="og:url" content={url} />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={summary} />
-    <meta property="og:image" content={icon} />
+    <meta property='og:url' content={url} />
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={summary} />
+    <meta property='og:image' content={icon} />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url?.split('//')[1] ?? ''} />
-    <meta property="twitter:url" content={url} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={summary} />
-    <meta name="twitter:image" content={icon} />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta property='twitter:domain' content={url?.split('//')[1] ?? ''} />
+    <meta property='twitter:url' content={url} />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={summary} />
+    <meta name='twitter:image' content={icon} />
 
-    <slot name="head" />
+    <slot name='head' />
   </head>
-  <body class=" text-white antialiased">
+  <body class='text-white antialiased'>
     <slot />
   </body>
 </html>
