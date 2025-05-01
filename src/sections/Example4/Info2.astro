@@ -1,44 +1,61 @@
 ---
-// src/sections/AboutSection.astro
 interface Props {
-  name: string;
+  name: string
   about: {
-    description: string[];
-  };
+    description: string[]
+  }
 }
 
-const { name, about } = Astro.props as Props;
+const { name, about } = Astro.props as Props
 ---
 
-<section
-  id="about"
-  aria-labelledby="about-heading"
-  class="bg-[#f2e8dc] text-black py-20"
->
-  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 space-y-12">
-    <!-- Encabezado -->
-    <header class="text-center space-y-4">
-      <h2
-        id="about-heading"
-        class="text-3xl md:text-5xl font-bold uppercase tracking-wide bling"
-      >
+<section id='about' aria-labelledby='about-heading' class='bg-[#f2e8dc] text-black py-20'>
+  <div class='max-w-7xl mx-auto px-6 md:px-12 lg:px-20 space-y-16'>
+    <!-- Encabezado con animación -->
+    <header class='text-center space-y-4 animate-fade-up'>
+      <h2 id='about-heading' class='text-3xl md:text-5xl font-bold uppercase tracking-wide bling'>
         Somos lo que un hombre necesita al salir de su casa
       </h2>
-      <blockquote class="italic font-serif text-pretty text-lg md:text-xl">
+      <blockquote class='italic font-serif text-pretty text-lg md:text-xl'>
         “Somos una barbería que marca la diferencia”
       </blockquote>
       <div>
-        <span class="inline-block border-l-4 border-don-gold pl-4 font-semibold text-don-gold">
+        <span class='inline-block border-l-4 border-don-gold pl-4 font-semibold text-don-gold'>
           {name}
         </span>
       </div>
     </header>
 
-    <!-- Cuerpo de texto -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-base md:text-lg leading-relaxed">
-      {about.description.map((paragraph) => (
-        <span class="text-pretty">{paragraph}</span>
-      ))}
+    <!-- Descripción animada -->
+    <div
+      class='grid grid-cols-1 md:grid-cols-2 gap-10 text-base md:text-lg leading-relaxed animate-fade-up'
+    >
+      {
+        about.description.map(paragraph => (
+          <p>
+            <span class='text-pretty text-black/90 font-normal'>{paragraph}</span>
+          </p>
+        ))
+      }
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+  }
+</style>
